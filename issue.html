@@ -20,6 +20,7 @@
 		</header>
 		<div class="mui-content">
 			<div class="panel">
+				<div class="swiper-container">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide" ng-repeat="pages in scene track by $index">
 						<div class="page">
@@ -53,8 +54,9 @@
 					</div>
 				</div>
 			</div>
+			</div>
 		</div>
-		<footer>
+		<footer class="footer">
 			<div class="menu">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide option">
@@ -89,7 +91,7 @@
 			<div class="mui-popup-buttons">
 				<span class="mui-popup-button" onclick="bin()">不保存</span>
 				<span class="mui-popup-button" onclick="cShade()">取消</span>
-				<span class="mui-popup-button mui-popup-button-bold" onclick="ave()">保存</span>
+				<span class="mui-popup-button mui-popup-button-bold" onclick="save()">保存</span>
 			</div>
 		</div>
 		<div class="mui-popup-backdrop mui-active" style="display: none;" id="shade"></div>
@@ -97,7 +99,7 @@
 		<script type="text/javascript" src="js/swiper-4.1.0.min.js"></script>
 		<script type="text/javascript" src="js/swiper.animate.min.js"></script>
 		<script type="text/javascript" src="js/hammer.min.js"></script>
-		<script type="text/javascript" src="js/scene/util.js"></script>
+		<script type="text/javascript" src="js/scene/zoom.min.js"></script>
 		<script type="text/javascript" src="js/scene/issue.js"></script>
 	</body>
 

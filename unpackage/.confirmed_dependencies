@@ -275,7 +275,8 @@
       "css/index.css",
       "js/mui.min.js",
       "js/webView.js",
-      "js/index.js"
+      "js/index.js",
+      "template/recommend.html"
     ],
     "refer": [
       "about-us.html",

@@ -1,11 +1,17 @@
-mui.init();
+mui.init({
+	preloadPages: [{
+		id: "addText",
+		url: "/scene/addText.html"
+	}],
+	preloadLimit: 5
+});
 
-var menu = new Swiper(".menu", {
+var menu = new Swiper(".footer .menu", {
 	slidesPerView: 5,
 	resistanceRatio: 0
 });
 
-var swiper = new Swiper(".panel", {
+var swiper = new Swiper(".panel .swiper-container", {
 	slidesPerView: 1.1,
 	spaceBetween: 10,
 	resistanceRatio: 0,
@@ -40,8 +46,7 @@ scene.controller("issue", function($scope) {
 		var index = swiper.activeIndex;
 		if(index < $scope.scene.length) {
 			mui.openWindow({
-				id: "addText",
-				url: "/scene/addText.html"
+				id: "addText"
 			});
 		}
 	});

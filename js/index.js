@@ -1,4 +1,10 @@
-mui.init();
+mui.init({
+	preloadPages: [{
+		id: "bMusic",
+		url: "./music/back-music.html"
+	}],
+	preloadLimit: 5
+});
 
 mui.plusReady(function() {
 	var currentId = plus.webview.currentWebview().id;
@@ -49,7 +55,6 @@ document.getElementById("about").addEventListener("tap", function() {
 /*乐库*/
 document.getElementById("music").addEventListener("tap", function() {
 	mui.openWindow({
-		id: "bMusic",
-		url: "./music/back-music.html"
+		id: "bMusic"
 	});
 });

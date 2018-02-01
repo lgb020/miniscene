@@ -50,7 +50,7 @@
 
 /*选项*/
 .title {
-	font-size: 1rem;
+	font-size: 0.9rem;
 	height: 30px;
 	line-height: 30px;
 	border-left: 3px solid #f68531;
@@ -61,7 +61,7 @@
 }
 
 .related{
-	margin: 35px 0px 5px 0px;
+	margin: 40px 0px 5px 0px;
 }
 
 .scene{

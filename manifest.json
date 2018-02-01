@@ -1,4 +1,4 @@
-﻿{
+{
     "@platforms": ["android", "iPhone", "iPad"],
     "id": "H508DA7EA",/*应用的标识，创建应用时自动生成，勿手动修改*/
     "name": "MINISCENE",/*应用名称，程序桌面图标名称*/
@@ -20,9 +20,7 @@
         "Accelerometer": {
             "description": "访问加速度感应器"
         },
-        "Audio": {
-            "description": "访问麦克风"
-        },
+        "Audio": {},
         
         "Cache": {
             "description": "管理应用缓存"
@@ -34,9 +32,7 @@
             "description": "跟踪调试输出日志"
         },
         
-        "Device": {
-            "description": "访问设备信息"
-        },
+        "Device": {},
         "Downloader": {
             "description": "文件下载管理"
         },
@@ -49,9 +45,7 @@
         "Gallery": {
             "description": "访问系统相册"
         },
-        "Geolocation": {
-            "description": "访问位置信息"
-        },
+        
         "Invocation": {
             "description": "使用Native.js能力"
         },
@@ -77,9 +71,7 @@
         "Zip": {
             "description": "文件压缩与解压缩"
         },
-        "Barcode": {
-            "description": "管理二维码扫描插件"
-        },
+        
         
         
         "Webview":{
@@ -118,7 +110,7 @@
                 "keystore": "",/*Android应用打包使用的密钥库文件*/
                 "password": "",/*Android应用打包使用密钥库中证书的密码*/
                 "aliasname": "",/*Android应用打包使用密钥库中证书的别名*/
-               "permissions": ["<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-feature android:name=\"android.hardware.camera.autofocus\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>"]
+               "permissions": ["<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.INTERNET\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>"]
 				/*使用Native.js调用原生安卓API需要使用到的系统权限*/
             },
             "orientation": ["portrait-primary","portrait-secondary"],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
