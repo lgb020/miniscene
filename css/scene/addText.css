@@ -1,0 +1,13 @@
+.mui-title {
+	font-size: 1rem;
+}
+
+.mui-pull-right {
+	line-height: 44px;
+	font-size: 1rem;
+}
+
+#text,
+#text::-webkit-input-placeholder {
+	font-size: 0.9rem;
+}

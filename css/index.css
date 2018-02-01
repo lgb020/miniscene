@@ -1,0 +1,36 @@
+.mui-bar-nav {
+	box-shadow: 0 1px 0px #e5e1e1;
+}
+
+input[type=search] {
+	font-size: 0.9rem;
+	border-radius: 20px;
+	text-align: left;
+}
+
+.mui-icon-search {
+	font-size: 22px !important;
+}
+
+/*菜单选项*/
+.mui-segmented-control {
+	font-size: 0.9rem;
+}
+
+.mui-segmented-control.mui-scroll-wrapper .mui-control-item {
+	padding: 0px 20px;
+}
+
+.iconfont{
+	font-size: 24px;
+	padding: 10px;
+	margin-right: -10px;
+	margin-left: -10px;
+	
+}
+
+.mui-badge{
+	margin-left: -5px;
+	padding: 4px 4px;
+	background: red;
+}

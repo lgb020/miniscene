@@ -1,0 +1,18 @@
+.mui-bar .mui-pull-right {
+	line-height: 44px;
+	font-size: 1rem;
+}
+
+.mui-bar .mui-title {
+	right: 50px;
+}
+
+.mui-title .mui-input-clear {
+	border-radius: 2rem;
+	font-size: 0.9rem;
+}
+
+.mui-input-clear::-webkit-input-placeholder {
+	font-size: 0.9rem;
+	color: #b3b4b4;
+}

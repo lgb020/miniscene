@@ -1,0 +1,95 @@
+.adv{
+	width: 100%;
+}
+
+.adv img{
+	width: 100%;
+}
+
+/*模板信息*/
+.title {
+	margin-top: 10px;
+	font-size: 0.9rem;
+	height: 30px;
+	line-height: 30px;
+	border-left: 3px solid #f68531;
+}
+
+.title .mui-pull-left {
+	margin-left: 10px;
+}
+
+.title .mui-pull-right {
+	margin-right: 10px;
+	color: #f68531;
+}
+
+.title .mui-pull-right i {
+	font-size: 1rem;
+}
+
+.info {
+	margin: 10px 0px 15px 0px;
+	padding: 0px 4%;
+	width: 100%;
+	height: auto;
+}
+
+.list{
+	width: 100%;
+	height: auto;
+}
+
+.info .cover {
+	width: 30%;
+	height: auto;
+	display: inline-block;
+	margin-top: 10px;
+}
+
+.info .center {
+	margin-left: 4%;
+}
+
+.info .add {
+	margin-left: 5%;
+}
+
+.info .right {
+	float: right;
+}
+
+.info .cover img {
+	width: 100%;
+}
+
+.info .cover span {
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 0.8rem;
+}
+
+.info .cover .describes {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.info .cover .integral {
+	color: #f68531;
+}
+
+.info .cover .integral i {
+	font-size: 0.9rem;
+}
+
+/*下拉刷新*/
+.mui-pull-bottom-pocket{
+	margin-top: 10px;
+}
+
+.mui-pull-caption{
+	font-size: 14px;
+}

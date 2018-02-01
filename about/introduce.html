@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<title>关于MINISCENE</title>
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/iconfont.css" />
+		<style>
+			.mui-title {
+				font-size: 1rem;
+			}
+			
+			.mui-card-header,
+			.mui-card-footer {
+				font-size: 14px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">关于MINISCENE</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-card">
+				<div class="mui-card-header" id="version"></div>
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						"MINISCENE"是一款简单、强大的HTML编辑器，平台借鉴了开发者日常使用过的H5场景而进行设计，提供的原始素材为开发者整理于网上，若有侵权行为，可联系开发者下线相应素材。
+					</div>
+				</div>
+			</div>
+			<div class="mui-card">
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						该软件为开发者大学毕业设计作品。因为个人思维方式局限，在软件设计上考虑难免欠佳，如有发现问题，欢迎提出，互相学习。
+					</div>
+				</div>
+			</div>
+			<div class="mui-card">
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						开发者联系方式：
+						<div>QQ：1083178465</div>
+						<div>微信：hsf15768615284</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/mui.min.js"></script>
+		<script>
+			mui.init();
+			mui.plusReady(function() {
+				plus.runtime.getProperty(plus.runtime.appid, function(inf) {
+					var version = "版本："+inf.version;
+					document.getElementById("version").innerHTML = version;
+					
+				});
+			});
+		</script>
+	</body>
+
+</html>

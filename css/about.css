@@ -1,0 +1,123 @@
+.background{
+	width: 100%;
+	height: auto;
+}
+
+.background img{
+	width: 100%;
+}
+
+.photo{
+	width: 100%;
+	text-align: center;
+	margin-top: -35%;
+}
+
+.photo img{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+}
+
+.photo .name{
+	width: 40%;
+	height: 30px;
+	line-height: 30px;
+	margin:0 auto;
+	font-size: 1rem;
+	color: #fff;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+/*头部图标*/
+.mui-bar-nav{
+	box-shadow: none;
+}
+
+.mui-bar{
+	background: none;
+}
+
+.mui-bar-nav~.mui-content{
+	padding-top:0px;
+}
+
+.mui-icon{
+	color:#fff;
+}
+
+/*选项*/
+.title {
+	font-size: 1rem;
+	height: 30px;
+	line-height: 30px;
+	border-left: 3px solid #f68531;
+}
+
+.title .mui-pull-left {
+	margin-left: 10px;
+}
+
+.related{
+	margin: 35px 0px 5px 0px;
+}
+
+.scene{
+	margin: 15px 0px 5px 0px;
+}
+
+.mui-badge{
+	line-height: 1.4;
+	position: absolute;
+	left: 100%;
+	margin-left: -10px;
+	padding: 4px 4px;
+	background: red;
+}
+
+.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body{
+	font-size: 14px;
+}
+
+.mui-grid-view.mui-grid-9{
+	background: #fff;
+}
+
+.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+	border-right:none;
+	border-bottom: none;
+}
+
+.mui-grid-view.mui-grid-9 .mui-media .iconfont{
+	font-size: 2rem;
+}
+
+.icon-wodexiaoxi{
+	color: rgb(50, 185, 170);
+}
+
+.icon-rili{
+	color: rgb(136, 90, 56);
+}
+
+.icon-iconfontdianpu{
+	color: #f68531;
+}
+
+.icon-wodekehu{
+	color: rgb(255, 202, 87);
+}
+
+.icon-wode{
+	color: rgb(221, 85, 58);
+}
+
+.icon-huiyuan1{
+	color: rgb(187, 166, 109);
+}
+
+.mui-grid-view.mui-grid-9 .mui-table-view-cell.mui-active{
+	background-color: #fbf9f9;
+}

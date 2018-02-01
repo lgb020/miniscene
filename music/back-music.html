@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>音乐库</title>
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/iconfont.css" />
+		<link rel="stylesheet" href="../css/music/back-music.css" />
+	</head>
+
+	<body ng-app="music" ng-controller="ctrl">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">音乐库</h1>
+			<a class="mui-icon mui-icon-search mui-pull-right" id="search"></a>
+		</header>
+		<div class="mui-content">
+			<div class="mui-segmented-control">
+				<a class="mui-control-item mui-active" href="#online">在线</a>
+				<a class="mui-control-item" href="#location">本地</a>
+			</div>
+			<div id="online" class="mui-control-content mui-active">
+				<ul class="mui-table-view online">
+					
+				</ul>
+			</div>
+			<div id="location" class="mui-control-content">
+				<ul class="mui-table-view location">
+					
+				</ul>
+			</div>
+		</div>
+		<footer>
+			<audio id="music" src="http://pic.ibaotu.com/00/45/87/232888piCVbK.mp3" controls></audio>
+		</footer>
+		<script type="text/javascript" src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/music/back-music.js"></script>
+	</body>
+
+</html>

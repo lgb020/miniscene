@@ -1,0 +1,116 @@
+.mui-title {
+	font-size: 1rem;
+}
+
+.head-img {
+	border-radius: 50%;
+}
+
+.mui-media-body .name {
+	font-size: 0.9rem;
+	color: #333;
+}
+
+.mui-media-body .mui-ellipsis {
+	font-size: 0.8rem;
+}
+
+.mui-ellipsis span {
+	display: inline-block;
+}
+
+.common{
+	color: #8f8f94;
+}
+
+.isIntegral {
+	color: #f68531;
+}
+
+.recharge {
+	border-radius: 30px;
+	padding: 4px 12px;
+}
+
+.times{
+	margin-left: 0.4rem;
+}
+
+/*兑换记录*/
+.exchange{
+	margin-top: 15px;
+}
+
+.exchange .icon-wodexiaoxi{
+	color: #f68531;
+}
+
+.small-title{
+	font-size: 0.9rem;
+}
+
+.mui-collapse-content article {
+  position: relative;
+}
+.mui-collapse-content article section {
+  padding: 0 0 15px;
+  position: relative;
+}
+.mui-collapse-content article section:before {
+  content: "";
+  width: 4px;
+  top: 17px;
+  bottom: -17px;
+  background: #e6e6e6;
+  position: absolute;
+}
+.mui-collapse-content article section:last-child:before {
+  display: none;
+}
+.mui-collapse-content article section time {
+  width: 15%;
+  display: block;
+  position: absolute;
+}
+.mui-collapse-content article section time > span {
+  display: block;
+  text-align: right;
+}
+.mui-collapse-content article section aside {
+  color: #3a3a38;
+  margin-left: 6%;
+}
+
+.mui-collapse-content article section aside p{
+	font-size: 0.9rem !important;
+}
+.mui-collapse-content article section .brief {
+  color: #9f9f9f;
+}
+
+.point-time {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 15px;
+  margin-left: -3px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px #fff;
+}
+
+.point-yellow {
+  background-color: #f68531;
+}
+
+
+/*提醒*/
+.remind{
+	padding: 10px 15px;
+	font-size: 0.9rem;
+	color: #555555;
+}
+
+.remind span{
+	display: block;
+	padding-top: 5px;
+}

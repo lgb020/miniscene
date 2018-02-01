@@ -1,0 +1,84 @@
+.mui-title {
+	font-size: 1rem;
+}
+
+.mui-content {
+	margin-bottom: 50px;
+}
+
+.mui-segmented-control {
+	font-size: 0.8rem;
+	margin: 8px auto;
+	border-radius: 20px;
+	width: 40%;
+}
+
+.mui-segmented-control .mui-control-item {
+	line-height: 28px;
+}
+
+.mui-table-view {
+	font-size: 1rem;
+	background-color: #f7f7f7;
+}
+
+.mui-table-view-cell {
+	padding: 13px 15px;
+}
+
+
+/*下拉刷新*/
+.mui-pull-bottom-pocket {
+	margin-top: 5px;
+}
+
+.mui-pull-caption {
+	font-size: 14px;
+}
+
+/*音乐列表*/
+.mui-table-view-cell{
+	font-size: 0.9rem;
+}
+
+.mui-table-view-cell .length,.mui-table-view-cell .singer{
+	font-size: 0.8rem;
+	color: #b3b4b4;
+}
+
+.url{
+	display: none;
+}
+
+.title{
+	width: 65%;
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+
+.singer{
+	width: 30%;
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	text-align: right;
+	
+}
+
+/*音乐播放*/
+footer {
+	position: fixed;
+	width: 100%;
+	height: 50px;
+	bottom: 0px;
+	background-color: #fafafa;
+}
+
+footer audio{
+	width: 100%;
+}
+
+.current{
+	color: #f68531;
+}

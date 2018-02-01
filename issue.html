@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>场景发布</title>
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/swiper-4.1.0.min.css" />
+		<link rel="stylesheet" href="css/animate.min.css" />
+		<link rel="stylesheet" href="css/scene/issue.css" />
+		<script type="text/javascript" src="js/angular/angular.min.js"></script>
+	</head>
+
+	<body ng-app="scene" ng-controller="issue">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<a class="mui-icon mui-icon-loop mui-pull-right"></a>
+		</header>
+		<div class="mui-content">
+			<div class="panel">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide" ng-repeat="pages in scene track by $index">
+						<div class="page">
+							<div class="bg" style="background-image: url('{{pages.bgUrl}}');">
+								<ul class="edit-area" id="{{pages.areaId}}">
+									<li ng-repeat="list in pages track by $index"
+										id="inside{{pages.areaId}}{{$index}}" class="{{list.className}}" style="{{list.css}}" 
+										ng-click="check(pages.areaId,$index)"
+										>
+										<span compile="list.content"></span>
+										<div class="bar bar-top"></div>
+										<div class="bar bar-bottom"></div>
+										<div class="bar bar-left"></div>
+										<div class="bar bar-right"></div>
+										<div class="bar bar-radius radius-del">
+											<i class="iconfont icon-close"></i>
+										</div>
+										<div class="bar bar-radius radius-drop" id="drop{{pages.areaId}}{{$index}}"></div>
+										<div class="bar bar-radius radius-height" id="height{{pages.areaId}}{{$index}}"></div>
+										<div class="bar bar-radius radius-width" id="width{{pages.areaId}}{{$index}}"></div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="add" ng-click="addPage()">
+							<span class="iconfont icon-tianjiatupian"></span>
+							<span class="toast">添加页面</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="menu">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide option">
+						<span class="iconfont icon-moban-copy"></span>
+						<span class="name">+模板</span>
+					</div>
+					<div class="swiper-slide option">
+						<a href="javascript:void(0);" class="addText">
+							<span class="iconfont icon-wenzi-copy"></span>
+							<span class="name">+文字</span>
+						</a>
+					</div>
+					<div class="swiper-slide option" ng-click="addImg()">
+						<span class="iconfont icon-tupian-copy"></span>
+						<span class="name">+图片</span>
+					</div>
+					<div class="swiper-slide option">
+						<span class="iconfont icon-huanbeijing-copy"></span>
+						<span class="name">背景</span>
+					</div>
+					<div class="swiper-slide option">
+						<span class="iconfont icon-yinle"></span>
+						<span class="name">音乐</span>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<div class="mui-popup mui-popup-in" style="display: none;" id="widget">
+			<div class="mui-popup-inner">
+				<div class="mui-popup-text">是否保存数据?</div>
+			</div>
+			<div class="mui-popup-buttons">
+				<span class="mui-popup-button" onclick="bin()">不保存</span>
+				<span class="mui-popup-button" onclick="cShade()">取消</span>
+				<span class="mui-popup-button mui-popup-button-bold" onclick="ave()">保存</span>
+			</div>
+		</div>
+		<div class="mui-popup-backdrop mui-active" style="display: none;" id="shade"></div>
+		<script type="text/javascript" src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/swiper-4.1.0.min.js"></script>
+		<script type="text/javascript" src="js/swiper.animate.min.js"></script>
+		<script type="text/javascript" src="js/hammer.min.js"></script>
+		<script type="text/javascript" src="js/scene/util.js"></script>
+		<script type="text/javascript" src="js/scene/issue.js"></script>
+	</body>
+
+</html>
