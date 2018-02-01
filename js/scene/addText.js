@@ -38,7 +38,6 @@ mui("body").on("tap", ".ensure", function() {
 		mui.fire(view, "getText", {
 			text: value
 		});
-	} else {
-		mui.back();
 	}
+	mui.back();
 });

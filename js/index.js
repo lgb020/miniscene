@@ -38,6 +38,7 @@ mui.plusReady(function() {
 /*个人中心*/
 document.getElementById("about").addEventListener("tap", function() {
 	mui.openWindow({
+		id: "aboutUs",
 		url: "./about-us.html",
 		show:{
 			aniShow:"slide-in-left"
@@ -48,6 +49,7 @@ document.getElementById("about").addEventListener("tap", function() {
 /*乐库*/
 document.getElementById("music").addEventListener("tap", function() {
 	mui.openWindow({
+		id: "bMusic",
 		url: "./music/back-music.html"
 	});
 });

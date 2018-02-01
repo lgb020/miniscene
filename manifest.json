@@ -1,327 +1,507 @@
-{
-	"@platforms": [
-		"android",
-		"iPhone",
-		"iPad"
-	],
-	"id": "H508DA7EA",/*应用的标识，创建应用时自动生成，勿手动修改*/
-	"name": "MINISCENE",/*应用名称，程序桌面图标名称*/
-	"version": {
-		"name": "1.0.0",/*应用版本名称*/
-		"code": "83"
-	},
-	"description": "",/*应用描述信息*/
-	"icons": {
-		"72": "icon.png"
-	},
-	"launch_path": "index.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
-	"developer": {
-		"name": "",/*开发者名称*/
-		"email": "",/*开发者邮箱地址*/
-		"url": "http://www.dcloud.io"
-	},
-	"permissions": {
-		"Accelerometer": {},
-		"Audio": {},
-		"Cache": {
-			"description": "管理应用缓存"
-		},
-		"Camera": {},
-		"Console": {
-			"description": "跟踪调试输出日志"
-		},
-		"Contacts": {},
-		"Device": {},
-		"Downloader": {},
-		"Events": {
-			"description": "应用扩展事件"
-		},
-		"File": {},
-		"Gallery": {},
-		"Geolocation": {},
-		"Invocation": {},
-		"Messaging": {},
-		"Orientation": {},
-		"Proximity": {},
-		"Storage": {},
-
-		"Uploader": {},
-		"Runtime": {},
-		"XMLHttpRequest": {},
-		"Zip": {},
-		"Barcode": {},
-		"Maps": {},
-		"Speech": {},
-		"Webview": {},
-		"NativeUI": {},
-		"Navigator": {},
-		"NativeObj": {},
-		"OAuth": {}
-	},
-	"plus": {
-		"splashscreen": {
-			"autoclose": true,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
-			"waiting": true,
-			"delay": "1300"
-		},
-		"runmode": "liberate",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
-		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
-		"distribute": {
-			"apple": {
-				"appid": "",/*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
-				"mobileprovision": "",/*iOS应用打包配置文件*/
-				"password": "",/*iOS应用打包个人证书导入密码*/
-				"p12": "",/*iOS应用打包个人证书，打包配置文件关联的个人证书*/
-				"devices": "universal",/*iOS应用支持的设备类型，可取值iphone/ipad/universal*/
-				"frameworks": []
-			},
-			"google": {
-				"packagename": "",/*Android应用包名，如io.dcloud.HelloH5*/
-				"keystore": "",/*Android应用打包使用的密钥库文件*/
-				"password": "",/*Android应用打包使用密钥库中证书的密码*/
-				"aliasname": "",/*Android应用打包使用密钥库中证书的别名*/
-				"permissions": [
-					"<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
-					"<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
-					"<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
-					"<uses-permission android:name=\"android.permission.VIBRATE\"/>",
-					"<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
-					"<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
-					"<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
-					"<uses-permission  android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
-					"<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
-					"<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
-					"<uses-permission android:name=\"com.android.launcher.permission.UNINSTALL_SHORTCUT\"/>",
-					"<uses-permission android:name=\"android.permission.CAMERA\"/>",
-					"<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
-					"<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
-					"<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
-					"<uses-permission android:name=\"com.android.launcher.permission.INSTALL_SHORTCUT\"/>",
-					"<uses-permission android:name=\"android.permission.SEND_SMS\"/>",
-					"<uses-permission android:name=\"android.permission.INTERNET\"/>",
-					"<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
-					"<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
-					"<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
-					"<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
-					"<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
-					"<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
-					"<uses-feature android:name=\"android.hardware.camera\"/>",
-					"<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
-					"<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
-					"<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>",
-					"<uses-permission android:name=\"android.permission.WRITE_SMS\"/>",
-					"<uses-permission android:name=\"android.permission.READ_SMS\"/>"
-				]
-			},
-			"orientation": [
-				"portrait-primary",
-				"portrait-secondary"
-			],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
-			"icons": {
-				"ios": {
-					"prerendered": true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
-					/*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
-					"iphone": {
-						"normal": "",/*iPhone普通屏幕程序图标，分辨率：57x57*/
-						"retina": "",/*iPhone高分屏程序图标，分辨率：114x114*/
-						/*iPhone iOS7高分屏程序图标，分辨率：120x120*/
-						"spotlight-normal": "", /*iPhone Spotlight搜索程序图标，分辨率：29x29*/
-						"spotlight-retina": "", /*iPhone高分屏Spotlight搜索程序图标，分辨率：58x58*/
-						/*iPhone iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
-						"settings-normal": "", /*iPhone设置页面程序图标，分辨率：29x29*/
-						"app@3x": "unpackage/res/icons/180x180.png",
-						"app@2x": "unpackage/res/icons/120x120.png",
-						"settings@2x": "unpackage/res/icons/58x58.png",
-						"settings@3x": "unpackage/res/icons/87x87.png",
-						"spotlight@2x": "unpackage/res/icons/80x80.png",
-						"spotlight@3x": "unpackage/res/icons/120x120.png",
-						"notification@2x": "unpackage/res/icons/40x40.png",
-						"notification@3x": "unpackage/res/icons/60x60.png"
-					},
-					"ipad": {
-						"normal": "", /*iPad普通屏幕程序图标，分辨率：72x72*/
-						"retina": "", /*iPad高分屏程序图标，分辨率：144x144*/
-						/*iPad iOS7程序图标，分辨率：76x76*/
-						/*iPad iOS7高分屏程序图标，分辨率：152x152*/
-						"spotlight-normal": "", /*iPad Spotlight搜索程序图标，分辨率：50x50*/
-						"spotlight-retina": "", /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*/
-						/*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
-						/*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
-						/*iPad设置页面程序图标，分辨率：29x29*/
-						"app": "unpackage/res/icons/76x76.png",
-						"app@2x": "unpackage/res/icons/152x152.png",
-						"settings": "unpackage/res/icons/29x29.png",
-						"spotlight": "unpackage/res/icons/40x40.png",
-						"proapp@2x": "unpackage/res/icons/167x167.png",
-						"settings@2x": "unpackage/res/icons/58x58.png",
-						"spotlight@2x": "unpackage/res/icons/80x80.png",
-						"notification": "unpackage/res/icons/20x20.png",
-						"notification@2x": "unpackage/res/icons/40x40.png"
-					},
-					"appstore": "unpackage/res/icons/1024x1024.png"
-				},
-				"android": {
-					"mdpi": "unpackage/res/icons/48x48.png", /*普通屏程序图标，分辨率：48x48*/
-					"ldpi": "unpackage/res/icons/48x48.png", /*大屏程序图标，分辨率：48x48*/
-					"hdpi": "unpackage/res/icons/72x72.png", /*高分屏程序图标，分辨率：72x72*/
-					"xhdpi": "unpackage/res/icons/96x96.png",/*720P高分屏程序图标，分辨率：96x96*/
-					"xxhdpi": "unpackage/res/icons/144x144.png",
-					"xxxhdpi": "unpackage/res/icons/192x192.png"
-				}
-			},
-			"splashscreen": {
-				"ios": {
-					"iphone": {
-						"default": ""
-					},
-					"ipad": {
-						"portrait": "", /*iPad竖屏启动图片，分辨率：768x1004*/
-						"portrait-retina": "",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
-						"landscape": "", /*iPad横屏启动图片，分辨率：1024x748*/
-						"landscape-retina": "", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
-						"portrait7": "", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
-						"portrait-retina7": "",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
-						"landscape7": "", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
-						"landscape-retina7": ""
-					}
-				},
-				"android": {
-					"mdpi": "", /*普通屏启动图片，分辨率：240x282*/
-					"ldpi": "", /*大屏启动图片，分辨率：320x442*/
-					"hdpi": "F:/项目/毕业设计/初版/资料/启动页/480762.png", /*高分屏启动图片，分辨率：480x762*/
-					"xhdpi": "F:/项目/毕业设计/初版/资料/启动页/7201242.png", /*720P高分屏启动图片，分辨率：720x1242*/
-					"xxhdpi": "F:/项目/毕业设计/初版/资料/启动页/10801882.png"
-				}
-			},
-			"debug": false
-		}
-	},
-	"dependencies": {
+﻿{
+    "@platforms": ["android", "iPhone", "iPad"],
+    "id": "H508DA7EA",/*应用的标识，创建应用时自动生成，勿手动修改*/
+    "name": "MINISCENE",/*应用名称，程序桌面图标名称*/
+    "version": {
+        "name": "1.0",/*应用版本名称*/
+        "code": ""
+    },
+    "description": "",/*应用描述信息*/
+    "icons": {
+        "72": "icon.png"
+    },
+    "launch_path": "index.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+    "developer": {
+        "name": "",/*开发者名称*/
+        "email": "",/*开发者邮箱地址*/
+        "url": ""/*开发者个人主页地址*/
+    },
+    "permissions": {
+        "Accelerometer": {
+            "description": "访问加速度感应器"
+        },
+        "Audio": {
+            "description": "访问麦克风"
+        },
+        
+        "Cache": {
+            "description": "管理应用缓存"
+        },
+        "Camera": {
+            "description": "访问摄像头"
+        },
+        "Console": {
+            "description": "跟踪调试输出日志"
+        },
+        
+        "Device": {
+            "description": "访问设备信息"
+        },
+        "Downloader": {
+            "description": "文件下载管理"
+        },
+        "Events": {
+            "description": "应用扩展事件"
+        },
+        "File": {
+            "description": "访问本地文件系统"
+        },
+        "Gallery": {
+            "description": "访问系统相册"
+        },
+        "Geolocation": {
+            "description": "访问位置信息"
+        },
+        "Invocation": {
+            "description": "使用Native.js能力"
+        },
+        "Orientation": {
+            "description": "访问方向感应器"
+        },
+        "Proximity": {
+            "description": "访问距离感应器"
+        },
+        "Storage": {
+            "description": "管理应用本地数据"
+        },
+        
+        "Uploader": {
+            "description": "管理文件上传任务"
+        },
+        "Runtime": {
+            "description": "访问运行期环境"
+        },
+        "XMLHttpRequest": {
+            "description": "跨域网络访问"
+        },
+        "Zip": {
+            "description": "文件压缩与解压缩"
+        },
+        "Barcode": {
+            "description": "管理二维码扫描插件"
+        },
+        
+        
+        "Webview":{
+        	"description": "窗口管理"
+        },
+        "NativeUI":{
+        	"description": "原生UI控件"
+        },
+        "Navigator":{
+        	"description": "浏览器信息"
+        },
+        "NativeObj":{
+        	"description": "原生对象"
+        }
+    },
+    "plus": {
+        "splashscreen": {
+            "autoclose": true,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
+            "waiting": true/*是否在程序启动界面显示等待雪花，true表示显示，false表示不显示。*/
+        },
+        "popGesture": "close",/*设置应用默认侧滑返回关闭Webview窗口，"none"为无侧滑返回功能，"hide"为侧滑隐藏Webview窗口。参考http://ask.dcloud.net.cn/article/102*/
+        "runmode": "normal",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
+        "signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
+        "distribute": {
+            "apple": {
+                "appid": "",/*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
+                "mobileprovision": "",/*iOS应用打包配置文件*/
+                "password": "",/*iOS应用打包个人证书导入密码*/
+                "p12": "",/*iOS应用打包个人证书，打包配置文件关联的个人证书*/
+                "devices": "universal",/*iOS应用支持的设备类型，可取值iphone/ipad/universal*/
+                "frameworks":[
+                ]/*调用Native.js调用原生Objective-c API需要引用的FrameWork，如需调用GameCenter，则添加"GameKit.framework"*/
+            },
+            "google": {
+                "packagename": "",/*Android应用包名，如io.dcloud.HelloH5*/
+                "keystore": "",/*Android应用打包使用的密钥库文件*/
+                "password": "",/*Android应用打包使用密钥库中证书的密码*/
+                "aliasname": "",/*Android应用打包使用密钥库中证书的别名*/
+               "permissions": ["<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-feature android:name=\"android.hardware.camera.autofocus\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>"]
+				/*使用Native.js调用原生安卓API需要使用到的系统权限*/
+            },
+            "orientation": ["portrait-primary","portrait-secondary"],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
+            "icons": {
+                "ios": {
+                    "prerendered": true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
+                    "auto": "", /*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
+                    "iphone": {
+                        "normal": "unpackage/res/icons/57x57.png", /*iPhone3/3GS程序图标，分辨率：57x57*/
+                        "retina": "unpackage/res/icons/114x114.png", /*iPhone4程序图标，分辨率：114x114*/
+                        "retina7": "unpackage/res/icons/120x120.png", /*iPhone4S/5/6程序图标，分辨率：120x120*/
+			"retina8": "unpackage/res/icons/180x180.png", /*iPhone6 Plus程序图标，分辨率：180x180*/
+                        "spotlight-normal": "unpackage/res/icons/29x29.png", /*iPhone3/3GS Spotlight搜索程序图标，分辨率：29x29*/
+                        "spotlight-retina": "unpackage/res/icons/58x58.png", /*iPhone4 Spotlight搜索程序图标，分辨率：58x58*/
+                        "spotlight-retina7": "unpackage/res/icons/80x80.png", /*iPhone4S/5/6 Spotlight搜索程序图标，分辨率：80x80*/
+                        "settings-normal": "unpackage/res/icons/29x29.png", /*iPhone4设置页面程序图标，分辨率：29x29*/
+                        "settings-retina": "unpackage/res/icons/58x58.png", /*iPhone4S/5/6设置页面程序图标，分辨率：58x58*/
+			"settings-retina8": "unpackage/res/icons/87x87.png" /*iPhone6Plus设置页面程序图标，分辨率：87x87*/
+                    },
+                    "ipad": {
+                        "normal": "unpackage/res/icons/72x72.png", /*iPad普通屏幕程序图标，分辨率：72x72*/
+                        "retina": "unpackage/res/icons/144x144.png", /*iPad高分屏程序图标，分辨率：144x144*/
+                        "normal7": "unpackage/res/icons/76x76.png", /*iPad iOS7程序图标，分辨率：76x76*/
+                        "retina7": "unpackage/res/icons/152x152.png", /*iPad iOS7高分屏程序图标，分辨率：152x152*/
+                        "spotlight-normal": "unpackage/res/icons/50x50.png", /*iPad Spotlight搜索程序图标，分辨率：50x50*/
+                        "spotlight-retina": "unpackage/res/icons/100x100.png", /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*/
+                        "spotlight-normal7": "unpackage/res/icons/40x40.png",/*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
+                        "spotlight-retina7": "unpackage/res/icons/80x80.png",/*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+                        "settings-normal": "unpackage/res/icons/29x29.png",/*iPad设置页面程序图标，分辨率：29x29*/
+                        "settings-retina": "unpackage/res/icons/58x58.png" /*iPad高分屏设置页面程序图标，分辨率：58x58*/
+                    }
+                },
+                "android": {
+                    "mdpi": "unpackage/res/icons/48x48.png", /*普通屏程序图标，分辨率：48x48*/
+                    "ldpi": "unpackage/res/icons/48x48.png", /*大屏程序图标，分辨率：48x48*/
+                    "hdpi": "unpackage/res/icons/72x72.png", /*高分屏程序图标，分辨率：72x72*/
+                    "xhdpi": "unpackage/res/icons/96x96.png",/*720P高分屏程序图标，分辨率：96x96*/
+                    "xxhdpi": "unpackage/res/icons/144x144.png","xxxhdpi":"unpackage/res/icons/192x192.png"/*1080P 高分屏程序图标，分辨率：144x144*/
+                }
+            },
+            "splashscreen": {
+                "ios": {
+                    "iphone": {
+                        "default": "", /*iPhone3启动图片选，分辨率：320x480*/
+                        "retina35": "",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
+                        "retina40": "",/*4.0 英寸设备(iPhone5/iPhone5s)启动图片，分辨率：640x1136*/
+                        "retina47": "",/*4.7 英寸设备(iPhone6)启动图片，分辨率：750x1334*/
+                        "retina55": "",/*5.5 英寸设备(iPhone6 Plus)启动图片，分辨率：1242x2208*/
+                        "retina55l": ""/*5.5 英寸设备(iPhone6 Plus)横屏启动图片，分辨率：2208x1242*/
+                    },
+                    "ipad": {
+                        "portrait": "", /*iPad竖屏启动图片，分辨率：768x1004*/
+                        "portrait-retina": "",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
+                        "landscape": "", /*iPad横屏启动图片，分辨率：1024x748*/
+                        "landscape-retina": "", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
+                        "portrait7": "", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
+                        "portrait-retina7": "",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
+                        "landscape7": "", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
+                        "landscape-retina7": ""/*iPad iOS7高分屏横屏启动图片，分辨率：2048x1536*/
+                    }
+                },
+                "android": {
+                    "mdpi": "", /*普通屏启动图片，分辨率：240x282*/
+                    "ldpi": "", /*大屏启动图片，分辨率：320x442*/
+                    "hdpi": "F:/项目/毕业设计/项目相关/启动页/480762.png", /*高分屏启动图片，分辨率：480x762*/
+                    "xhdpi": "F:/项目/毕业设计/项目相关/启动页/7201242.png", /*720P高分屏启动图片，分辨率：720x1242*/
+                    "xxhdpi": "F:/项目/毕业设计/项目相关/启动页/10801882.png"/*1080P高分屏启动图片，分辨率：1080x1882*/
+                }
+            }
+        }
+    },
+	"dependencies":{
 		"pages": {
-			"index.html": {
-				"href": "index.html",
+			"about/setting.html": {
+				"href": "about/setting.html",
 				"resources": [
-					"js/mui.min.js",
 					"css/mui.min.css",
 					"fonts/mui.ttf",
-					"sort.html",
-					"template.html",
-					"template/recommend.html",
-					"template/photo.html"
-				],
-				"priority": 0,
-				"refer": [
-					"template/hot.html",
-					"template/music.html",
-					"template/person.html",
-					"template/company.html",
-					"template/newest.html",
-					"about-us.html",
-					"store.html",
-					"music/back-music.html"
-				]
-			},
-			"template/company.html": {
-				"resources": [],
-				"refer": [
-					"template/abstract.html",
-					"template/company-tab.html",
-					"template/tabInfo.html",
-					"template/tab-info.html"
+					"css/iconfont.css",
+					"js/mui.min.js"
 				],
 				"priority": 0
 			},
-			"template/photo.html": {
-				"resources": [],
-				"refer": [
-					"template/company-tab.html",
-					"template/tabInfo.html",
-					"template/tab-info.html"
+			"about/store.html": {
+				"href": "about/store.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"css/about/store.css",
+					"js/mui.min.js",
+					"js/about/store.js",
+					"img/cover.jpg"
 				],
-				"priority": 0
+				"priority": 1
 			},
-			"about-us.html": {
-				"resources": [],
-				"refer": [
-					"about/inform.html",
-					"about/store.html",
-					"about/templ.html",
-					"about/client.html",
-					"about/member.html",
-					"about/introduce.html",
-					"about/setting.html"
+			"about/introduce.html": {
+				"href": "about/introduce.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"js/mui.min.js"
 				],
-				"priority": 0
+				"priority": 2
+			},
+			"about/inform.html": {
+				"href": "about/inform.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"css/about/inform.css",
+					"js/mui.min.js",
+					"js/about/inform.js"
+				],
+				"priority": 3
+			},
+			"about/recharge.html": {
+				"href": "about/recharge.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"js/mui.min.js"
+				],
+				"priority": 4
 			},
 			"about/member.html": {
-				"resources": [],
+				"href": "about/member.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"css/about/member.css",
+					"js/mui.min.js",
+					"img/logo.png"
+				],
 				"refer": [
 					"about/recharge.html"
 				],
-				"priority": 0
+				"priority": 4
 			},
-			"about/setting.html": {
+			"music/search.html": {
+				"href": "music/search.html",
 				"resources": [
-					"/index.html"
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"css/music/search.css",
+					"js/mui.min.js"
 				],
-				"refer": [
-					"index.html"
-				],
-				"priority": 0
-			},
-			"about/templ.html": {
-				"resources": [],
-				"refer": [
-					"about/editTempl.html",
-					"about/setTempl.html",
-					"about/set-templ.html"
-				],
-				"priority": 0
-			},
-			"about/set-templ.html": {
-				"resources": [],
-				"refer": [
-					"music/back-music.html"
-				],
-				"priority": 0
+				"priority": 5
 			},
 			"music/back-music.html": {
-				"resources": [],
+				"href": "music/back-music.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"css/music/back-music.css",
+					"js/mui.min.js",
+					"js/music/back-music.js"
+				],
 				"refer": [
 					"music/search.html"
 				],
-				"priority": 0
+				"priority": 5
 			},
-			"template/recommend.html": {
-				"resources": [],
+			"about/set-templ.html": {
+				"href": "about/set-templ.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"css/about/set-templ.css",
+					"js/mui.min.js",
+					"js/about/set-templ.js"
+				],
 				"refer": [
-					"store/store_all.html",
-					"scene/issue.html",
-					"issue.html"
+					"music/back-music.html"
+				],
+				"priority": 5
+			},
+			"about/templ.html": {
+				"href": "about/templ.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"css/about/templ.css",
+					"js/mui.min.js",
+					"js/about/templ.js",
+					"img/cover.jpg"
+				],
+				"refer": [
+					"about/set-templ.html"
+				],
+				"priority": 5
+			},
+			"about-us.html": {
+				"href": "about-us.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"css/about.css",
+					"js/mui.min.js",
+					"js/about.js",
+					"img/center.jpg",
+					"img/photo.jpg"
+				],
+				"refer": [
+					"about/setting.html",
+					"about/store.html",
+					"about/introduce.html",
+					"about/inform.html",
+					"about/member.html",
+					"about/templ.html"
 				],
 				"priority": 0
 			},
+			"template/tab-info.html": {
+				"href": "template/tab-info.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"css/template/tab-info.css",
+					"js/mui.min.js",
+					"js/template/tab-info.js",
+					"img/cover.jpg"
+				],
+				"priority": 1
+			},
+			"template/company.html": {
+				"href": "template/company.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"css/template/company.css",
+					"js/mui.min.js",
+					"js/template/company.js",
+					"img/cover.jpg"
+				],
+				"refer": [
+					"template/tab-info.html"
+				],
+				"priority": 1
+			},
+			"template/photo.html": {
+				"href": "template/photo.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"css/template/photo.css",
+					"js/mui.min.js",
+					"js/template/photo.js",
+					"img/cover.jpg"
+				],
+				"refer": [
+					"template/tab-info.html"
+				],
+				"priority": 2
+			},
+			"template/hot.html": {
+				"href": "template/hot.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"css/template/hot.css",
+					"js/mui.min.js",
+					"js/template/hot.js",
+					"img/cover.jpg",
+					"img/banner3.jpg"
+				],
+				"priority": 3
+			},
 			"store/store_all.html": {
-				"resources": [],
+				"href": "store/store_all.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"css/store/store_info.css",
+					"css/swiper-4.1.0.min.css",
+					"js/mui.min.js",
+					"js/swiper-4.1.0.min.js",
+					"js/store/store_info.js",
+					"img/photo.jpg",
+					"img/banner4.jpg"
+				],
 				"refer": [
 					"about/store.html"
 				],
-				"priority": 0
+				"priority": 4
+			},
+			"scene/addText.html": {
+				"href": "scene/addText.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/scene/addText.css",
+					"js/mui.min.js",
+					"js/scene/addText.js"
+				],
+				"priority": 5,
+				"refer": []
 			},
 			"issue.html": {
-				"resources": [],
+				"href": "issue.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"css/swiper-4.1.0.min.css",
+					"css/animate.min.css",
+					"css/scene/issue.css",
+					"img/bar.png",
+					"js/angular/angular.min.js",
+					"js/mui.min.js",
+					"js/swiper-4.1.0.min.js",
+					"js/swiper.animate.min.js",
+					"js/hammer.min.js",
+					"js/scene/util.js",
+					"js/scene/issue.js",
+					"img/photo.jpg"
+				],
 				"refer": [
-					"issue/text.html",
-					"scene/text.html",
 					"scene/addText.html"
+				],
+				"priority": 5
+			},
+			"template/recommend.html": {
+				"href": "template/recommend.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"css/template/recommend.css",
+					"js/mui.min.js",
+					"js/template/recommend.js",
+					"img/cover.jpg",
+					"img/banner2.jpg",
+					"img/banner1.jpg"
+				],
+				"refer": [
+					"store/store_all.html",
+					"issue.html"
+				],
+				"priority": 4
+			},
+			"index.html": {
+				"href": "index.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"css/index.css",
+					"js/mui.min.js",
+					"js/webView.js",
+					"js/index.js",
+					"template/recommend.html"
+				],
+				"refer": [
+					"about-us.html",
+					"template/company.html",
+					"template/photo.html",
+					"template/hot.html",
+					"music/back-music.html"
 				],
 				"priority": 0
 			}
 		},
 		"idle": {
 			"resources": [
-				"js/mui.js",
-				"css/mui.css"
+				"js/angular/angular-route.min.js",
+				"login.html",
+				"img/background.jpg",
+				"js/mui.view.js"
 			]
 		}
 	}
