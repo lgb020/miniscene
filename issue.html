@@ -26,20 +26,19 @@
 						<div class="page">
 							<div class="bg" style="background-image: url('{{pages.bgUrl}}');">
 								<ul class="edit-area" id="{{pages.areaId}}">
-									<li ng-repeat="list in pages track by $index"
-										id="inside{{pages.areaId}}{{$index}}" class="{{list.className}}" style="{{list.css}}" 
-										ng-click="check(pages.areaId,$index)"
-										>
+									<li ng-repeat="list in pages track by $index" id="inside{{pages.areaId}}{{$index}}" class="{{list.className}}" style="{{list.css}}" ng-click="check(pages.areaId,$index)">
 										<span compile="list.content"></span>
 										<div class="bar bar-top"></div>
 										<div class="bar bar-bottom"></div>
 										<div class="bar bar-left"></div>
 										<div class="bar bar-right"></div>
-										<div class="bar bar-radius radius-del">
+										<div class="bar bar-radius radius-del" ng-click="del(pages.areaId,$index)">
 											<i class="iconfont icon-close"></i>
 										</div>
 										<div class="bar bar-radius radius-drop" id="drop{{pages.areaId}}{{$index}}"></div>
-										<div class="bar bar-radius radius-height" id="height{{pages.areaId}}{{$index}}"></div>
+										<div class="bar bar-radius radius-height">
+											<i class="mui-icon mui-icon-compose"></i>
+										</div>
 										<div class="bar bar-radius radius-width" id="width{{pages.areaId}}{{$index}}"></div>
 									</li>
 								</ul>

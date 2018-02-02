@@ -100,6 +100,8 @@ ul{
 	font-size: 16px;
 	word-wrap:break-word;
 	text-align: center;
+	top: 100px;
+	left:30px;
 }
 
 /*选择边框*/
@@ -173,7 +175,14 @@ ul{
 	font-size: 0.8rem;
 	color: #fff;
 	position: absolute;
-	top: 0.05rem;
+	line-height: 13px;
+}
+
+.radius-height .mui-icon-compose{
+	font-size: 0.8rem;
+	color: #fff;
+	position: absolute;
+	line-height: 13px;
 }
 
 /*底部菜单*/

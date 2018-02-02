@@ -141,15 +141,25 @@ var getCss = function(elem, key) {
 //确定后返回编辑页面
 mui("body").on("tap", ".ensure", function() {
 	var value = document.getElementById("text").value;
-	console.log(window.getComputedStyle(document.getElementById("example")));
 	if(value != "" && value != " ") {
 		//获取样式参数
-		var elem  = document.getElementById("example");
-		var fontSize = getCss(elem,"font-size");
-		var color = getCss(elem,"color");
+		var elem = document.getElementById("example");
+		var fontSize = getCss(elem, "font-size");
+		var color = getCss(elem, "color");
+		var align = getCss(elem, "text-align");
+		var ani_delay = getCss(elem, "animation-delay");
+		var ani_duration = getCss(elem, "animation-duration");
+		var ani_name = getCss(elem, "animation-name");
+
 		var view = plus.webview.getWebviewById("issue");
 		mui.fire(view, "getText", {
-			text: value
+			value: value,
+			fontSize: fontSize,
+			color: color,
+			align: align,
+			ani_delay: ani_delay,
+			ani_duration: ani_duration,
+			ani_name: ani_name
 		});
 	}
 	mui.back();
