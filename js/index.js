@@ -2,6 +2,9 @@ mui.init({
 	preloadPages: [{
 		id: "bMusic",
 		url: "./music/back-music.html"
+	},{
+		id: "search",
+		url: "./scene/search.html"
 	}],
 	preloadLimit: 5
 });
@@ -41,7 +44,7 @@ mui.plusReady(function() {
 	});
 });
 
-/*个人中心*/
+//个人中心
 document.getElementById("about").addEventListener("tap", function() {
 	mui.openWindow({
 		id: "aboutUs",
@@ -52,9 +55,16 @@ document.getElementById("about").addEventListener("tap", function() {
 	});
 });
 
-/*乐库*/
+//乐库
 document.getElementById("music").addEventListener("tap", function() {
 	mui.openWindow({
 		id: "bMusic"
+	});
+});
+
+//搜索
+document.getElementById("search").addEventListener("tap", function() {
+	mui.openWindow({
+		id: "search"
 	});
 });

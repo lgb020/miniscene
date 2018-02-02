@@ -1,4 +1,10 @@
-mui.init();
+mui.init({
+	preloadPages: [{
+		id: "storeAll",
+		url: "../store/store_all.html"
+	}],
+	preloadLimit: 5
+});
 
 mui("#slider").slider({
 	interval: 3000
@@ -7,8 +13,7 @@ mui("#slider").slider({
 /*设计小店*/
 document.getElementById("store").addEventListener("tap", function() {
 	mui.openWindow({
-		id: "storeAll",
-		url: "../store/store_all.html"
+		id: "storeAll"
 	});
 });
 

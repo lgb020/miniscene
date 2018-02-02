@@ -52,9 +52,7 @@
         "Orientation": {
             "description": "访问方向感应器"
         },
-        "Proximity": {
-            "description": "访问距离感应器"
-        },
+        
         "Storage": {
             "description": "管理应用本地数据"
         },
@@ -483,7 +481,8 @@
 					"template/company.html",
 					"template/photo.html",
 					"template/hot.html",
-					"music/back-music.html"
+					"music/back-music.html",
+					"scene/search.html"
 				],
 				"priority": 0
 			}

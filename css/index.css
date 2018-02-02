@@ -1,15 +1,27 @@
+.mui-title{
+	color: #555555;
+}
+
 .mui-bar-nav {
 	box-shadow: 0 1px 0px #e5e1e1;
 }
 
-input[type=search] {
+.search {
+	height: 29px;
+	line-height: 29px;
+	width: 100%;
 	font-size: 0.9rem;
-	border-radius: 20px;
+	border-radius: 2rem;
+	margin: 6px 0;
 	text-align: left;
+	background-color: rgba(0,0,0,.1);
+	padding: 0 10px;
 }
 
-.mui-icon-search {
-	font-size: 22px !important;
+.search .mui-icon-search{
+	display: inline-block;
+	margin-top: 4px;
+	font-size: 1rem;
 }
 
 /*菜单选项*/
@@ -33,4 +45,9 @@ input[type=search] {
 	margin-left: -5px;
 	padding: 4px 4px;
 	background: red;
+}
+
+.mui-input-clear::-webkit-input-placeholder {
+	font-size: 0.9rem;
+	color: #b3b4b4;
 }

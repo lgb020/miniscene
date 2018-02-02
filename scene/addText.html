@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
 		<title>文本编辑</title>
 		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/iconfont.css" />
 		<link rel="stylesheet" href="../css/swiper-4.1.0.min.css" />
 		<link rel="stylesheet" href="../css/animate.min.css" />
 		<link rel="stylesheet" href="../css/scene/addText.css" />
@@ -20,11 +21,12 @@
 		</header>
 		<div class="mui-content">
 			<input type="text" placeholder="请输入文字" id="text" ng-model="value">
-			<div class="example" style="font-size:{{fontSize}};color:{{fontColor}};text-align: {{fontPosition}};">
-				<span ng-bind="value"></span>
+			<div class="example {{aEffect}}"  id="example"
+				style="font-size:{{fontSize}};color:{{fontColor}};text-align: {{fontAlign}};animation-duration:{{aDuration}}s;animation-delay:{{aDelay}}s">
+				<span  ng-bind="value"></span>
 			</div>
 			<div class="title">
-				<span class="mui-pull-left">大小</span>
+				<span class="mui-pull-left">样式</span>
 			</div>
 			<div class="size">
 				<div class="swiper-container">
@@ -35,24 +37,49 @@
 					</div>
 				</div>
 			</div>
-			<div class="title">
-				<span class="mui-pull-left">颜色</span>
-			</div>
 			<div class="color">
 				<div class="swiper-container">
 					<div class="swiper-wrapper">
-						<div class="swiper-slide" ng-repeat="bgColor in colorArray track by $index" 
-							ng-click="setColor($index)">
+						<div class="swiper-slide" ng-repeat="bgColor in colorArray track by $index" ng-click="setColor($index)">
 							<span style="background-color: {{bgColor}};" class="bg"></span>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="title">
-				<span class="mui-pull-left">位置</span>
+			<div class="align">
+				<div class="option" ng-click="setAlign(0)">
+					<span class="iconfont icon-icon--1"></span>
+					<span class="name">左对齐</span>
+				</div>
+				<div class="option check" ng-click="setAlign(1)">
+					<span class="iconfont icon-icon--"></span>
+					<span class="name">居中对齐</span>
+				</div>
+				<div class="option" ng-click="setAlign(2)">
+					<span class="iconfont icon-youduiqi"></span>
+					<span class="name">右对齐</span>
+				</div>
 			</div>
 			<div class="title">
 				<span class="mui-pull-left">动画</span>
+			</div>
+			<div class="animate">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide" ng-repeat="name in animateArray track by $index" 
+							ng-click="setAnimate($index)">
+							<span ng-bind="name"></span>
+						</div>
+					</div>
+				</div>
+				<div class="mui-input-row mui-input-range rang">
+		            <label>动画时间：<span id="duration-val">1s</span></label>
+		            <input type="range" id="duration" value="1" min="0" max="5" step="0.1" ng-model="aDuration">
+		        </div>
+		        <div class="mui-input-row mui-input-range rang">
+		            <label>延迟时间：<span id="delay-val">0.5s</span></label>
+		            <input type="range" id="delay" value="0.5" min="0" max="5" step="0.1" ng-model="aDelay">
+		        </div>
 			</div>
 		</div>
 		<script type="text/javascript" src="../js/mui.min.js"></script>

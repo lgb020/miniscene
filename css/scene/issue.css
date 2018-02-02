@@ -79,7 +79,7 @@ ul{
 }
 
 .edit-area li{
-	width:30%;
+	width:auto;
 	top:20%;
 	left:5%;
 	list-style: none !important;
