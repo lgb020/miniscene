@@ -1,0 +1,25 @@
+html,
+body {
+	height: 100%;
+}
+
+.mui-title {
+	font-size: 1rem;
+}
+
+.mui-content {
+	height: 100%;
+}
+
+.mui-slider {
+	height: 100%;
+}
+
+.mui-slider .mui-slider-group {
+	height: 100%;
+}
+
+.mui-control-content {
+	background-color: #f7f7f7;
+	height: 100%;
+}

@@ -12,18 +12,21 @@ body {
 	height: 100%;
 }
 
+
 /*页面*/
-ul{
+
+ul {
 	list-style: none;
 	padding: 0px !important;
-	margin:0px !important;
+	margin: 0px !important;
 }
+
 .panel {
 	height: 85.7%;
 	margin-top: 1rem !important;
 }
 
-.panel .swiper-container{
+.panel .swiper-container {
 	height: 100%;
 }
 
@@ -33,18 +36,18 @@ ul{
 	background: #e4e4e4;
 }
 
-.add{
+.add {
 	width: 100%;
 	height: 70px;
 	text-align: center;
 	color: #bbbbbb;
 }
 
-.add span{
+.add span {
 	display: block;
 }
 
-.add .iconfont{
+.add .iconfont {
 	width: 100%;
 	height: 50px;
 	line-height: 50px;
@@ -52,90 +55,95 @@ ul{
 	margin-top: 200px;
 }
 
-.add .toast{
+.add .toast {
 	font-size: 0.9rem;
 	margin-top: 5px;
 }
 
+
 /*素材样式*/
-.page{
+
+.page {
 	width: 100%;
 	height: 100%;
 }
-.bg{
+
+.bg {
 	width: 100%;
 	height: 100%;
 	background-size: cover;
 	background-position: 50% 50%;
 }
 
-.edit-area{
+.edit-area {
 	width: 100%;
 	height: 100%;
-	background-repeat:no-repeat;
-	background-size:100% 100%;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 	position: relative;
 	overflow: hidden;
 }
 
-.edit-area li{
-	width:auto;
-	top:20%;
-	left:5%;
+.edit-area li {
+	width: auto;
+	top: 20%;
+	left: 5%;
 	list-style: none !important;
 	position: absolute;
 	line-height: 1;
 	text-align: -webkit-match-parent;
 }
 
-.edit-area img{
-	width:100%;
-	height:100%
+.edit-area img {
+	width: 100%;
+	height: 100%
 }
 
-.edit-area .text{
+.edit-area .text {
 	line-height: inherit;
 	padding: 1rem 0.5rem;
-	margin:0px;
+	margin: 0px;
 	font-size: 16px;
-	word-wrap:break-word;
+	word-wrap: break-word;
 	text-align: center;
 	top: 100px;
-	left:30px;
+	left: 30px;
 }
 
+
 /*选择边框*/
-.edit-area .bar{
+
+.edit-area .bar {
 	position: absolute;
 	z-index: 100;
 	touch-action: pan-x pan-y;
-	user-select:none;
-	-webkit-user-drag:none;
+	user-select: none;
+	-webkit-user-drag: none;
 	display: none;
 }
 
-.bar-top{
+.bar-top {
 	width: 100%;
 	height: 5px;
 	top: 0px;
 	background: url(../../img/bar.png) repeat-x;
 }
 
-.bar-bottom{
+.bar-bottom {
 	width: 100%;
 	height: 5px;
 	bottom: 0px;
 	background: url(../../img/bar.png) repeat-x bottom;
 }
 
-.bar-left{
+.bar-left {
 	width: 5px;
 	height: 100%;
 	top: 0px;
 	background: url(../../img/bar.png) repeat-y;
 }
 
-.bar-right{
+.bar-right {
 	width: 5px;
 	height: 100%;
 	top: 0px;
@@ -143,7 +151,7 @@ ul{
 	background: url(../../img/bar.png) repeat-y right;
 }
 
-.bar-radius{
+.bar-radius {
 	width: 15px;
 	height: 15px;
 	border-radius: 15px;
@@ -151,41 +159,43 @@ ul{
 	border: 1px solid #f68531;
 }
 
-.radius-drop{
+.radius-drop {
 	bottom: -6px;
 	right: -6px;
 }
 
-.radius-del{
-	top:-6px;
-	left:-6px;
+.radius-del {
+	top: -6px;
+	left: -6px;
 }
 
-.radius-height{
+.radius-height {
 	bottom: -6px;
 	left: -6px;
 }
 
-.radius-width{
+.radius-width {
 	top: -6px;
 	right: -6px;
 }
 
-.radius-del .iconfont{
+.radius-del .iconfont {
 	font-size: 0.8rem;
 	color: #fff;
 	position: absolute;
 	line-height: 13px;
 }
 
-.radius-height .mui-icon-compose{
+.radius-height .mui-icon-compose {
 	font-size: 0.8rem;
 	color: #fff;
 	position: absolute;
 	line-height: 13px;
 }
+
 
 /*底部菜单*/
+
 footer {
 	position: fixed;
 	width: 100%;
@@ -194,32 +204,41 @@ footer {
 	background-color: #fafafa;
 }
 
-footer .menu .option{
+footer .menu .option {
 	height: 50px;
 	display: inline-block;
 	text-align: center;
 }
 
-.option span{
+.option span {
 	display: block;
 }
 
-.option .iconfont{
+.option .iconfont {
 	margin-top: 5px;
 	font-size: 1.2rem;
 	color: #565656;
 }
 
-.option .name{
+.option .name {
 	height: 20px;
 	line-height: 20px;
 	font-size: 0.8rem;
 	color: #565656;
 }
 
-/*弹窗*/
 .mui-popup-inner,
-.mui-popup-button{
+.mui-popup-button {
 	font-size: 0.9rem;
 }
 
+
+/*分页*/
+.swiper-pagination{
+	color: #BBBBBB;
+	font-size: 0.6rem;
+}
+
+.swiper-pagination-lock {
+	display: block;
+}

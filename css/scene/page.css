@@ -1,0 +1,47 @@
+.mui-title{
+	font-size: 1rem;
+}
+
+.info {
+	margin: 0px 0px 15px 0px;
+	padding: 0px 4%;
+	width: 100%;
+	height: auto;
+}
+
+.list{
+	width: 100%;
+	height: auto;
+}
+
+.info .cover {
+	width: 30%;
+	height: auto;
+	display: inline-block;
+	margin-top: 10px;
+}
+
+.info .center {
+	margin-left: 4%;
+}
+
+.info .add {
+	margin-left: 5%;
+}
+
+.info .right {
+	float: right;
+}
+
+.info .cover img {
+	width: 100%;
+}
+
+/*下拉刷新*/
+.mui-pull-bottom-pocket{
+	margin-top: 10px;
+}
+
+.mui-pull-caption{
+	font-size: 14px;
+}

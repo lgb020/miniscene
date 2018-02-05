@@ -15,7 +15,7 @@ var count = 0;
 
 function moreInfo() {
 	setTimeout(function() {
-		mui('#hotInfo').pullRefresh().endPullup((++count > 2));
+		mui("#hotInfo").pullRefresh().endPullup((++count > 2));
 		var info = document.body.querySelector(".list");
 		var list = document.body.querySelectorAll(".list .cover");
 		for(var i = 0; i < list.length; i++) {

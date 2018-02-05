@@ -23,7 +23,7 @@ document.getElementById("issue").addEventListener("tap", function() {
 		id: "issue",
 		url: "../issue.html",
 		show:{
-			aniShow:"slide-in-bottom"
+			aniShow:"pop-in"
 		}
 	});
 });

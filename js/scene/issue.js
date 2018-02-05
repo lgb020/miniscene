@@ -1,7 +1,19 @@
 mui.init({
-	preloadPages: [{
+	preloadPages: [ {
+		id: "addPage",
+		url: "/scene/page.html"
+	},{
 		id: "addText",
 		url: "/scene/addText.html"
+	}, {
+		id: "addImg",
+		url: "/scene/addImg.html"
+	}, {
+		id: "addBg",
+		url: "/scene/addBg.html"
+	}, {
+		id: "addMusic",
+		url: "/scene/addMusic.html"
 	}],
 	preloadLimit: 5
 });
@@ -18,7 +30,11 @@ var swiper = new Swiper(".panel .swiper-container", {
 	centeredSlides: true,
 	watchOverflow: true,
 	observer: true,
-	observeParents: true
+	observeParents: true,
+	pagination: {
+		el: ".swiper-pagination",
+		type: "fraction",
+	}
 });
 
 var scene = angular.module("scene", []);
@@ -42,12 +58,28 @@ scene.controller("issue", function($scope) {
 		$scope.scene.push(page);
 	}
 
+	//添加模板
+	mui("body").on("tap", ".addPage", function() {
+		var index = swiper.activeIndex;
+		if(index < $scope.scene.length) {
+			mui.openWindow({
+				id: "addPage",
+				show: {
+					aniShow: "pop-in"
+				}
+			});
+		}
+	});
+
 	//添加文字
 	mui("body").on("tap", ".addText", function() {
 		var index = swiper.activeIndex;
 		if(index < $scope.scene.length) {
 			mui.openWindow({
-				id: "addText"
+				id: "addText",
+				show: {
+					aniShow: "pop-in"
+				}
 			});
 		}
 	});
@@ -76,7 +108,7 @@ scene.controller("issue", function($scope) {
 	});
 
 	//添加图片
-	$scope.addImg = function() {
+	/*$scope.addImg = function() {
 		img = {};
 		//获取当前操作的下标
 		var index = swiper.activeIndex;
@@ -88,7 +120,44 @@ scene.controller("issue", function($scope) {
 			$scope.scene[index].push(img);
 		}
 		status = "true"; //编辑状态改为true
-	}
+	}*/
+	mui("body").on("tap", ".addImg", function() {
+		var index = swiper.activeIndex;
+		if(index < $scope.scene.length) {
+			mui.openWindow({
+				id: "addImg",
+				show: {
+					aniShow: "pop-in"
+				}
+			});
+		}
+	});
+	
+	//添加背景
+	mui("body").on("tap", ".addBg", function() {
+		var index = swiper.activeIndex;
+		if(index < $scope.scene.length) {
+			mui.openWindow({
+				id: "addBg",
+				show: {
+					aniShow: "pop-in"
+				}
+			});
+		}
+	});
+	
+	//添加音乐
+	mui("body").on("tap", ".addMusic", function() {
+		var index = swiper.activeIndex;
+		if(index < $scope.scene.length) {
+			mui.openWindow({
+				id: "addMusic",
+				show: {
+					aniShow: "pop-in"
+				}
+			});
+		}
+	});
 
 	/**
 	 * 实现素材点击后可拖拽
@@ -121,6 +190,39 @@ scene.controller("issue", function($scope) {
 		$scope.scene[pageIndex].splice(index, 1);
 	}
 
+	//修改素材传递参数
+	$scope.edit = function(pageId, index) {
+		var elemId = "inside" + pageId + index;
+		var preantElem = document.getElementById(elemId);
+		var result = preantElem.classList.contains("scenc-text");
+		if(result) {
+			var elem = preantElem.getElementsByTagName("div")[0];
+			var pageIndex = pageId.substring("4");
+			var value = elem.innerText;
+			var fontSize = getCss(elem, "font-size");
+			var color = getCss(elem, "color");
+			var align = getCss(elem, "text-align");
+			var ani_delay = getCss(elem, "animation-delay");
+			var ani_duration = getCss(elem, "animation-duration");
+			var ani_name = getCss(elem, "animation-name");
+			var view = plus.webview.getWebviewById("addText");
+			mui.fire(view, "initText", {
+				pageIndex: pageIndex,
+				index: index,
+				value: value,
+				fontSize: fontSize,
+				color: color,
+				align: align,
+				ani_delay: ani_delay,
+				ani_duration: ani_duration,
+				ani_name: ani_name
+			});
+			view.show("slide-in-right", 300); //显示页面
+		} else {
+
+		}
+	}
+
 	/**
 	 * 拖动
 	 * @param {Object} hammer：hammer实例
@@ -141,16 +243,16 @@ scene.controller("issue", function($scope) {
 			element.style.left = x + event.deltaX + "px";
 		});
 		hammer.on("panend", function(event) {
-			//获取基础样式，重构css
+			//拖动结束后获取基础样式，重构css
 			var width = getCss(element, "width");
 			var height = getCss(element, "height");
 			var left = getCss(element, "left");
 			var top = getCss(element, "top");
-			var zIndex = getCss(element,"z-index");
+			var zIndex = getCss(element, "z-index");
 			var pageIndex = pageId.substring("4");
-			
-			var elemCss = "width:"+width+";height:"+height+";left:"+left+";top:"+top+";z-index:"+zIndex+";";
-			$scope.scene[pageIndex][index].css=elemCss;
+
+			var elemCss = "width:" + width + ";height:" + height + ";left:" + left + ";top:" + top + ";z-index:" + zIndex + ";";
+			$scope.scene[pageIndex][index].css = elemCss;
 		});
 	}
 
