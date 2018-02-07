@@ -14,7 +14,9 @@ mui.init({
 var swiper = new Swiper(".swiper-container", {
 	slidesPerView: 2.5,
 	spaceBetween: 4,
-	resistanceRatio: 0
+	resistanceRatio: 0,
+	observer: true,
+	observeParents: true
 });
 
 var store = function(id) {

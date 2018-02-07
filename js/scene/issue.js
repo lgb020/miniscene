@@ -4,23 +4,24 @@ mui.init({
 		url: "/scene/page.html"
 	},{
 		id: "addText",
-		url: "/scene/addText.html"
+		url: "/scene/text.html"
 	}, {
 		id: "addImg",
-		url: "/scene/addImg.html"
+		url: "/scene/img.html"
 	}, {
 		id: "addBg",
-		url: "/scene/addBg.html"
+		url: "/scene/backg.html"
 	}, {
 		id: "addMusic",
-		url: "/scene/addMusic.html"
+		url: "/scene/music.html"
 	}],
 	preloadLimit: 5
 });
 
 var menu = new Swiper(".footer .menu", {
 	slidesPerView: 5,
-	resistanceRatio: 0
+	resistanceRatio: 0,
+	watchOverflow: true
 });
 
 var swiper = new Swiper(".panel .swiper-container", {
@@ -217,7 +218,7 @@ scene.controller("issue", function($scope) {
 				ani_duration: ani_duration,
 				ani_name: ani_name
 			});
-			view.show("slide-in-right", 300); //显示页面
+			view.show("slide-in-right"); //显示页面
 		} else {
 
 		}

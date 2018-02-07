@@ -50,7 +50,7 @@ document.getElementById("about").addEventListener("tap", function() {
 		id: "aboutUs",
 		url: "./about-us.html",
 		show:{
-			aniShow:"slide-in-left"
+			aniShow:"fade-in"
 		}
 	});
 });
@@ -58,7 +58,10 @@ document.getElementById("about").addEventListener("tap", function() {
 //乐库
 document.getElementById("music").addEventListener("tap", function() {
 	mui.openWindow({
-		id: "bMusic"
+		id: "bMusic",
+		show:{
+			aniShow:"pop-in"
+		}
 	});
 });
 

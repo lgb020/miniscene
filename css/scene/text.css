@@ -1,0 +1,164 @@
+html,
+body {
+	height: 100%;
+}
+
+.mui-title {
+	font-size: 1rem;
+}
+
+.mui-content{
+	height: 100%;
+}
+
+.mui-pull-right {
+	line-height: 44px;
+	font-size: 0.9rem;
+}
+
+#text,
+#text::-webkit-input-placeholder {
+	font-size: 0.9rem;
+}
+
+input[type=text]{
+	border:none;
+}
+
+/*信息选项*/
+.example{
+	margin: 0 1rem;
+	padding: 1rem 0.5rem;
+	border: 2px dotted #f8f8fa;
+	height: 55px;
+	max-height: 55px;
+	word-wrap:break-word;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow: hidden;
+}
+
+.title {
+	margin-top: 15px;
+	font-size: 16px;
+	height: 30px;
+	line-height: 30px;
+	border-left: 3px solid #f68531;
+}
+
+.title .mui-pull-left {
+	margin-left: 10px;
+}
+
+.size{
+	margin: 15px 0px;
+	padding: 0px 5px;
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	font-size: 0.9rem;
+	color: #C0C0C0;
+}
+
+.size .option{
+	border-radius: 5px;
+	border:1px solid #C0C0C0;
+}
+
+.size .check{
+	border: 0;
+	background-color: #f68531;
+	color: #FFFFFF !important;
+}
+
+.color{
+	margin: 15px 0px;
+	padding: 0px 5px;
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+}
+
+.color span{
+	border-radius: 5px;
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+}
+
+.color .check{
+	border: 1px solid #f68531;
+}
+
+.align{
+	padding: 15px 5px 0 5px;
+	font-size: 0.9rem;
+}
+
+.align div{
+	display: inline-block;
+	width: 32.5%;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+}
+
+.align .option span{
+	display: block;
+}
+
+
+.align .option .iconfont{
+	height: 20px;
+	line-height: 20px;
+	font-size: 1.6rem;
+}
+
+.align .option .name{
+	margin-top: 5px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 0.8rem;
+}
+
+.align .option{
+	color: #C0C0C0;
+}
+
+.align .check{
+	color: #f68531 !important;
+}
+
+.animate{
+	padding: 15px 5px 0 5px;
+	font-size: 0.9rem;
+}
+
+.animate .swiper-slide{
+	text-align: center;
+	height: 60px;
+	line-height: 60px;
+	background-color: #FFF;
+	border-radius: 5px;
+	color: #C0C0C0;
+}
+
+.animate .check{
+	background-color: #f68531;
+	color: #FFFFFF;
+}
+
+/*滑块*/
+.rang{
+	margin-top: 15px;
+	display: none;
+}
+
+.mui-input-row label{
+	padding: 11px 10px;
+}
+
+.mui-input-range .mui-tooltip{
+	display: none;
+}

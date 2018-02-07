@@ -1,5 +1,5 @@
 {
-    "@platforms": ["android", "iPhone", "iPad"],
+    "@platforms": ["android", "iPhone"],
     "id": "H508DA7EA",/*应用的标识，创建应用时自动生成，勿手动修改*/
     "name": "MINISCENE",/*应用名称，程序桌面图标名称*/
     "version": {
@@ -440,7 +440,11 @@
 					"scene/page.html",
 					"scene/addMusic.html",
 					"scene/addBg.html",
-					"scene/addImg.html"
+					"scene/addImg.html",
+					"scene/music.html",
+					"scene/text.html",
+					"scene/img.html",
+					"scene/backg.html"
 				],
 				"priority": 5
 			},
@@ -489,6 +493,13 @@
 				"resources": [],
 				"refer": [
 					"scene/search.html"
+				],
+				"priority": 0
+			},
+			"scene/backg.html": {
+				"resources": [],
+				"refer": [
+					"scene/cropper.html"
 				],
 				"priority": 0
 			}

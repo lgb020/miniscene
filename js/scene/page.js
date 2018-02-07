@@ -21,13 +21,13 @@ function moreInfo() {
 			var div = document.createElement("div");
 			switch(i % 3) {
 				case 0:
-					div.className = "cover";
-					break;
-				case 1:
 					div.className = "cover add";
 					break;
-				default:
+				case 1:
 					div.className = "cover right";
+					break;
+				default:
+					div.className = "cover";
 					break;
 			}
 			div.innerHTML = "<img src='../img/cover.jpg' />";
