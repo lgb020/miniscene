@@ -50,7 +50,7 @@ document.getElementById("about").addEventListener("tap", function() {
 		id: "aboutUs",
 		url: "./about-us.html",
 		show:{
-			aniShow:"fade-in"
+			aniShow:"pop-in"
 		}
 	});
 });
@@ -68,6 +68,9 @@ document.getElementById("music").addEventListener("tap", function() {
 //搜索
 document.getElementById("search").addEventListener("tap", function() {
 	mui.openWindow({
-		id: "search"
+		id: "search",
+		show:{
+			aniShow:"pop-in"
+		}
 	});
 });

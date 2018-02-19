@@ -9,7 +9,7 @@ mui.plusReady(function() {
 document.getElementById("back-music").addEventListener("tap", function() {
 	mui.openWindow({
 		id: "bMusic",
-		url: "../music/back-music.html",
+		url: "../scene/music.html",
 		extras: {
 			account: "1083178465@qq.com",
 			temp_id:"1"

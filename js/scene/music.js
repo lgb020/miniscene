@@ -119,3 +119,20 @@ mui.back = function(){
 	audio.pause();
 	plus.webview.hide(plus.webview.currentWebview(),"pop-out");
 }
+
+/*本地在线切换*/
+var menu = document.getElementById("menu")
+menu.addEventListener("tap", function() {
+	var online = document.getElementById("online");
+	var location = document.getElementById("location");
+	var content = menu.innerHTML;
+	if(content=="本地"){
+		online.style.display = "none";
+		location.style.display = "block";
+		menu.innerHTML = "在线";
+	}else{
+		online.style.display = "block";
+		location.style.display = "none";
+		menu.innerHTML = "本地";
+	}
+});

@@ -7,37 +7,22 @@
 		<title>推荐场景</title>
 		<link rel="stylesheet" href="../css/mui.min.css" />
 		<link rel="stylesheet" href="../css/iconfont.min.css" />
+		<link rel="stylesheet" href="../css/swiper-4.1.0.min.css" />
 		<link rel="stylesheet" href="../css/template/recommend.css" />
+		<script type="text/javascript" src="../js/angular/angular.min.js"></script>
 	</head>
 	<body>
-		<div class="mui-content">
-			<div id="slider" class="mui-slider">
-				<div class="mui-slider-group mui-slider-loop">
-					<div class="mui-slider-item mui-slider-item-duplicate">
-						<a href="#">
-							<img src="../img/banner2.jpg">
-						</a>
+		<div class="mui-content" ng-app="scene" ng-controller="ctrl">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="../img/banner1.jpg"/>
 					</div>
-					<div class="mui-slider-item">
-						<a href="#">
-							<img src="../img/banner1.jpg">
-						</a>
-					</div>
-					<div class="mui-slider-item">
-						<a href="#">
-							<img src="../img/banner2.jpg">
-						</a>
-					</div>
-					<div class="mui-slider-item mui-slider-item-duplicate">
-						<a href="#">
-							<img src="../img/banner1.jpg">
-						</a>
+					<div class="swiper-slide">
+						<img src="../img/banner2.jpg"/>
 					</div>
 				</div>
-				<div class="mui-slider-indicator">
-					<div class="mui-indicator mui-active"></div>
-					<div class="mui-indicator"></div>
-				</div>
+				<div class="swiper-pagination"></div>
 			</div>
 			<div class="title">
 				<span class="mui-pull-left">精选模板</span>
@@ -150,6 +135,7 @@
 			<i class="iconfont icon-add"></i>
 		</div>
 		<script type="text/javascript" src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/swiper-4.1.0.min.js"></script>
 		<script type="text/javascript" src="../js/template/recommend.js"></script>
 	</body>
 </html>

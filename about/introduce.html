@@ -16,6 +16,23 @@
 			.mui-card-footer {
 				font-size: 14px;
 			}
+			
+			.icon-wodexiaoxi{
+				color: #f68531;
+			}
+			.small-title {
+				font-size: 0.9rem;
+			}
+			.way{
+				margin-top: 15px;
+			}
+			.mui-collapse-content{
+				font-size: 0.9rem;
+				color: #8f8f94;
+			}
+			.mui-collapse-content div{
+				margin: 0.3rem 0px;
+			}
 		</style>
 	</head>
 
@@ -25,39 +42,39 @@
 			<h1 class="mui-title">关于MINISCENE</h1>
 		</header>
 		<div class="mui-content">
-			<div class="mui-card">
-				<div class="mui-card-header" id="version"></div>
-				<div class="mui-card-content">
-					<div class="mui-card-content-inner">
-						"MINISCENE"是一款简单、强大的HTML编辑器，平台借鉴了开发者日常使用过的H5场景而进行设计，提供的原始素材为开发者整理于网上，若有侵权行为，可联系开发者下线相应素材。
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-collapse mui-active">
+					<a class="mui-navigate-right" href="#">
+						<i class="iconfont icon-wodexiaoxi"></i>
+						<span class="small-title">介绍</span>
+					</a>
+					<div class="mui-collapse-content">
+						<div id="version"></div>
+						<div>"MINISCENE"是一款简单、强大的HTML编辑器，平台追求简单，可一键生成H5场景，也支持个性化制作，同时提供丰富的素材。</div>
+						<div>因个人开发思维方式局限，在软件设计上考虑难免欠缺，如有发现问题，欢迎提出。</div>
 					</div>
-				</div>
-			</div>
-			<div class="mui-card">
-				<div class="mui-card-content">
-					<div class="mui-card-content-inner">
-						该软件为开发者大学毕业设计作品。因为个人思维方式局限，在软件设计上考虑难免欠佳，如有发现问题，欢迎提出，互相学习。
+				</li>
+			</ul>
+			<ul class="mui-table-view way">
+				<li class="mui-table-view-cell mui-collapse">
+					<a class="mui-navigate-right" href="#">
+						<i class="iconfont icon-wodexiaoxi"></i>
+						<span class="small-title">联系我</span>
+					</a>
+					<div class="mui-collapse-content">
+						<p>邮箱：1083178465@qq.com</p>
 					</div>
-				</div>
-			</div>
-			<div class="mui-card">
-				<div class="mui-card-content">
-					<div class="mui-card-content-inner">
-						开发者联系方式：
-						<div>QQ：1083178465</div>
-						<div>微信：hsf15768615284</div>
-					</div>
-				</div>
-			</div>
+				</li>
+			</ul>
 		</div>
 		<script type="text/javascript" src="../js/mui.min.js"></script>
 		<script>
 			mui.init();
 			mui.plusReady(function() {
 				plus.runtime.getProperty(plus.runtime.appid, function(inf) {
-					var version = "版本："+inf.version;
+					var version = "当前版本：" + inf.version;
 					document.getElementById("version").innerHTML = version;
-					
+
 				});
 			});
 		</script>

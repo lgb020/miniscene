@@ -108,7 +108,7 @@ text.controller("add", function($scope) {
 		aOption[index].classList.add("check");
 		//添加动画时显示滑块
 		var rang = document.body.querySelectorAll(".animate .rang");
-		if(index > 0 && index < $scope.animateArray.length - 1) {
+		if(index > 0 && index <= $scope.animateArray.length - 1) {
 			for(var i = 0; i < rang.length; i++) {
 				rang[i].style.display = "block";
 			}
@@ -207,7 +207,7 @@ mui("body").on("tap", ".ensure", function() {
 		var ani_delay = getCss(elem, "animation-delay");
 		var ani_duration = getCss(elem, "animation-duration");
 		var ani_name = getCss(elem, "animation-name");
-
+		
 		var view = plus.webview.getWebviewById("issue");
 		mui.fire(view, "getText", {
 			value: value,

@@ -6,15 +6,29 @@
 	margin-bottom: 50px;
 }
 
-.mui-segmented-control {
-	font-size: 0.8rem;
-	margin: 8px auto;
-	border-radius: 20px;
-	width: 40%;
+.mui-bar .mui-pull-right {
+	line-height: 44px;
+	font-size: 0.9rem;
 }
 
-.mui-segmented-control .mui-control-item {
-	line-height: 28px;
+.search {
+	height: 29px;
+	line-height: 29px;
+	width: 92%;
+	font-size: 0.9rem;
+	border-radius: 2rem;
+	margin: 6px 4%;
+	text-align: left;
+	background-color: rgba(0,0,0,.1);
+	padding: 0 10px;
+	color: #8F8F94;
+}
+
+.search .mui-icon-search{
+	display: inline-block;
+	margin-top: 4px;
+	font-size: 1.2rem;
+	color: #8F8F94;
 }
 
 .mui-table-view {
@@ -81,4 +95,14 @@ footer audio{
 
 .current{
 	color: #f68531;
+}
+
+#online{
+	display: block;
+	margin-bottom: 50px;
+}
+
+#location{
+	display: none;
+	margin-bottom: 50px;
 }

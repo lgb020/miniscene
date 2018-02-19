@@ -8,15 +8,17 @@ body {
 	font-size: 1rem;
 }
 
-.mui-segmented-control {
-	font-size: 0.8rem;
-	margin: 8px auto;
-	border-radius: 20px;
-	width: 40%;
+.mui-bar .mui-pull-right {
+	line-height: 44px;
+	font-size: 0.9rem;
 }
 
-.mui-segmented-control .mui-control-item {
-	line-height: 28px;
+#online{
+	display: none;
+}
+
+#location{
+	display: block;
 }
 
 .info {
@@ -83,6 +85,14 @@ body {
 
 .info .cover img {
 	width: 100%;
+}
+
+#online-text{
+	display: block;
+}
+
+#location-text{
+	display: none;
 }
 
 /*下拉刷新*/

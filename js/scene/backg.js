@@ -21,7 +21,6 @@ var swiper = new Swiper(".swiper-container", {
 });
 
 var count = 0;
-
 function moreInfo() {
 	setTimeout(function() {
 		mui("#info").pullRefresh().endPullup((++count > 2));
@@ -91,3 +90,20 @@ var cropeImg = function(url){
 		}
 	});
 }
+
+/*本地在线切换*/
+var menu = document.getElementById("menu")
+menu.addEventListener("tap", function() {
+	var online = document.getElementById("online-text");
+	var location = document.getElementById("location-text");
+	var content = menu.innerHTML;
+	if(content=="使用过"){
+		online.style.display = "none";
+		location.style.display = "block";
+		menu.innerHTML = "在线";
+	}else{
+		online.style.display = "block";
+		location.style.display = "none";
+		menu.innerHTML = "使用过";
+	}
+});

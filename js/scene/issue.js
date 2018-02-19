@@ -18,9 +18,9 @@ mui.init({
 	preloadLimit: 5
 });
 
-var menu = new Swiper(".footer .menu", {
-	slidesPerView: 5,
-	resistanceRatio: 0,
+var menu = new Swiper(".footer .swiper-container", {
+	slidesPerView: 4.5,
+	resistanceRatio: 0.5,
 	watchOverflow: true
 });
 
@@ -38,9 +38,9 @@ var swiper = new Swiper(".panel .swiper-container", {
 	}
 });
 
-var scene = angular.module("scene", []);
+var app = angular.module("scene", []);
 var status = "false"; //编辑状态默认为false
-scene.controller("issue", function($scope) {
+app.controller("issue", function($scope) {
 	/**
 	 * 构建页面对象数组
 	 * 一个页面为一个数组，存放当前页素材对象
@@ -57,6 +57,14 @@ scene.controller("issue", function($scope) {
 		page.bgUrl = "";
 		page.areaId = "area" + index;
 		$scope.scene.push(page);
+	}
+	
+	//删除当前页
+	$scope.delPage = function(){
+		var index = swiper.activeIndex; //当前页面
+		//删除
+		$scope.scene.splice(index,1);
+		console.log($scope.scene);
 	}
 
 	//添加模板
@@ -84,6 +92,8 @@ scene.controller("issue", function($scope) {
 			});
 		}
 	});
+	
+	//文本添加
 	window.addEventListener("getText", function(event) {
 		var value = event.detail.value;
 		var fontSize = event.detail.fontSize;
@@ -98,9 +108,10 @@ scene.controller("issue", function($scope) {
 			var index = swiper.activeIndex;
 			if(index < $scope.scene.length) {
 				var zIndex = $scope.scene[index].length;
-				text.content = "<div class='text' style='font-size:" + fontSize + ";color:" + color + ";text-align:" + align + ";animation-delay:" + ani_delay + ";animation-duration:" + ani_duration + "'>" + value + "</div>";
+				text.content = "<div class='text'>" + value + "</div>";
 				text.className = "swiper-no-swiping scenc-text animated " + ani_name;
-				text.css = "z-index:" + zIndex + ";";
+				text.divCss = "font-size:" + fontSize + ";color:" + color + ";text-align:" + align + ";";
+				text.liCss = "z-index:" + zIndex  + ";animation-delay:" + ani_delay + ";animation-duration:" + ani_duration + ";";
 				$scope.scene[index].push(text);
 			}
 			$scope.$apply(); //手动刷新
@@ -219,9 +230,8 @@ scene.controller("issue", function($scope) {
 				ani_name: ani_name
 			});
 			view.show("slide-in-right"); //显示页面
-		} else {
-
 		}
+		$scope.apply();
 	}
 
 	/**
@@ -295,7 +305,7 @@ var save = function() {
  * 调用$compile服务
  * 手动编译动态生成html代码中的指令
  */
-scene.directive("compile", function($compile) {
+app.directive("compile", function($compile) {
 	return function(scope, element, attrs) {
 		scope.$watch(
 			function(scope) {

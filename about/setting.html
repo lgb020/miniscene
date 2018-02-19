@@ -11,21 +11,6 @@
 			.mui-title {
 				font-size: 1rem;
 			}
-			
-			.mui-table-view-cell {
-				font-size: 0.9rem;
-			}
-			
-			.mui-btn-block {
-				font-size: 0.9rem;
-				width: 80%;
-				margin: 1.5rem auto;
-				padding: 8px 0px;
-			}
-			
-			.icon-weixin {
-				color: rgb(10, 188, 100);
-			}
 		</style>
 	</head>
 
@@ -35,38 +20,11 @@
 			<h1 class="mui-title">设置</h1>
 		</header>
 		<div class="mui-content">
-			<ul class="mui-table-view">
-				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right">
-						<i class="iconfont icon-qq"></i>
-						<span>QQ ：还未绑定</span>
-					</a>
-				</li>
-				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right">
-						<i class="iconfont icon-weixin"></i>
-						<span>微信：还未绑定</span>
-					</a>
-				</li>
-			</ul>
-			<button class="mui-btn mui-btn-block mui-btn-primary" id="exit">退出登录</button>
+			
 		</div>
 		<script type="text/javascript" src="../js/mui.min.js"></script>
 		<script type="text/javascript">
 			mui.init();
-			document.getElementById("exit").addEventListener("tap", function() {
-				/**
-				 * 查询所有webview的id
-				 * 关闭除首页选项卡以外的webview
-				 */
-				var view = plus.webview.all();
-				var array = ["recommend","hot","company","photo"];
-				for(var i=1;i<view.length;i++){
-					if(array.indexOf(view[i].id)==-1){
-						plus.webview.close(view[i]);
-					}
-				}
-			});
 		</script>
 	</body>
 

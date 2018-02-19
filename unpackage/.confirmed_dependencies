@@ -1,310 +1,310 @@
 {
-	"about/setting.html": {
-		"href": "about/setting.html",
-		"resources": [
-			"css/mui.min.css",
-			"css/iconfont.css",
-			"js/mui.min.js"
-		],
-		"refer": [],
-		"priority": 0
-	},
-	"about/store.html": {
-		"href": "about/store.html",
-		"resources": [
-			"css/mui.min.css",
-			"css/iconfont.css",
-			"css/about/store.css",
-			"js/mui.min.js",
-			"js/about/store.js",
-			"img/cover.jpg"
-		],
-		"refer": [],
-		"priority": 0
-	},
-	"about/introduce.html": {
-		"href": "about/introduce.html",
-		"resources": [
-			"css/mui.min.css",
-			"css/iconfont.css",
-			"js/mui.min.js"
-		],
-		"refer": [],
-		"priority": 0
-	},
-	"about/inform.html": {
-		"href": "about/inform.html",
-		"resources": [
-			"css/mui.min.css",
-			"css/iconfont.css",
-			"css/about/inform.css",
-			"js/mui.min.js",
-			"js/about/inform.js"
-		],
-		"refer": [],
-		"priority": 0
-	},
-	"about/recharge.html": {
-		"href": "about/recharge.html",
-		"resources": [
-			"css/mui.min.css",
-			"css/iconfont.css",
-			"js/mui.min.js"
-		],
-		"refer": [],
-		"priority": 0
-	},
-	"about/member.html": {
-		"href": "about/member.html",
-		"resources": [
-			"css/mui.min.css",
-			"css/iconfont.css",
-			"css/about/member.css",
-			"js/mui.min.js",
-			"img/logo.png"
-		],
-		"refer": [
-			"about/recharge.html"
-		],
-		"priority": 0
-	},
-	"music/search.html": {
-		"href": "music/search.html",
-		"resources": [
-			"css/mui.min.css",
-			"css/iconfont.css",
-			"css/music/search.css",
-			"js/mui.min.js"
-		],
-		"refer": [],
-		"priority": 0
-	},
-	"music/back-music.html": {
-		"href": "music/back-music.html",
-		"resources": [
-			"css/mui.min.css",
-			"css/iconfont.css",
-			"css/music/back-music.css",
-			"js/mui.min.js",
-			"js/music/back-music.js"
-		],
-		"refer": [
-			"music/search.html"
-		],
-		"priority": 0
-	},
-	"about/set-templ.html": {
-		"href": "about/set-templ.html",
-		"resources": [
-			"css/mui.min.css",
-			"css/iconfont.css",
-			"css/about/set-templ.css",
-			"js/mui.min.js",
-			"js/about/set-templ.js"
-		],
-		"refer": [
-			"music/back-music.html"
-		],
-		"priority": 0
-	},
-	"about/templ.html": {
-		"href": "about/templ.html",
-		"resources": [
-			"css/mui.min.css",
-			"css/iconfont.css",
-			"css/about/templ.css",
-			"js/mui.min.js",
-			"js/about/templ.js",
-			"img/cover.jpg"
-		],
-		"refer": [
-			"about/set-templ.html"
-		],
-		"priority": 0
-	},
-	"about-us.html": {
-		"href": "about-us.html",
-		"resources": [
-			"css/mui.min.css",
-			"css/iconfont.css",
-			"css/about.css",
-			"js/mui.min.js",
-			"js/about.js",
-			"img/center.jpg",
-			"img/photo.jpg"
-		],
-		"refer": [
-			"about/setting.html",
-			"about/store.html",
-			"about/introduce.html",
-			"about/inform.html",
-			"about/member.html",
-			"about/templ.html"
-		],
-		"priority": 0
-	},
-	"template/tab-info.html": {
-		"href": "template/tab-info.html",
-		"resources": [
-			"css/mui.min.css",
-			"css/iconfont.css",
-			"css/template/tab-info.css",
-			"js/mui.min.js",
-			"js/template/tab-info.js",
-			"img/cover.jpg"
-		],
-		"refer": [],
-		"priority": 0
-	},
-	"template/company.html": {
-		"href": "template/company.html",
-		"resources": [
-			"css/mui.min.css",
-			"css/iconfont.css",
-			"css/template/company.css",
-			"js/mui.min.js",
-			"js/template/company.js"
-		],
-		"refer": [
-			"template/tab-info.html"
-		],
-		"priority": 0
-	},
-	"template/photo.html": {
-		"href": "template/photo.html",
-		"resources": [
-			"css/mui.min.css",
-			"css/iconfont.css",
-			"css/template/photo.css",
-			"js/mui.min.js",
-			"js/template/photo.js"
-		],
-		"refer": [
-			"template/tab-info.html"
-		],
-		"priority": 0
-	},
-	"template/hot.html": {
-		"href": "template/hot.html",
-		"resources": [
-			"css/mui.min.css",
-			"css/iconfont.css",
-			"css/template/hot.css",
-			"js/mui.min.js",
-			"js/template/hot.js",
-			"img/banner3.jpg"
-		],
-		"refer": [],
-		"priority": 0
-	},
-	"store/store_all.html": {
-		"href": "store/store_all.html",
-		"resources": [
-			"css/mui.min.css",
-			"css/iconfont.css",
-			"css/store/store_info.css",
-			"css/swiper-4.1.0.min.css",
-			"js/mui.min.js",
-			"js/swiper-4.1.0.min.js",
-			"js/store/store_info.js",
-			"img/banner4.jpg"
-		],
-		"refer": [
-			"about/store.html"
-		],
-		"priority": 0
-	},
-	"scene/addText.html": {
-		"href": "scene/addText.html",
-		"resources": [
-			"css/mui.min.css",
-			"css/scene/addText.css",
-			"js/mui.min.js",
-			"js/scene/addText.js"
-		],
-		"refer": [],
-		"priority": 0
-	},
-	"issue.html": {
-		"href": "issue.html",
-		"resources": [
-			"css/mui.min.css",
-			"css/iconfont.css",
-			"css/swiper-4.1.0.min.css",
-			"css/animate.min.css",
-			"css/scene/issue.css",
-			"js/angular/angular.min.js",
-			"js/mui.min.js",
-			"js/swiper-4.1.0.min.js",
-			"js/swiper.animate.min.js",
-			"js/hammer.min.js",
-			"js/scene/util.js",
-			"js/scene/issue.js",
-			"img/photo.jpg",
-			"img/bar.png"
-		],
-		"refer": [
-			"scene/addText.html",
-			"scene/page.html",
-			"scene/addMusic.html",
-			"scene/addBg.html",
-			"scene/addImg.html",
-			"scene/music.html",
-			"scene/text.html",
-			"scene/img.html",
-			"scene/backg.html"
-		],
-		"priority": 0
-	},
-	"template/recommend.html": {
-		"href": "template/recommend.html",
-		"resources": [
-			"css/mui.min.css",
-			"css/iconfont.css",
-			"css/template/recommend.css",
-			"js/mui.min.js",
-			"js/template/recommend.js",
-			"img/cover.jpg",
-			"img/banner2.jpg",
-			"img/banner1.jpg",
-			"fonts/mui.ttf"
-		],
-		"refer": [
-			"store/store_all.html",
-			"issue.html"
-		],
-		"priority": 0
-	},
-	"index.html": {
-		"href": "index.html",
-		"resources": [
-			"css/mui.min.css",
-			"css/iconfont.css",
-			"css/index.css",
-			"js/mui.min.js",
-			"js/webView.js",
-			"js/index.js",
-			"template/recommend.html"
-		],
-		"refer": [
-			"about-us.html",
-			"template/company.html",
-			"template/photo.html",
-			"template/hot.html",
-			"template/recommend.html",
-			"music/back-music.html",
-			"scene/search.html"
-		],
-		"priority": 0
-	},
-	"scene/addMusic.html": {
-		"refer": [
-			"scene/search.html"
-		]
-	},
-	"scene/backg.html": {
-		"refer": [
-			"scene/cropper.html"
-		]
-	}
+  "about/setting.html": {
+    "href": "about/setting.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "js/mui.min.js"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "about/store.html": {
+    "href": "about/store.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "css/about/store.css",
+      "js/mui.min.js",
+      "js/about/store.js",
+      "img/cover.jpg"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "about/introduce.html": {
+    "href": "about/introduce.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "js/mui.min.js"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "about/inform.html": {
+    "href": "about/inform.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "css/about/inform.css",
+      "js/mui.min.js",
+      "js/about/inform.js"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "about/recharge.html": {
+    "href": "about/recharge.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "js/mui.min.js"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "about/member.html": {
+    "href": "about/member.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "css/about/member.css",
+      "js/mui.min.js",
+      "img/logo.png"
+    ],
+    "refer": [
+      "about/recharge.html"
+    ],
+    "priority": 0
+  },
+  "music/search.html": {
+    "href": "music/search.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "css/music/search.css",
+      "js/mui.min.js"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "music/back-music.html": {
+    "href": "music/back-music.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "css/music/back-music.css",
+      "js/mui.min.js",
+      "js/music/back-music.js"
+    ],
+    "refer": [
+      "music/search.html"
+    ],
+    "priority": 0
+  },
+  "about/set-templ.html": {
+    "href": "about/set-templ.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "css/about/set-templ.css",
+      "js/mui.min.js",
+      "js/about/set-templ.js"
+    ],
+    "refer": [
+      "music/back-music.html"
+    ],
+    "priority": 0
+  },
+  "about/templ.html": {
+    "href": "about/templ.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "css/about/templ.css",
+      "js/mui.min.js",
+      "js/about/templ.js",
+      "img/cover.jpg"
+    ],
+    "refer": [
+      "about/set-templ.html"
+    ],
+    "priority": 0
+  },
+  "about-us.html": {
+    "href": "about-us.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "css/about.css",
+      "js/mui.min.js",
+      "js/about.js",
+      "img/center.jpg",
+      "img/photo.jpg"
+    ],
+    "refer": [
+      "about/setting.html",
+      "about/store.html",
+      "about/introduce.html",
+      "about/inform.html",
+      "about/member.html",
+      "about/templ.html"
+    ],
+    "priority": 0
+  },
+  "template/tab-info.html": {
+    "href": "template/tab-info.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "css/template/tab-info.css",
+      "js/mui.min.js",
+      "js/template/tab-info.js",
+      "img/cover.jpg"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "template/company.html": {
+    "href": "template/company.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "css/template/company.css",
+      "js/mui.min.js",
+      "js/template/company.js"
+    ],
+    "refer": [
+      "template/tab-info.html"
+    ],
+    "priority": 0
+  },
+  "template/photo.html": {
+    "href": "template/photo.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "css/template/photo.css",
+      "js/mui.min.js",
+      "js/template/photo.js"
+    ],
+    "refer": [
+      "template/tab-info.html"
+    ],
+    "priority": 0
+  },
+  "template/hot.html": {
+    "href": "template/hot.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "css/template/hot.css",
+      "js/mui.min.js",
+      "js/template/hot.js",
+      "img/banner3.jpg"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "store/store_all.html": {
+    "href": "store/store_all.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "css/store/store_info.css",
+      "css/swiper-4.1.0.min.css",
+      "js/mui.min.js",
+      "js/swiper-4.1.0.min.js",
+      "js/store/store_info.js",
+      "img/banner4.jpg"
+    ],
+    "refer": [
+      "about/store.html"
+    ],
+    "priority": 0
+  },
+  "scene/addText.html": {
+    "href": "scene/addText.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/scene/addText.css",
+      "js/mui.min.js",
+      "js/scene/addText.js"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "issue.html": {
+    "href": "issue.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "css/swiper-4.1.0.min.css",
+      "css/animate.min.css",
+      "css/scene/issue.css",
+      "js/angular/angular.min.js",
+      "js/mui.min.js",
+      "js/swiper-4.1.0.min.js",
+      "js/swiper.animate.min.js",
+      "js/hammer.min.js",
+      "js/scene/util.js",
+      "js/scene/issue.js",
+      "img/photo.jpg",
+      "img/bar.png"
+    ],
+    "refer": [
+      "scene/addText.html",
+      "scene/page.html",
+      "scene/addMusic.html",
+      "scene/addBg.html",
+      "scene/addImg.html",
+      "scene/music.html",
+      "scene/text.html",
+      "scene/img.html",
+      "scene/backg.html"
+    ],
+    "priority": 0
+  },
+  "template/recommend.html": {
+    "href": "template/recommend.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "css/template/recommend.css",
+      "js/mui.min.js",
+      "js/template/recommend.js",
+      "img/cover.jpg",
+      "img/banner2.jpg",
+      "img/banner1.jpg",
+      "fonts/mui.ttf"
+    ],
+    "refer": [
+      "store/store_all.html",
+      "issue.html"
+    ],
+    "priority": 0
+  },
+  "index.html": {
+    "href": "index.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "css/index.css",
+      "js/mui.min.js",
+      "js/webView.js",
+      "js/index.js",
+      "template/recommend.html"
+    ],
+    "refer": [
+      "about-us.html",
+      "template/company.html",
+      "template/photo.html",
+      "template/hot.html",
+      "template/recommend.html",
+      "music/back-music.html",
+      "scene/search.html"
+    ],
+    "priority": 0
+  },
+  "scene/addMusic.html": {
+    "refer": [
+      "scene/search.html"
+    ]
+  },
+  "scene/backg.html": {
+    "refer": [
+      "scene/cropper.html"
+    ]
+  }
 }
