@@ -1,16 +1,15 @@
 /*轮播图*/
-.mui-slider-indicator {
-	bottom: 1px;
+.swiper-slide img{
+	width: 100%;
 }
 
-.mui-slider-indicator .mui-indicator {
-	margin: 1px 2px;
-	background:#FFF;
-	box-shadow:none;
-}
-
-.mui-slider-indicator .mui-active.mui-indicator{
+.swiper-pagination-bullet-active{
 	background: #f68531;
+}
+
+.swiper-pagination-bullet{
+	width: 6px;
+	height: 6px;
 }
 /*模板信息*/
 .title {

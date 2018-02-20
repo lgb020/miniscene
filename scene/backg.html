@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>背景</title>
+		<title>背景素材</title>
 		<link rel="stylesheet" href="../css/mui.min.css" />
 		<link rel="stylesheet" href="../css/iconfont.min.css" />
 		<link rel="stylesheet" href="../css/swiper-4.1.0.min.css" />
@@ -15,7 +15,7 @@
 	<body ng-app="bg" ng-controller="bgCon">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<h1 class="mui-title">背景图库</h1>
+			<h1 class="mui-title">背景素材</h1>
 			<a class="mui-pull-right" id="menu">使用过</a>
 		</header>
 		<div class="mui-content">
@@ -31,7 +31,7 @@
 							</div>
 						</div>
 						<div class="swiper-slide" ng-repeat="ocolor in originColor track by $index">
-							<div class="cover">
+							<div class="cover pure">
 								<img src="../img/backcolor.png" style="background-color: {{ocolor}};" />
 							</div>
 						</div>
@@ -41,7 +41,7 @@
 					<span class="mui-pull-left">推荐</span>
 				</div>
 				<div class="info" id="info">
-					<div class="list">
+					<div class="list recommend">
 						<div class="cover">
 							<img src="../img/cover.jpg" />
 						</div>

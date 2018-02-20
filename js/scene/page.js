@@ -5,7 +5,7 @@ mui.init({
 			height: 50,
 			auto: true,
 			contentrefresh: "正在加载...",
-			contentnomore: '没有更多数据了',
+			contentnomore: "没有更多数据了",
 			callback: moreInfo
 		}
 	}
@@ -21,17 +21,27 @@ function moreInfo() {
 			var div = document.createElement("div");
 			switch(i % 3) {
 				case 0:
-					div.className = "cover add";
-					break;
-				case 1:
-					div.className = "cover right";
-					break;
-				default:
 					div.className = "cover";
 					break;
+				case 1:
+					div.className = "cover add";
+					break;
+				default:
+					div.className = "cover right";
+					break;
 			}
-			div.innerHTML = "<img src='../img/cover.jpg' />";
+			div.innerHTML = "<input type='hidden' value='0' /><img src='../img/cover.jpg' />";
 			info.appendChild(div);
 		}
 	}, 2000);
 }
+
+//选择模板
+mui("#info").on("tap", ".cover", function() {
+	var id = this.childNodes[1].value;
+	var view = plus.webview.getWebviewById("issue");
+	mui.fire(view, "getPage", {
+		id: id
+	});
+	mui.back();
+});

@@ -1,13 +1,4 @@
-mui.init({
-	preloadPages: [{
-		id: "storeAll",
-		url: "../store/store_all.html"
-	},{
-		id: "issue",
-		url: "../issue.html"
-	}],
-	preloadLimit: 5
-});
+mui.init();
 
 var menu = new Swiper(".swiper-container", {
 	effect: "fade",
@@ -36,7 +27,11 @@ scene.controller("ctrl", function($scope, $http) {
 /*设计小店*/
 document.getElementById("store").addEventListener("tap", function() {
 	mui.openWindow({
-		id: "storeAll"
+		id: "storeAll",
+		url: "../store/store_all.html",
+		show: {
+			aniShow: "pop-in"
+		}
 	});
 });
 
@@ -44,6 +39,7 @@ document.getElementById("store").addEventListener("tap", function() {
 document.getElementById("issue").addEventListener("tap", function() {
 	mui.openWindow({
 		id: "issue",
+		url: "../issue.html",
 		show: {
 			aniShow: "pop-in"
 		}

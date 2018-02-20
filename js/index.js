@@ -2,9 +2,6 @@ mui.init({
 	preloadPages: [{
 		id: "bMusic",
 		url: "./music/back-music.html"
-	},{
-		id: "search",
-		url: "./scene/search.html"
 	}],
 	preloadLimit: 5
 });
@@ -16,7 +13,7 @@ mui.plusReady(function() {
 			id: "recommend",
 			url: "./template/recommend.html",
 			extras: {},
-			
+
 		}, {
 			id: "hot",
 			url: "./template/hot.html",
@@ -49,8 +46,8 @@ document.getElementById("about").addEventListener("tap", function() {
 	mui.openWindow({
 		id: "aboutUs",
 		url: "./about-us.html",
-		show:{
-			aniShow:"pop-in"
+		show: {
+			aniShow: "pop-in"
 		}
 	});
 });
@@ -59,8 +56,8 @@ document.getElementById("about").addEventListener("tap", function() {
 document.getElementById("music").addEventListener("tap", function() {
 	mui.openWindow({
 		id: "bMusic",
-		show:{
-			aniShow:"pop-in"
+		show: {
+			aniShow: "pop-in"
 		}
 	});
 });
@@ -69,8 +66,9 @@ document.getElementById("music").addEventListener("tap", function() {
 document.getElementById("search").addEventListener("tap", function() {
 	mui.openWindow({
 		id: "search",
-		show:{
-			aniShow:"pop-in"
+		url: "./scene/search.html",
+		show: {
+			aniShow: "pop-in"
 		}
 	});
 });
