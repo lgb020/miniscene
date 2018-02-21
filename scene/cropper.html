@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="../css/mui.min.css" />
 		<link rel="stylesheet" href="../css/iconfont.min.css" />
 		<link rel="stylesheet" href="../css/cropper.min.css" />
+		<link rel="stylesheet" href="../css/swiper-4.1.0.min.css" />
 		<style>
 			html,
 			body {
@@ -59,8 +60,24 @@
 				width: 20px;
 			}
 			
+			.ration {
+				padding: 15px 5px 0 5px;
+				font-size: 0.9rem;
+			}
+			
+			.ration .swiper-slide {
+				text-align: center;
+				height: 30px;
+				line-height: 30px;
+				color: #C0C0C0;
+			}
+			
+			.ration .check {
+				color: #f68531;
+			}
+			
 			.button {
-				margin-top: 20%;
+				margin-top: 10%;
 				width: 100%;
 				text-align: center;
 			}
@@ -70,9 +87,10 @@
 				border-radius: 20px;
 			}
 		</style>
+		<script type="text/javascript" src="../js/angular/angular.min.js"></script>
 	</head>
 
-	<body>
+	<body ng-app="crop" ng-controller="cropper">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 		</header>
@@ -80,38 +98,77 @@
 			<div class="container">
 				<img id="image" src="">
 			</div>
+			<div class="ration">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide" ng-repeat="ration in rationArray track by $index" ng-click="setRation($index)">
+							<span ng-bind="ration"></span>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="button">
-				<button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">
+				<button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" ng-click="upload()">
 					裁剪
 				</button>
 			</div>
 		</div>
 	</body>
 	<script type="text/javascript" src="../js/mui.min.js"></script>
+	<script type="text/javascript" src="../js/swiper-4.1.0.min.js"></script>
 	<script type="text/javascript" src="../js/cropper.min.js"></script>
 	<script>
 		mui.init();
-		
-		var img = "";
-		mui.plusReady(function() {
-			//获取传递过来的账号
-			var self = plus.webview.currentWebview();
-			img = self.img;
-			document.getElementById("image").src = img;
-			crop();
-		});
-		
-		var crop = function(){
-			var image = document.querySelector('#image');
-			var cropper = new Cropper(image, {
-				dragMode:"move",
-				aspectRatio: 120 / 179,
-				autoCropArea: 1,
-				background: false,
-				restore: false,
-				toggleDragModeOnDblclick: false,
+
+		var crop = angular.module("crop", []);
+		crop.controller("cropper", function($scope) {
+			$scope.rationArray = new Array("背景", "1:1", "2:3", "自由");
+			var value = new Array(120 / 179, 1 / 1, 4 / 3, NaN);
+
+			var img = "";
+			var cropper = "";
+			mui.plusReady(function() {
+				var self = plus.webview.currentWebview();
+				img = self.img;
+				document.getElementById("image").src = img;
+				var image = document.querySelector("#image");
+				cropper = new Cropper(image, {
+					dragMode: "move",
+					aspectRatio: 120 / 179,
+					autoCropArea: 1,
+					viewMode: 1,
+					background: false,
+					restore: false,
+					toggleDragModeOnDblclick: false,
+				});
 			});
-		}
+
+			//修改比例
+			var ration = new Swiper(".ration .swiper-container", {
+				slidesPerView: 4,
+				spaceBetween: 10,
+				resistanceRatio: 0,
+				watchOverflow: true,
+				observer: true,
+				observeParents: true
+			});
+			$scope.setRation = function(index) {
+				cropper.setAspectRatio(value[index]);
+				var menu = document.body.querySelectorAll(".ration .swiper-slide");
+				for(var i = 0; i < menu.length; i++) {
+					if(menu[i].classList.contains("check")) {
+						menu[i].classList.remove("check");
+					}
+				}
+				menu[index].classList.add("check");
+			}
+
+			//完成截取
+			$scope.upload = function() {
+				var imgUrl = cropper.getCroppedCanvas().toDataURL();
+				console.log(imgUrl);
+			}
+		});
 	</script>
 
 </html>
