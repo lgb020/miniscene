@@ -14,11 +14,11 @@ mui.init({
 	}, {
 		id: "addMusic",
 		url: "/scene/music.html"
-	},{
+	}, {
 		id: "editImg",
 		url: "/scene/edit-img.html"
 	}],
-	preloadLimit: 6
+	preloadLimit: 10
 });
 
 var menu = new Swiper(".footer .swiper-container", {
@@ -109,13 +109,12 @@ app.controller("issue", function($scope) {
 		var ani_delay = event.detail.ani_delay;
 		var ani_duration = event.detail.ani_duration;
 		var ani_name = event.detail.ani_name;
-		console.log(pageIndex+" "+sIndex+" "+value+" "+fontSize);
 		if(value != "" && value != " ") {
 			text = {};
 			var index = swiper.activeIndex;
 			if(index < $scope.scene.length) {
 				text.content = "<div class='text'>" + value + "</div>";
-				text.className = "swiper-no-swiping scenc-text animated " + ani_name;
+				text.className = "swiper-no-swiping scene-text animated " + ani_name;
 				text.divCss = "font-size:" + fontSize + ";color:" + color + ";text-align:" + align + ";";
 				text.liCss = "animation-delay:" + ani_delay + ";animation-duration:" + ani_duration + ";";
 				if(pageIndex == -1 && sIndex == -1) {
@@ -147,7 +146,7 @@ app.controller("issue", function($scope) {
 		if(mImg != "" && mImg != " ") {
 			var index = swiper.activeIndex;
 			if(index < $scope.scene.length) {
-				text.content = "<img src='"+mImg+"' class='img' style='opacity:0.8'/>";
+				text.content = "<img src='" + mImg + "' class='img' style='opacity:0.8'/>";
 				text.className = "swiper-no-swiping scene-img";
 				text.divCss = "";
 				text.liCss = "";
@@ -170,10 +169,10 @@ app.controller("issue", function($scope) {
 		var ani_delay = event.detail.ani_delay;
 		var ani_duration = event.detail.ani_duration;
 		text = {};
-		text.content = "<img src='"+mImg+"' class='img' style='opacity:"+opacity+"'/>";
+		text.content = "<img src='" + mImg + "' class='img' style='opacity:" + opacity + "'/>";
 		text.className = "swiper-no-swiping scene-img animated " + ani_name;
 		text.divCss = "";
-		text.liCss = "width:" + width +";height:" + height +";top:" + top +";left:" + left +";animation-delay:" + ani_delay + ";animation-duration:" + ani_duration + ";";
+		text.liCss = "width:" + width + ";height:" + height + ";top:" + top + ";left:" + left + ";animation-delay:" + ani_delay + ";animation-duration:" + ani_duration + ";";
 		$scope.scene[pageIndex][sIndex] = text;
 		$scope.$apply(); //手动刷新
 		status = "true"; //编辑状态改为true
@@ -197,6 +196,7 @@ app.controller("issue", function($scope) {
 			var index = swiper.activeIndex;
 			if(index < $scope.scene.length) {
 				$scope.scene[index].bgUrl = img;
+				$scope.scene[index].color = "";
 			}
 			$scope.$apply(); //手动刷新
 			status = "true"; //编辑状态改为true
@@ -209,6 +209,7 @@ app.controller("issue", function($scope) {
 			var index = swiper.activeIndex;
 			if(index < $scope.scene.length) {
 				$scope.scene[index].color = bgColor;
+				$scope.scene[index].bgUrl = "";
 			}
 			$scope.$apply(); //手动刷新
 			status = "true"; //编辑状态改为true
@@ -232,7 +233,7 @@ app.controller("issue", function($scope) {
 	$scope.edit = function(pageId, index) {
 		var preantId = "inside" + pageId + index;
 		var preantElem = document.getElementById(preantId);
-		var result = preantElem.classList.contains("scenc-text");
+		var result = preantElem.classList.contains("scene-text");
 		var pageIndex = pageId.substring("4");
 		if(result) {
 			var elem = preantElem.getElementsByTagName("div")[0];
@@ -259,11 +260,11 @@ app.controller("issue", function($scope) {
 		} else {
 			var elem = preantElem.getElementsByTagName("img")[0];
 			var value = elem.src;
-			var width = getCss(preantElem,"width");
-			var height = getCss(preantElem,"height");
-			var top = getCss(preantElem,"top");
-			var left = getCss(preantElem,"left");
-			var opacity = getCss(elem,"opacity");
+			var width = getCss(preantElem, "width");
+			var height = getCss(preantElem, "height");
+			var top = getCss(preantElem, "top");
+			var left = getCss(preantElem, "left");
+			var opacity = getCss(elem, "opacity");
 			var ani_delay = getCss(preantElem, "animation-delay");
 			var ani_duration = getCss(preantElem, "animation-duration");
 			var ani_name = getCss(preantElem, "animation-name");
@@ -325,10 +326,9 @@ app.controller("issue", function($scope) {
 			var height = getCss(element, "height");
 			var left = getCss(element, "left");
 			var top = getCss(element, "top");
-			var zIndex = getCss(element, "z-index");
 			var pageIndex = pageId.substring("4");
 
-			var elemCss = "width:" + width + ";height:" + height + ";left:" + left + ";top:" + top + ";z-index:" + zIndex + ";";
+			var elemCss = "width:" + width + ";height:" + height + ";left:" + left + ";top:" + top + ";";
 			$scope.scene[pageIndex][index].css = elemCss;
 		});
 	}
@@ -359,45 +359,52 @@ app.controller("issue", function($scope) {
 		var pageIndex = pageId.substring(4);
 		$scope.scene[pageIndex].splice(index, 1);
 	}
-});
 
-//完成
-document.getElementById("finish").addEventListener("tap", function() {
-	cover();
-	//	save();
-});
+	//完成
+	document.getElementById("finish").addEventListener("tap", function() {
+		cover();
+		save();
+	});
 
-//截取封面图
-var cover = function() {
-	var page = document.getElementById("page0");
-	var width = page.offsetWidth;
-	var height = page.offsetHeight;
-	var canvas = document.createElement("canvas");
-	var scale = 2;
-	canvas.width = width * scale;
-	canvas.height = height * scale;
-	var opts = {
-		scale: scale,
-		canvas: canvas,
-		useCORS: true,
-		width: width,
-		height: height
-	};
-	html2canvas(page, opts).then(function(canvas) {
-		var img = canvas.toDataURL("image/png");
-		console.log(img);
-	})
-}
+	//保存数据
+	var save = function() {
+		var index = swiper.activeIndex;
+		for(var i=0;i<$scope.scene.length;i++){
+			var info={};
+			info.color = $scope.scene[i].color;
+			info.bgUrl = $scope.scene[i].bgUrl;
+			info.content = JSON.stringify($scope.scene[i]);
+			console.log(JSON.stringify(info));
+		}
+	}
+
+	//截取封面图
+	var cover = function() {
+		var page = document.getElementById("page0");
+		var width = page.offsetWidth;
+		var height = page.offsetHeight;
+		var canvas = document.createElement("canvas");
+		var scale = 2;
+		canvas.width = width * scale;
+		canvas.height = height * scale;
+		var opts = {
+			scale: scale,
+			canvas: canvas,
+			useCORS: true,
+			width: width,
+			height: height
+		};
+		html2canvas(page, opts).then(function(canvas) {
+			var img = canvas.toDataURL("image/png");
+			console.log(img);
+		})
+	}
+});
 
 //获取相关CSS属性
 var getCss = function(elem, key) {
 	return window.getComputedStyle(elem)[key];
 };
-
-//保存数据
-var save = function() {
-	console.log("保存");
-}
 
 /*
  * 调用$compile服务

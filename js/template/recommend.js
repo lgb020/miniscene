@@ -19,7 +19,7 @@ mui.plusReady(function() {
 });
 
 var scene = angular.module("scene", []);
-var root = "http://127.0.0.1:8080"
+var root = "http://www.hsfeng.cn/scene/"
 scene.controller("ctrl", function($scope, $http) {
 	
 });
