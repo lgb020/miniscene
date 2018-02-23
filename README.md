@@ -1,4 +1,4 @@
 # MINISCENE
-H5场景制作平台前端代码<br/>
+H5场景制作平台<br/>
 开发工具：HBuilder<br />
 开发环境：HTML5+CSS3+MUI+AngularJS
