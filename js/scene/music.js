@@ -104,7 +104,10 @@ function musicLocation() {
 document.getElementById("search").addEventListener("tap", function() {
 	mui.openWindow({
 		id:"mSearch",
-		url: "./search.html"
+		url: "./search.html",
+		show: {
+			aniShow: "pop-in"
+		}
 	});
 });
 

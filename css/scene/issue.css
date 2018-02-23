@@ -90,17 +90,14 @@ ul {
 
 .edit-area li {
 	width: auto;
-	top: 20%;
-	left: 5%;
 	list-style: none !important;
 	position: absolute;
 	line-height: 1;
 	text-align: -webkit-match-parent;
 }
 
-.edit-area img {
+.edit-area .img {
 	width: 100%;
-	height: 100%
 }
 
 .edit-area .text {
@@ -108,8 +105,6 @@ ul {
 	padding: 1rem 0.5rem;
 	margin: 0px;
 	word-wrap: break-word;
-	top: 100px;
-	left: 30px;
 }
 
 

@@ -14,8 +14,11 @@ mui.init({
 	}, {
 		id: "addMusic",
 		url: "/scene/music.html"
+	},{
+		id: "editImg",
+		url: "/scene/edit-img.html"
 	}],
-	preloadLimit: 5
+	preloadLimit: 6
 });
 
 var menu = new Swiper(".footer .swiper-container", {
@@ -47,7 +50,6 @@ app.controller("issue", function($scope) {
 	$scope.scene = new Array(); //场景
 	var page; //单个页面,存放素材对象
 	var text; //文本素材对象
-	var img; //图片素材对象
 
 	//添加新页面
 	$scope.addPage = function() {
@@ -77,6 +79,13 @@ app.controller("issue", function($scope) {
 			});
 		}
 	});
+	window.addEventListener("getPage", function(event) {
+		var pageId = event.detail.id;
+		if(pageId > 0) {
+			var index = swiper.activeIndex;
+			console.log(pageId);
+		}
+	});
 
 	//添加文字
 	mui("body").on("tap", ".addText", function() {
@@ -100,37 +109,88 @@ app.controller("issue", function($scope) {
 		var ani_delay = event.detail.ani_delay;
 		var ani_duration = event.detail.ani_duration;
 		var ani_name = event.detail.ani_name;
+		console.log(pageIndex+" "+sIndex+" "+value+" "+fontSize);
 		if(value != "" && value != " ") {
 			text = {};
-			//获取当前操作的下标
 			var index = swiper.activeIndex;
 			if(index < $scope.scene.length) {
-				var zIndex = $scope.scene[index].length;
 				text.content = "<div class='text'>" + value + "</div>";
 				text.className = "swiper-no-swiping scenc-text animated " + ani_name;
 				text.divCss = "font-size:" + fontSize + ";color:" + color + ";text-align:" + align + ";";
-				text.liCss = "z-index:" + zIndex + ";animation-delay:" + ani_delay + ";animation-duration:" + ani_duration + ";";
-				if(pageIndex==-1 && sIndex==-1){
+				text.liCss = "animation-delay:" + ani_delay + ";animation-duration:" + ani_duration + ";";
+				if(pageIndex == -1 && sIndex == -1) {
 					$scope.scene[index].push(text);
-				}else{
-					$scope.scene[pageIndex][sIndex]=text;
+				} else {
+					$scope.scene[pageIndex][sIndex] = text;
 				}
 			}
 			$scope.$apply(); //手动刷新
 			status = "true"; //编辑状态改为true
 		}
 	});
-	
-	//模板添加
-	window.addEventListener("getPage",function(event){
-		var pageId = event.detail.id;
-		if(pageId>0){
-			var index = swiper.activeIndex;
-			console.log(pageId);
+
+	//添加图片
+	mui("body").on("tap", ".addImg", function() {
+		var index = swiper.activeIndex;
+		if(index < $scope.scene.length) {
+			mui.openWindow({
+				id: "addImg",
+				show: {
+					aniShow: "pop-in"
+				}
+			});
 		}
 	});
+	window.addEventListener("getImg", function(event) {
+		var mImg = event.detail.mImg;
+		text = {};
+		if(mImg != "" && mImg != " ") {
+			var index = swiper.activeIndex;
+			if(index < $scope.scene.length) {
+				text.content = "<img src='"+mImg+"' class='img' style='opacity:0.8'/>";
+				text.className = "swiper-no-swiping scene-img";
+				text.divCss = "";
+				text.liCss = "";
+				$scope.scene[index].push(text);
+			}
+			$scope.$apply(); //手动刷新
+			status = "true"; //编辑状态改为true
+		}
+	});
+	window.addEventListener("editImg", function(event) {
+		var pageIndex = event.detail.pageIndex;
+		var sIndex = event.detail.sIndex;
+		var mImg = event.detail.content;
+		var width = event.detail.width;
+		var height = event.detail.height;
+		var top = event.detail.top;
+		var left = event.detail.left;
+		var opacity = parseFloat(event.detail.opacity);
+		var ani_name = event.detail.ani_name;
+		var ani_delay = event.detail.ani_delay;
+		var ani_duration = event.detail.ani_duration;
+		text = {};
+		text.content = "<img src='"+mImg+"' class='img' style='opacity:"+opacity+"'/>";
+		text.className = "swiper-no-swiping scene-img animated " + ani_name;
+		text.divCss = "";
+		text.liCss = "width:" + width +";height:" + height +";top:" + top +";left:" + left +";animation-delay:" + ani_delay + ";animation-duration:" + ani_duration + ";";
+		$scope.scene[pageIndex][sIndex] = text;
+		$scope.$apply(); //手动刷新
+		status = "true"; //编辑状态改为true
+	});
 
-	//背景图添加
+	//添加背景
+	mui("body").on("tap", ".addBg", function() {
+		var index = swiper.activeIndex;
+		if(index < $scope.scene.length) {
+			mui.openWindow({
+				id: "addBg",
+				show: {
+					aniShow: "pop-in"
+				}
+			});
+		}
+	});
 	window.addEventListener("getBackg", function(event) {
 		var img = event.detail.img;
 		if(img != "" && img != " ") {
@@ -145,52 +205,13 @@ app.controller("issue", function($scope) {
 	//纯色添加
 	window.addEventListener("getBackgC", function(event) {
 		var bgColor = event.detail.bgColor;
-		if(img != "" && img != " ") {
+		if(bgColor != "" && bgColor != " ") {
 			var index = swiper.activeIndex;
 			if(index < $scope.scene.length) {
 				$scope.scene[index].color = bgColor;
 			}
 			$scope.$apply(); //手动刷新
 			status = "true"; //编辑状态改为true
-		}
-	});
-
-	//添加图片
-	/*$scope.addImg = function() {
-		img = {};
-		//获取当前操作的下标
-		var index = swiper.activeIndex;
-		if(index < $scope.scene.length) {
-			var zIndex = $scope.scene[index].length;
-			img.content = "<img src='img/photo.jpg'/>";
-			img.className = "swiper-no-swiping scene-img";
-			img.css = "z-index:" + zIndex + ";top: 100px;left:30px;";
-			$scope.scene[index].push(img);
-		}
-		status = "true"; //编辑状态改为true
-	}*/
-	mui("body").on("tap", ".addImg", function() {
-		var index = swiper.activeIndex;
-		if(index < $scope.scene.length) {
-			mui.openWindow({
-				id: "addImg",
-				show: {
-					aniShow: "pop-in"
-				}
-			});
-		}
-	});
-
-	//添加背景
-	mui("body").on("tap", ".addBg", function() {
-		var index = swiper.activeIndex;
-		if(index < $scope.scene.length) {
-			mui.openWindow({
-				id: "addBg",
-				show: {
-					aniShow: "pop-in"
-				}
-			});
 		}
 	});
 
@@ -206,15 +227,15 @@ app.controller("issue", function($scope) {
 			});
 		}
 	});
-	
+
 	//修改素材传递参数
 	$scope.edit = function(pageId, index) {
-		var elemId = "inside" + pageId + index;
-		var preantElem = document.getElementById(elemId);
+		var preantId = "inside" + pageId + index;
+		var preantElem = document.getElementById(preantId);
 		var result = preantElem.classList.contains("scenc-text");
+		var pageIndex = pageId.substring("4");
 		if(result) {
 			var elem = preantElem.getElementsByTagName("div")[0];
-			var pageIndex = pageId.substring("4");
 			var value = elem.innerText;
 			var fontSize = getCss(elem, "font-size");
 			var color = getCss(elem, "color");
@@ -235,8 +256,32 @@ app.controller("issue", function($scope) {
 				ani_name: ani_name
 			});
 			view.show("slide-in-right"); //显示页面
-		}else{
-			
+		} else {
+			var elem = preantElem.getElementsByTagName("img")[0];
+			var value = elem.src;
+			var width = getCss(preantElem,"width");
+			var height = getCss(preantElem,"height");
+			var top = getCss(preantElem,"top");
+			var left = getCss(preantElem,"left");
+			var opacity = getCss(elem,"opacity");
+			var ani_delay = getCss(preantElem, "animation-delay");
+			var ani_duration = getCss(preantElem, "animation-duration");
+			var ani_name = getCss(preantElem, "animation-name");
+			var view = plus.webview.getWebviewById("editImg");
+			mui.fire(view, "initImg", {
+				pageIndex: pageIndex,
+				index: index,
+				value: value,
+				width: width,
+				height: height,
+				top: top,
+				left: left,
+				opacity: opacity,
+				ani_delay: ani_delay,
+				ani_duration: ani_duration,
+				ani_name: ani_name
+			});
+			view.show("slide-in-right"); //显示页面
 		}
 	}
 
@@ -308,7 +353,7 @@ app.controller("issue", function($scope) {
 			scale.Set(wId, "right-up");
 		}
 	}
-	
+
 	//删除素材
 	$scope.del = function(pageId, index) {
 		var pageIndex = pageId.substring(4);
@@ -328,17 +373,17 @@ var cover = function() {
 	var width = page.offsetWidth;
 	var height = page.offsetHeight;
 	var canvas = document.createElement("canvas");
-    var scale = 2;
-    canvas.width = width * scale;
-    canvas.height = height * scale;
+	var scale = 2;
+	canvas.width = width * scale;
+	canvas.height = height * scale;
 	var opts = {
 		scale: scale,
-        canvas: canvas,
+		canvas: canvas,
 		useCORS: true,
-        width: width, 
-        height: height
-    };
-	html2canvas(page,opts).then(function(canvas) {
+		width: width,
+		height: height
+	};
+	html2canvas(page, opts).then(function(canvas) {
 		var img = canvas.toDataURL("image/png");
 		console.log(img);
 	})

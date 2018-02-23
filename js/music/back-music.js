@@ -12,12 +12,8 @@ mui.init({
 });
 
 /*获取传递过来的用户名和模板id*/
-var userName, id;
 mui.plusReady(function() {
 	var self = plus.webview.currentWebview();
-	userName = self.account;
-	id = self.temp_id;
-	
 	/*初始化数据*/
 	init_info();
 	setTimeout(function() {
@@ -26,10 +22,11 @@ mui.plusReady(function() {
 });
 
 /*获取更多的音乐信息*/
-var count = 0;
+var page = 1;
+var count = 5;
 function moreInfo() {
 	setTimeout(function() {
-		mui("#online").pullRefresh().endPullup((++count > 2));
+		mui("#online").pullRefresh().endPullup(page>count);
 		init_info();
 	}, 2000);
 }
@@ -97,14 +94,16 @@ function musicLocation() {
 		}
 		cursor.close();
 	}
-
 }
 
 //搜索
 document.getElementById("search").addEventListener("tap", function() {
 	mui.openWindow({
 		id:"mSearch",
-		url: "./search.html"
+		url: "./search.html",
+		show: {
+			aniShow: "pop-in"
+		}
 	});
 });
 

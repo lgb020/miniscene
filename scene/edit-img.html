@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>图片编辑</title>
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/iconfont.min.css" />
+		<link rel="stylesheet" href="../css/swiper-4.1.0.min.css" />
+		<link rel="stylesheet" href="../css/scene/edit_img.css" />
+		<script type="text/javascript" src="../js/angular/angular.min.js"></script>
+	</head>
+	<body ng-app="edit" ng-controller="editImg">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">图片编辑</h1>
+			<a class="mui-action-back mui-pull-right ensure">确定</a>
+		</header>
+		<div class="mui-content">
+			<div class="title">
+				<span class="mui-pull-left">样式</span>
+			</div>
+			<div class="animate">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide" ng-repeat="name in animateArray track by $index" 
+							ng-click="setAnimate($index)">
+							<span ng-bind="name"></span>
+						</div>
+					</div>
+				</div>
+				<div class="mui-input-row mui-input-range rang">
+		            <label>动画时间：<span id="duration-val">0.5</span>s</label>
+		            <input type="range" id="duration" value="0.5" min="0" max="5" step="0.1" ng-model="aDuration">
+		        </div>
+		        <div class="mui-input-row mui-input-range rang">
+		            <label>延迟时间：<span id="delay-val">0.5</span>s</label>
+		            <input type="range" id="delay" value="0.5" min="0" max="5" step="0.1" ng-model="aDelay">
+		        </div>
+		        <div class="mui-input-row mui-input-range orang">
+		            <label>透明度：<span id="opacity-val">0.8</span></label>
+		            <input type="range" id="opacity" value="0.8" min="0" max="1" step="0.1" ng-model="opacity">
+		        </div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/swiper-4.1.0.min.js"></script>
+		<script type="text/javascript" src="../js/scene/edit_img.js"></script>
+	</body>
+</html>

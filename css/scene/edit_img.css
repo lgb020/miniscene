@@ -1,0 +1,79 @@
+html,
+body {
+	height: 100%;
+}
+
+.mui-title {
+	font-size: 1rem;
+}
+
+.mui-content {
+	height: 100%;
+}
+
+.mui-pull-right {
+	line-height: 44px;
+	font-size: 0.9rem;
+}
+
+.title {
+	margin: 20px 0px 0px 5px;
+	font-size: 16px;
+	height: 30px;
+	line-height: 30px;
+	border-left: 3px solid #f68531;
+}
+
+.title .mui-pull-left {
+	margin-left: 10px;
+}
+
+.animate{
+	padding: 15px 5px 0 5px;
+	font-size: 0.9rem;
+}
+
+.animate .swiper-slide{
+	text-align: center;
+	height: 60px;
+	line-height: 60px;
+	background-color: #FFF;
+	border-radius: 5px;
+	color: #C0C0C0;
+}
+
+.animate .check{
+	background-color: #f68531;
+	color: #FFFFFF;
+}
+
+/*滑块*/
+.rang{
+	margin-top: 15px;
+	display: none;
+}
+
+.orang{
+	margin-top: 15px;
+}
+
+.mui-input-row label{
+	padding: 11px 10px;
+}
+
+.mui-input-range .mui-tooltip{
+	display: none;
+}
+
+/*样例*/
+.example{
+	margin: 0 1rem;
+	padding: 1rem 0.5rem;
+	border: 2px dotted #f8f8fa;
+	height: 55px;
+	max-height: 55px;
+	word-wrap:break-word;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow: hidden;
+}

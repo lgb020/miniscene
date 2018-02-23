@@ -121,7 +121,7 @@ text.controller("add", function($scope) {
 		}
 	}
 
-	//修改字体接收参数
+	//修改字体的参数
 	window.addEventListener("initText", function(event) {
 		$scope.pageIndex = event.detail.pageIndex; //页面下标
 		$scope.sIndex = event.detail.index; //素材下标
@@ -183,6 +183,16 @@ text.controller("add", function($scope) {
 		for(var i = 0; i < $scope.aniValue.length; i++) {
 			if($scope.aniValue[i] == aEffect) {
 				aOption[i].classList.add("check");
+				var rang = document.body.querySelectorAll(".animate .rang");
+				if(i==0){
+					for(var i = 0; i < rang.length; i++) {
+						rang[i].style.display = "none";
+					}
+				}else{
+					for(var i = 0; i < rang.length; i++) {
+						rang[i].style.display = "block";
+					}
+				}
 			}
 		}
 	});
