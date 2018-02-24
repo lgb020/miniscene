@@ -25,6 +25,11 @@ ul {
 	margin: 0px !important;
 }
 
+.mui-icon-closeempty{
+	float: right;
+	color: #FFFFFF;
+}
+
 .panel {
 	height: 85.7%;
 	margin-top: 1rem !important;

@@ -17,13 +17,13 @@
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<a class="mui-pull-right finish" id="finish">完成</a>
-			<a class="mui-icon mui-icon-trash mui-pull-right" ng-click="delPage()"></a>
 		</header>
 		<div class="mui-content">
 			<div class="panel">
 				<div class="swiper-container">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide" ng-repeat="pages in scene track by $index" id="page{{$index}}">
+							<i class="mui-icon mui-icon-closeempty" ng-click="delPage()"></i>
 							<div class="page">
 								<div class="bg" style="background-image: url('{{pages.bgUrl}}');background-color: {{pages.color}};">
 									<ul class="edit-area" id="{{pages.areaId}}">
@@ -82,12 +82,6 @@
 						<a href="javascript:void(0);" class="addBg">
 							<span class="iconfont icon-huanbeijing-copy"></span>
 							<span class="name">背景</span>
-						</a>
-					</div>
-					<div class="swiper-slide option">
-						<a href="javascript:void(0);" class="addMusic">
-							<span class="iconfont icon-yinle"></span>
-							<span class="name">音乐</span>
 						</a>
 					</div>
 				</div>

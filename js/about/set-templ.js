@@ -1,4 +1,10 @@
-mui.init();
+mui.init({
+	preloadPages: [{
+		id: "bMusic",
+		url: "../scene/music.html",
+	}],
+	preloadLimit: 10
+});
 mui.plusReady(function() {
 	//获取传递过来模板的id
 	var self = plus.webview.currentWebview();
@@ -9,10 +15,8 @@ mui.plusReady(function() {
 document.getElementById("back-music").addEventListener("tap", function() {
 	mui.openWindow({
 		id: "bMusic",
-		url: "../scene/music.html",
-		extras: {
-			account: "1083178465@qq.com",
-			temp_id:"1"
+		show: {
+			aniShow: "pop-in"
 		}
 	});
 });

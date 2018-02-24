@@ -92,7 +92,7 @@ var putaway = function(id) {
 }
 
 //编辑模板信息
-var editInfo = function(id){
+var editInfo = function(id) {
 	//选项图层关闭
 	mui("#setting").popover("toggle");
 }
@@ -104,6 +104,9 @@ var setInfo = function(id) {
 		url: "./set-templ.html",
 		extras: {
 			tempId: id
+		},
+		show: {
+			aniShow: "pop-in"
 		}
 	});
 	//选项图层关闭
@@ -111,11 +114,11 @@ var setInfo = function(id) {
 }
 
 //删除模板信息
-var delInfo = function(id){
-	var btnArray = ["删除","取消"];
+var delInfo = function(id) {
+	var btnArray = ["删除", "取消"];
 	mui.confirm("是否删除该场景？", "", btnArray, function(e) {
 		if(e.index == 0) {
-			var currentList = document.body.querySelector("#elem"+id);
+			var currentList = document.body.querySelector("#elem" + id);
 			currentList.parentNode.remove();
 			mui.toast("删除成功");
 		}
