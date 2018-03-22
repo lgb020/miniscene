@@ -41,6 +41,11 @@ body {
 	margin-left: 10px;
 }
 
+.title .mui-pull-right {
+	margin-right: 10px;
+	color: #f68531;
+}
+
 .info .cover,.info .img {
 	width: 30%;
 	height: auto;
@@ -53,10 +58,6 @@ body {
 }
 
 .info .center {
-	margin-left: 4%;
-}
-
-.info .add {
 	margin-left: 5%;
 }
 
@@ -65,11 +66,8 @@ body {
 }
 
 .info .img img {
-	width: 100%;
-}
-
-.info .cover img {
-	width: 100%;
+	width: 100px;
+	height: 100px;
 }
 
 #online-text{

@@ -18,3 +18,79 @@
 	font-size: 0.9rem;
 	color: #555555;
 }
+
+#notice {
+	display: none;
+}
+
+.notice {
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.notice i {
+	font-size: 4rem;
+	color: #8F8F94;
+}
+
+.notice span {
+	width: 100%;
+	display: block;
+}
+
+.notice .title {
+	font-size: 0.8rem;
+	color: #8F8F94;
+}
+
+/*场景*/
+.info {
+	margin: 10px 0px 15px 0px;
+	padding: 0px 4%;
+	width: 100%;
+	height: auto;
+}
+
+.info .cover {
+	width: 30%;
+	height: auto;
+	display: inline-block;
+	margin-top: 10px;
+}
+
+.info .center {
+	margin-left: 5%;
+}
+
+.info .right {
+	float: right;
+}
+
+.info .cover img {
+	width: 100%;
+}
+
+.info .cover span {
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 0.8rem;
+}
+
+.info .cover .describes {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.info .cover .integral {
+	color: #f68531;
+}
+
+.info .cover .integral i {
+	font-size: 0.9rem;
+}

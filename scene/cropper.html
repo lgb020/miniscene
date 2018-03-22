@@ -118,20 +118,21 @@
 	<script type="text/javascript" src="../js/swiper-4.1.0.min.js"></script>
 	<script type="text/javascript" src="../js/cropper.min.js"></script>
 	<script>
-		mui.init();
-
 		var crop = angular.module("crop", []);
-		crop.controller("cropper", function($scope) {
+		crop.controller("cropper", function($scope, $http) {
+			mui.init();
 			$scope.rationArray = new Array("背景", "1:1", "2:3", "自由");
 			var value = new Array(120 / 179, 1 / 1, 4 / 3, NaN);
 
 			var img = "";
 			var cropper = "";
+			var type = ""; //0-背景,1-图片
 			mui.plusReady(function() {
 				var self = plus.webview.currentWebview();
 				img = self.img;
+				type = self.type;
 				document.getElementById("image").src = img;
-				var image = document.querySelector("#image");
+				var image = document.getElementById("image");
 				cropper = new Cropper(image, {
 					dragMode: "move",
 					aspectRatio: 120 / 179,
@@ -152,8 +153,37 @@
 				observer: true,
 				observeParents: true
 			});
+
+			//完成截取
+			var root = "http://www.hsfeng.cn/scene/";
+			$scope.upload = function() {
+				var imgUrl = cropper.getCroppedCanvas().toDataURL("image/png");
+				var img = imgUrl.substr(imgUrl.indexOf(",") + 1);
+				$http({
+					method: "post",
+					url: root + "file/upload.html",
+					data: {
+						v: "1.0",
+						img: img,
+						type: type
+					},
+					headers: {"Content-Type": "application/x-www-form-urlencoded"},
+					transformRequest: function(obj) {
+						var str = [];
+						for(var p in obj) {
+							str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+						}
+						return str.join("&");
+					}
+				}).then(function successCallback(response) {
+					if(response.data==1){
+						mui.back();
+					}
+				});
+			}
+			
 			$scope.setRation = function(index) {
-				cropper.setAspectRatio(value[index]);
+				cropper.setAspectRatio(value[index]); //修改比例
 				var menu = document.body.querySelectorAll(".ration .swiper-slide");
 				for(var i = 0; i < menu.length; i++) {
 					if(menu[i].classList.contains("check")) {
@@ -161,12 +191,6 @@
 					}
 				}
 				menu[index].classList.add("check");
-			}
-
-			//完成截取
-			$scope.upload = function() {
-				var imgUrl = cropper.getCroppedCanvas().toDataURL();
-				console.log(imgUrl);
 			}
 		});
 	</script>

@@ -26,7 +26,10 @@ ul {
 }
 
 .mui-icon-closeempty{
-	float: right;
+	display: inline;
+	position: absolute;
+	z-index: 5;
+	right: 0px;
 	color: #FFFFFF;
 }
 
@@ -94,7 +97,7 @@ ul {
 }
 
 .edit-area li {
-	width: auto;
+	width: 30%;
 	list-style: none !important;
 	position: absolute;
 	line-height: 1;
@@ -103,6 +106,7 @@ ul {
 
 .edit-area .img {
 	width: 100%;
+	height: 100%;
 }
 
 .edit-area .text {

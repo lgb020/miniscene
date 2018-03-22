@@ -1,47 +1,68 @@
-mui.init({
-	pullRefresh: {
-		container: "#online",
-		up: {
-			height: 50,
-			auto: true,
-			contentrefresh: "正在加载...",
-			contentnomore: "没有更多数据了",
-			callback: moreInfo
+var music = angular.module("music", []);
+music.controller("info", function($scope, $http) {
+	//上拉加载
+	mui.init({
+		pullRefresh: {
+			container: "#online",
+			up: {
+				height: 50,
+				contentrefresh: "正在加载...",
+				contentnomore: "没有更多数据了",
+				callback: moreInfo
+			}
 		}
+	});
+	
+	var root = "http://www.hsfeng.cn/scene/";
+	var page = 1; //当前页
+	var count = 1; //总页数
+
+	//页面初始化
+	mui.plusReady(function() {
+		init_info(1);
+		setTimeout(function() {
+			musicLocation();
+		}, 600);
+	});
+
+	var init_info = function(page) {
+		var info = document.body.querySelector(".online");
+		$http({
+			method: "GET",
+			url: root + "music/info.html",
+			params: {
+				v: "1.0",
+				page: page
+			}
+		}).then(function successCallback(response) {
+			for(var i = 0; i < response.data.length; i++) {
+				var li = document.createElement("li");
+				li.className = "mui-table-view-cell";
+				li.innerHTML = "<span class='mui-pull-left title'>" + response.data[i].name + "</span>" +
+					"<span class='mui-pull-right length'>" + response.data[i].length + "</span>" +
+					"<input type='hidden' value='" + response.data[i].url + "'/>";
+				info.appendChild(li);
+			}
+		});
+	}
+
+	//查询总页数
+	$http({
+		method: "GET",
+		url: root + "music/count.html",
+		params: {v: "1.0"}
+	}).then(function successCallback(response) {
+		count = response.data;
+	});
+
+	function moreInfo() {
+		setTimeout(function() {
+			++page;
+			mui("#online").pullRefresh().endPullup(page >= count);
+			init_info(page);
+		}, 2000);
 	}
 });
-
-/*获取传递过来的用户名和模板id*/
-mui.plusReady(function() {
-	var self = plus.webview.currentWebview();
-	/*初始化数据*/
-	init_info();
-	setTimeout(function() {
-		musicLocation();
-	},600);
-});
-
-/*获取更多的音乐信息*/
-var page = 1;
-var count = 5;
-function moreInfo() {
-	setTimeout(function() {
-		mui("#online").pullRefresh().endPullup(page>count);
-		init_info();
-	}, 2000);
-}
-
-function init_info() {
-	var info = document.body.querySelector(".online");
-	for(var i = 0; i < 10; i++) {
-		var li = document.createElement("li");
-		li.className = "mui-table-view-cell";
-		li.innerHTML = "<span class='mui-pull-left title'>游玩好心情放松日系配乐</span>" +
-			"<span class='mui-pull-right length'>01:46</span>" +
-			"<input type='hidden' value='http://pic.ibaotu.com/00/34/92/50G888piC4XR.mp3'/>";
-		info.appendChild(li);
-	}
-}
 
 /*点击音乐播放*/
 mui(".mui-table-view").on("tap", ".mui-table-view-cell", function() {
@@ -86,9 +107,9 @@ function musicLocation() {
 				var music_path = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DATA));
 				var li = document.createElement("li");
 				li.className = "mui-table-view-cell";
-				li.innerHTML = "<span class='mui-pull-left title'>"+music_name+"</span>" +
-					"<span class='mui-pull-right singer'>"+music_singer+"</span>" +
-					"<input type='hidden' value='"+music_path+"'/>";
+				li.innerHTML = "<span class='mui-pull-left title'>" + music_name + "</span>" +
+					"<span class='mui-pull-right singer'>" + music_singer + "</span>" +
+					"<input type='hidden' value='" + music_path + "'/>";
 				location.appendChild(li);
 			}
 		}
@@ -99,7 +120,7 @@ function musicLocation() {
 //搜索
 document.getElementById("search").addEventListener("tap", function() {
 	mui.openWindow({
-		id:"mSearch",
+		id: "mSearch",
 		url: "./search.html",
 		show: {
 			aniShow: "pop-in"
@@ -113,11 +134,11 @@ menu.addEventListener("tap", function() {
 	var online = document.getElementById("online");
 	var location = document.getElementById("location");
 	var content = menu.innerHTML;
-	if(content=="本地"){
+	if(content == "本地") {
 		online.style.display = "none";
 		location.style.display = "block";
 		menu.innerHTML = "在线";
-	}else{
+	} else {
 		online.style.display = "block";
 		location.style.display = "none";
 		menu.innerHTML = "本地";

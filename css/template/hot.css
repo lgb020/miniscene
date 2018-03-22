@@ -35,11 +35,6 @@
 	height: auto;
 }
 
-.list{
-	width: 100%;
-	height: auto;
-}
-
 .info .cover {
 	width: 30%;
 	height: auto;
@@ -48,10 +43,6 @@
 }
 
 .info .center {
-	margin-left: 4%;
-}
-
-.info .add {
 	margin-left: 5%;
 }
 

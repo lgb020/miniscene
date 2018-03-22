@@ -45,8 +45,8 @@ text.controller("add", function($scope) {
 
 	$scope.fontArray = new Array("12", "13", "14", "16", "18", "20", "24", "28", "32", "48", "64");
 	$scope.colorArray = new Array("#FFFFFF", "#FFFFE0", "#FFFACD", "#F5DEB3", "#FFE4B5", "#DEB887", "#CD853F", "#FFA07A", "#FF7F50", "#FF6347", "#FF4500", "#FA8072", "#FFB6C1", "#FFC0CB", "#F08080", "#CD5C5C", "#FF0000", "#EEE8AA", "#F0E68C", "#DAA520", "#FFA500", "#FF8C00", "#F4A460", "#8B4513", "#87CEEB", "#00BFFF", "#4682B4", "#7B68EE", "#483D8B", "#0000FF", "#00008B", "#DDA0DD", "#EE82EE", "#FF00FF", "#8B008B", "#800080", "#DCDCDC", "#C0C0C0", "#A9A9A9", "#808080", "#000000");
-	$scope.animateArray = new Array("无动画", "弹入", "左弹入", "右弹入", "上弹入", "下弹入", "淡入", "上淡入", "下淡入", "左淡入", "右淡入", "淡出", "翻转", "水平翻", "垂直翻", "旋转", "左旋入", "右旋入", "下滑入", "上滑入", "左滑入", "右滑入", "放大");
-	$scope.aniValue = new Array("none", "bounceIn", "bounceInLeft", "bounceInRight", "bounceInDown", "bounceInUp", "fadeIn", "fadeInDown", "fadeInUp", "fadeInLeft", "fadeInRight", "fadeOut", "flip", "flipInX", "flipInY", "rotateIn", "rotateInDownLeft", "rotateInDownRight", "slideInUp", "slideInDown", "slideInLeft", "slideInRight", "zoomIn");
+	$scope.animateArray = new Array("无动画","淡入", "弹入", "左弹入", "右弹入", "上弹入", "下弹入", "上淡入", "下淡入", "左淡入", "右淡入", "淡出", "翻转", "水平翻", "垂直翻", "旋转", "左旋入", "右旋入", "下滑入", "上滑入", "左滑入", "右滑入", "放大");
+	$scope.aniValue = new Array("none","fadeIn", "bounceIn", "bounceInLeft", "bounceInRight", "bounceInDown", "bounceInUp", "fadeInDown", "fadeInUp", "fadeInLeft", "fadeInRight", "fadeOut", "flip", "flipInX", "flipInY", "rotateIn", "rotateInDownLeft", "rotateInDownRight", "slideInUp", "slideInDown", "slideInLeft", "slideInRight", "zoomIn");
 
 	//设置字体大小
 	$scope.setSize = function(index) {
@@ -126,6 +126,10 @@ text.controller("add", function($scope) {
 		$scope.pageIndex = event.detail.pageIndex; //页面下标
 		$scope.sIndex = event.detail.index; //素材下标
 		$scope.value = event.detail.value; //文本值
+		$scope.width = event.detail.width;
+		$scope.height = event.detail.height;
+		$scope.top = event.detail.top;
+		$scope.left = event.detail.left;
 		$scope.fontSize = event.detail.fontSize; //大小
 		$scope.fontColor = event.detail.color; //颜色
 		$scope.fontAlign = event.detail.align; //位置
@@ -214,6 +218,10 @@ text.controller("add", function($scope) {
 				pageIndex: $scope.pageIndex,
 				sIndex: $scope.sIndex,
 				value: value,
+				width: $scope.width,
+				height: $scope.height,
+				top: $scope.top,
+				left: $scope.left,
 				fontSize: fontSize,
 				color: color,
 				align: align,
@@ -234,10 +242,10 @@ var initFont = function() {
 	initSize[3].classList.add("check");
 }
 
-//初始化动画,默认无动画
+//初始化动画,默认淡入
 var initAnimate = function() {
 	var aOption = document.body.querySelectorAll(".animate .swiper-slide");
-	aOption[0].classList.add("check");
+	aOption[1].classList.add("check");
 }
 
 //滑块

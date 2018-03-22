@@ -8,27 +8,29 @@
 		<link rel="stylesheet" href="../css/mui.min.css" />
 		<link rel="stylesheet" href="../css/iconfont.min.css" />
 		<link rel="stylesheet" href="../css/about/set-templ.css" />
+		<script type="text/javascript" src="../js/angular/angular.min.js"></script>
 	</head>
 
-	<body>
+	<body ng-app="scene" ng-controller="setting">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">设置</h1>
-			<a class="complete mui-pull-right">完成</a>
+			<a class="complete mui-pull-right" id="update">完成</a>
 		</header>
 		<div class="mui-content">
 			<div class="title">
-				<input type="text" value="" placeholder="场景标题" />
-				<textarea rows="5" placeholder="场景描述"></textarea>
+				<input type="text" value="{{title}}" placeholder="场景标题" id="title"/>
+				<textarea rows="5" placeholder="场景描述" id="describes">{{describes}}</textarea>
 			</div>
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell" id="back-music">
 					<a class="mui-navigate-right">
 						背景音乐
-						<span class="current">Dream It Possible</span>
+						<span class="current">{{mTitle}}</span>
 					</a>
 				</li>
 			</ul>
+			<input type="hidden" value="{{sceneId}}" id="sceneId"/>
 		</div>
 		<script type="text/javascript" src="../js/mui.min.js"></script>
 		<script type="text/javascript" src="../js/about/set-templ.js"></script>

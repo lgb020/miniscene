@@ -8,9 +8,10 @@
 		<link rel="stylesheet" href="../css/mui.min.css" />
 		<link rel="stylesheet" href="../css/iconfont.min.css" />
 		<link rel="stylesheet" href="../css/about/templ.css" />
+		<script type="text/javascript" src="../js/angular/angular.min.js"></script>
 	</head>
 
-	<body>
+	<body ng-app="scene" ng-controller="templ">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">我的模板</h1>
@@ -22,95 +23,77 @@
 			</div>
 			<div id="original" class="mui-control-content mui-active">
 				<ul id="original-list" class="mui-table-view">
-					<li class="mui-table-view-cell">
+					<li class="mui-table-view-cell" ng-repeat="info in original track by $index">
 						<div class="mui-slider-right mui-disabled">
-							<a class="mui-btn mui-btn-yellow">分享</a>
-							<a class="mui-btn mui-btn-grey" onclick="setting(1,true)">管理</a>
+							<a class="mui-btn mui-btn-yellow" ng-click="share(info.id)">分享</a>
+							<a class="mui-btn mui-btn-grey" ng-click="setting(info.id,true)">管理</a>
 						</div>
-						<div class="mui-slider-handle mui-table" id="elem1">
-							<img class="mui-pull-left" src="../img/cover.jpg">
+						<i class="iconfont icon-jiaobiao" ng-if="info.isIssue==1"></i>
+						<div class="mui-slider-handle mui-table" id="elem{{info.id}}">
+							<img class="mui-pull-left" src="{{info.cover}}">
 							<div class="describes">
-								<span class="title">高端新年通用祝福模板</span>
-								<span class="mui-pull-right times">2018-01-08</span>
+								<span class="title">{{info.title}}</span>
+								<span class="mui-pull-right times">{{info.sTimes}}</span>
 								<span class="line"></span>
-								<span class="iconfont icon-29"> 119</span>
-								<span class="iconfont icon-shuju"> 15</span>
-							</div>
-						</div>
-					</li>
-					<li class="mui-table-view-cell">
-						<div class="mui-slider-right mui-disabled">
-							<a class="mui-btn mui-btn-yellow">分享</a>
-							<a class="mui-btn mui-btn-grey" onclick="setting(2,true)">管理</a>
-						</div>
-						<div class="mui-slider-handle mui-table" id="elem2">
-							<img class="mui-pull-left" src="../img/cover.jpg">
-							<div class="describes">
-								<span class="title">高端新年通用祝福模板</span>
-								<span class="mui-pull-right times">2018-01-08</span>
-								<span class="line"></span>
-								<span class="iconfont icon-29"> 52</span>
-								<span class="iconfont icon-shuju"> 15</span>
+								<span class="iconfont icon-29"> {{info.counts}}</span>
 							</div>
 						</div>
 					</li>
 				</ul>
+				<div class="notice dispress" id="notice">
+					<span><i class="iconfont icon-zanwutongzhi"></i></span>
+					<span class="title">没有场景，快去创作吧</span>
+				</div>
 			</div>
 			<div id="exchange" class="mui-control-content">
 				<ul id="exchange-list" class="mui-table-view">
-					<li class="mui-table-view-cell">
+					<li class="mui-table-view-cell" ng-repeat="info in exchange track by $index">
 						<div class="mui-slider-right mui-disabled">
-							<a class="mui-btn mui-btn-yellow">分享</a>
-							<a class="mui-btn mui-btn-grey" onclick="setting(3,false)">管理</a>
+							<a class="mui-btn mui-btn-yellow" ng-click="share(info.id)">分享</a>
+							<a class="mui-btn mui-btn-grey" ng-click="setting(info.id,false)">管理</a>
 						</div>
-						<div class="mui-slider-handle mui-table" id="elem3">
-							<img class="mui-pull-left" src="../img/cover.jpg">
+						<div class="mui-slider-handle mui-table" id="elem{{info.id}}">
+							<img class="mui-pull-left" src="{{info.cover}}">
 							<div class="describes">
-								<span class="title">高端新年通用祝福模板</span>
-								<span class="mui-pull-right times">2018-01-08</span>
+								<span class="title">{{info.title}}</span>
+								<span class="mui-pull-right times">{{info.sTimes}}</span>
 								<span class="line"></span>
-								<span class="iconfont icon-29"> 119</span>
-								<span class="iconfont icon-shuju"> 15</span>
-							</div>
-						</div>
-					</li>
-					<li class="mui-table-view-cell">
-						<div class="mui-slider-right mui-disabled">
-							<a class="mui-btn mui-btn-yellow">分享</a>
-							<a class="mui-btn mui-btn-grey" onclick="setting(4,false)">管理</a>
-						</div>
-						<div class="mui-slider-handle mui-table" id="elem4">
-							<img class="mui-pull-left" src="../img/cover.jpg">
-							<div class="describes">
-								<span class="title">高端新年通用祝福模板</span>
-								<span class="mui-pull-right times">2018-01-08</span>
-								<span class="line"></span>
-								<span class="iconfont icon-29"> 119</span>
-								<span class="iconfont icon-shuju"> 15</span>
-							</div>
-						</div>
-					</li>
-					<li class="mui-table-view-cell">
-						<div class="mui-slider-right mui-disabled">
-							<a class="mui-btn mui-btn-yellow">分享</a>
-							<a class="mui-btn mui-btn-grey" onclick="setting(5,false)">管理</a>
-						</div>
-						<div class="mui-slider-handle mui-table" id="elem5">
-							<img class="mui-pull-left" src="../img/cover.jpg">
-							<div class="describes">
-								<span class="title">高端新年通用祝福模板</span>
-								<span class="mui-pull-right times">2018-01-08</span>
-								<span class="line"></span>
-								<span class="iconfont icon-29"> 119</span>
-								<span class="iconfont icon-shuju"> 15</span>
+								<span class="iconfont icon-29"> {{info.counts}}</span>
 							</div>
 						</div>
 					</li>
 				</ul>
+				<div class="notice dispress" id="o-notice">
+					<span><i class="iconfont icon-zanwutongzhi"></i></span>
+					<span class="title">没有场景，快去创作吧</span>
+				</div>
 			</div>
 			<div id="setting" class="mui-popover mui-popover-bottom mui-popover-action ">
-				<ul class="mui-table-view mui-grid-view mui-grid-9" id="tab-list">
-					
+				<ul class="mui-table-view mui-grid-view mui-grid-9">
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="javascript:void(0)" ng-click="putaway()">
+							<span class="iconfont icon-dingdan"></span>
+							<div class="mui-media-body">上架</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="javascript:void(0)" ng-click="editInfo()">
+							<span class="iconfont icon-review"></span>
+							<div class="mui-media-body">编辑</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="javascript:void(0)" ng-click="delInfo()">
+							<span class="iconfont icon-delete"></span>
+							<div class="mui-media-body">删除</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="javascript:void(0)" ng-click="setInfo()">
+							<span class="iconfont icon-set"></span>
+							<div class="mui-media-body">设置</div>
+						</a>
+					</li>
 				</ul>
 				<ul class="mui-table-view cancel">
 					<li class="mui-table-view-cell">
@@ -118,7 +101,70 @@
 					</li>
 				</ul>
 			</div>
+			<div id="eSetting" class="mui-popover mui-popover-bottom mui-popover-action ">
+				<ul class="mui-table-view mui-grid-view mui-grid-9">
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="javascript:void(0)" ng-click="editInfo()">
+							<span class="iconfont icon-review"></span>
+							<div class="mui-media-body">编辑</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="javascript:void(0)" ng-click="delInfo()">
+							<span class="iconfont icon-delete"></span>
+							<div class="mui-media-body">删除</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="javascript:void(0)" ng-click="setInfo()">
+							<span class="iconfont icon-set"></span>
+							<div class="mui-media-body">设置</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view cancel">
+					<li class="mui-table-view-cell">
+						<a href="#setting">取消</a>
+					</li>
+				</ul>
+			</div>
+			<!--分享-->
+			<div id="share" class="mui-popover mui-popover-bottom mui-popover-action">
+				<ul class="mui-table-view mui-grid-view mui-grid-9">
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="javascript:void(0)" ng-click="shareway(0)">
+							<span class="iconfont icon-weixin"></span>
+							<div class="mui-media-body">微信</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3">
+						<a href="javascript:void(0)" ng-click="shareway(1)">
+							<span class="iconfont icon-cycle"></span>
+							<div class="mui-media-body">朋友圈</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view cancel">
+					<li class="mui-table-view-cell">
+						<a href="#share">取消</a>
+					</li>
+				</ul>
+			</div>
 		</div>
+		</div>
+		<input type="hidden" value="{{editId}}" id="editId" />
+		<div class="mui-popup mui-popup-in" style="display: none;" id="item">
+			<div class="mui-popup-inner">
+				<div class="mui-popup-text">
+					<input type="number" placeholder="不输入则为免费" value="0" id="jifen" />
+				</div>
+			</div>
+			<div class="mui-popup-buttons">
+				<span class="mui-popup-button" ng-click="cancel()">取消</span>
+				<span class="mui-popup-button mui-popup-button-bold" ng-click="submit()">确认</span>
+			</div>
+		</div>
+		<div class="mui-popup-backdrop mui-active" style="display: none;" id="shade"></div>
 		<script type="text/javascript" src="../js/mui.min.js"></script>
 		<script type="text/javascript" src="../js/about/templ.js"></script>
 	</body>

@@ -8,30 +8,17 @@
 		<link rel="stylesheet" href="../css/mui.min.css" />
 		<link rel="stylesheet" href="../css/iconfont.min.css" />
 		<link rel="stylesheet" href="../css/about/member.css" />
+		<script type="text/javascript" src="../js/angular/angular.min.js"></script>
 	</head>
 
-	<body>
+	<body ng-app="scene" ng-controller="member">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">会员信息</h1>
 		</header>
 		<div class="mui-content">
 			<ul class="mui-table-view mui-table-view-chevron">
-				<li class="mui-table-view-cell mui-media">
-					<img class="mui-media-object mui-pull-left head-img" src="../img/photo.jpg">
-					<div class="mui-media-body">
-						<p class="name">
-							<span>低调的旋律</span>
-							<!--会员点亮皇冠-->
-							<!--<span><i class="iconfont icon-huiyuan1 common"></i></span>-->
-							<span><i class="iconfont icon-huiyuan1 isIntegral"></i></span>
-						</p>
-						<p class="mui-ellipsis">
-							<span class="integral">积分：200</span>
-							<span class="times">次数：2/30</span>
-						</p>
-					</div>
-					<button type="button" class="mui-btn mui-btn-primary recharge" id="recharge">充值</button>
+				<li class="mui-table-view-cell mui-media" id="info">
 				</li>
 			</ul>
 			<ul class="mui-table-view exchange">
@@ -41,29 +28,7 @@
 						<span class="small-title">兑换记录</span>
 					</a>
 					<div class="mui-collapse-content">
-						<article>
-							<section>
-								<span class="point-time point-yellow"></span>
-								<aside>
-									<p class="time">2018-01-09</p>
-									<p class="brief">使用3积分兑换了模板</p>
-								</aside>
-							</section>
-							<section>
-								<span class="point-time point-yellow"></span>
-								<aside>
-									<p class="time">2018-01-09</p>
-									<p class="brief">模板"从你的全世界路过"被下载，赚取3积分</p>
-								</aside>
-							</section>
-							<section>
-								<span class="point-time point-yellow"></span>
-								<aside>
-									<p class="time">2018-01-08</p>
-									<p class="brief">使用8积分兑换了模板</p>
-								</aside>
-							</section>
-						</article>
+						<article id="exchange"></article>
 					</div>
 				</li>
 			</ul>
@@ -74,46 +39,16 @@
 						<span class="small-title">充值记录</span>
 					</a>
 					<div class="mui-collapse-content">
-						<article>
-							<section>
-								<span class="point-time point-yellow"></span>
-								<aside>
-									<p class="time">2018-01-09</p>
-									<p class="brief">充值了10元，兑换了100积分</p>
-								</aside>
-							</section>
-							<section>
-								<span class="point-time point-yellow"></span>
-								<aside>
-									<p class="time">2018-01-09</p>
-									<p class="brief">充值了5元成为会员</p>
-								</aside>
-							</section>
-						</article>
+						<article id="charge"></article>
 					</div>
 				</li>
 			</ul>
 			<div class="remind">
-				<span>备注：会员每月有30次可免费使用平台模板，超过次数需消耗积分。</span>
+				<span>备注：注册即为平台会员，会员每月有10次可免费使用平台模板，超过次数需消耗积分。</span>
 			</div>
 		</div>
 		<script type="text/javascript" src="../js/mui.min.js"></script>
-		<script type="text/javascript">
-			mui.init();
-
-			mui.plusReady(function() {
-				//获取传递过来的账号
-				var self = plus.webview.currentWebview();
-				document.getElementById("recharge").addEventListener("tap", function() {
-					mui.openWindow({
-						url: "./recharge.html",
-						extras: {
-							account: self.account
-						}
-					});
-				});
-			});
-		</script>
+		<script type="text/javascript" src="../js/about/member.js"></script>
 	</body>
 
 </html>

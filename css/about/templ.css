@@ -38,7 +38,7 @@
 }
 
 .mui-table-view-cell .title {
-	font-size: 1rem;
+	font-size: 0.9rem;
 	color: #333;
 	white-space: nowrap;
 	text-overflow: ellipsis;
@@ -105,8 +105,16 @@
 
 
 /*选项卡*/
-#setting .iconfont{
+#setting .iconfont,#eSetting .iconfont,#share .iconfont{
 	font-size: 1.2rem;
+}
+
+#share .icon-weixin{
+	color: rgb(10, 188, 100);
+}
+
+#share .icon-cycle{
+	color: rgb(136, 90, 56);
 }
 
 .mui-popover.mui-popover-action .mui-table-view {
@@ -157,4 +165,43 @@
 	margin:-15px -21px 0px -16px;
 	font-size: 0.9rem;
 	color: #f68531;
+}
+
+.notice{
+	text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    margin-top:50%;
+}
+.notice i{
+	font-size: 4rem;
+	color: #8F8F94;
+}
+
+.notice span{
+	width: 100%;
+	display: block;
+}
+
+.notice .title{
+	margin-top: -10px;
+	font-size: 0.8rem;
+	color: #8F8F94;
+}
+
+.mui-popup-inner,
+.mui-popup-button {
+	font-size: 0.9rem;
+}
+
+.mui-popup input[type=number]{
+	margin-bottom: 0px;
+	font-size: 0.9rem;
+	border: none;
+}
+
+.mui-popup-inner{
+	padding: 8px 0px;
 }

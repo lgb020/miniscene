@@ -12,120 +12,25 @@
 		<script type="text/javascript" src="../js/angular/angular.min.js"></script>
 	</head>
 	<body>
-		<div class="mui-content" ng-app="scene" ng-controller="ctrl">
+		<div class="mui-content" ng-app="scene" ng-controller="recommend">
 			<div class="swiper-container">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<img src="../img/banner1.jpg"/>
-					</div>
-					<div class="swiper-slide">
-						<img src="../img/banner2.jpg"/>
+					<div class="swiper-slide" ng-repeat="info in adv track by $index">
+						<img src="{{info.img}}"/>
 					</div>
 				</div>
 				<div class="swiper-pagination"></div>
 			</div>
 			<div class="title">
 				<span class="mui-pull-left">精选模板</span>
-				<span class="mui-pull-right"><i class="mui-icon mui-icon-loop"></i> 换一批</span>
+				<span class="mui-pull-right" ng-click="refresh()"><i class="mui-icon mui-icon-loop"></i> 换一批</span>
 			</div>
-			<div class="info">
-				<div class="cover">
-					<img src="../img/cover.jpg" />
-					<span class="describes">2018新年派对邀请函</span>
-					<span class="integral"><i class="iconfont icon-jifen"></i> 9</span>
-				</div>
-				<div class="cover center">
-					<img src="../img/cover.jpg" />
-					<span class="describes">2018新年派对邀请函</span>
-					<span class="integral"><i class="iconfont icon-jifen"></i> 18</span>
-				</div>
-				<div class="cover right">
-					<img src="../img/cover.jpg" />
-					<span class="describes">2018新年派对邀请函</span>
-					<span class="integral"><i class="iconfont icon-jifen"></i> 3</span>
-				</div>
-				<div class="cover">
-					<img src="../img/cover.jpg" />
-					<span class="describes">2018新年派对邀请函</span>
-					<span class="integral"><i class="iconfont icon-jifen"></i> 9</span>
-				</div>
-				<div class="cover center">
-					<img src="../img/cover.jpg" />
-					<span class="describes">2018新年派对邀请函</span>
-					<span class="integral"><i class="iconfont icon-jifen"></i> 18</span>
-				</div>
-				<div class="cover right">
-					<img src="../img/cover.jpg" />
-					<span class="describes">2018新年派对邀请函</span>
-					<span class="integral"><i class="iconfont icon-jifen"></i> 3</span>
-				</div>
-			</div>
+			<div class="info start"></div>
 			<div class="title">
 				<span class="mui-pull-left">最新推荐</span>
-				<span class="mui-pull-right">全部</span>
+				<span class="mui-pull-right"><i class="iconfont icon-more"></i></span>
 			</div>
-			<div class="info">
-				<div class="cover">
-					<img src="../img/cover.jpg" />
-					<span class="describes">2018新年派对邀请函</span>
-					<span class="integral"><i class="iconfont icon-jifen"></i> 9</span>
-				</div>
-				<div class="cover center">
-					<img src="../img/cover.jpg" />
-					<span class="describes">2018新年派对邀请函</span>
-					<span class="integral"><i class="iconfont icon-jifen"></i> 18</span>
-				</div>
-				<div class="cover right">
-					<img src="../img/cover.jpg" />
-					<span class="describes">2018新年派对邀请函</span>
-					<span class="integral"><i class="iconfont icon-jifen"></i> 3</span>
-				</div>
-				<div class="cover">
-					<img src="../img/cover.jpg" />
-					<span class="describes">2018新年派对邀请函</span>
-					<span class="integral"><i class="iconfont icon-jifen"></i> 9</span>
-				</div>
-				<div class="cover center">
-					<img src="../img/cover.jpg" />
-					<span class="describes">2018新年派对邀请函</span>
-					<span class="integral"><i class="iconfont icon-jifen"></i> 18</span>
-				</div>
-				<div class="cover right">
-					<img src="../img/cover.jpg" />
-					<span class="describes">2018新年派对邀请函</span>
-					<span class="integral"><i class="iconfont icon-jifen"></i> 3</span>
-				</div>
-				<div class="cover">
-					<img src="../img/cover.jpg" />
-					<span class="describes">2018新年派对邀请函</span>
-					<span class="integral"><i class="iconfont icon-jifen"></i> 9</span>
-				</div>
-				<div class="cover center">
-					<img src="../img/cover.jpg" />
-					<span class="describes">2018新年派对邀请函</span>
-					<span class="integral"><i class="iconfont icon-jifen"></i> 18</span>
-				</div>
-				<div class="cover right">
-					<img src="../img/cover.jpg" />
-					<span class="describes">2018新年派对邀请函</span>
-					<span class="integral"><i class="iconfont icon-jifen"></i> 3</span>
-				</div>
-				<div class="cover">
-					<img src="../img/cover.jpg" />
-					<span class="describes">2018新年派对邀请函</span>
-					<span class="integral"><i class="iconfont icon-jifen"></i> 9</span>
-				</div>
-				<div class="cover center">
-					<img src="../img/cover.jpg" />
-					<span class="describes">2018新年派对邀请函</span>
-					<span class="integral"><i class="iconfont icon-jifen"></i> 18</span>
-				</div>
-				<div class="cover right">
-					<img src="../img/cover.jpg" />
-					<span class="describes">2018新年派对邀请函</span>
-					<span class="integral"><i class="iconfont icon-jifen"></i> 3</span>
-				</div>
-			</div>
+			<div class="info news"></div>
 			<div class="store" id="store">
 				设计小店
 			</div>

@@ -17,6 +17,7 @@
 	width: 65px;
 	height: 65px;
 	border-radius: 50%;
+	border: 2px solid #fff;
 }
 
 .photo .name{
@@ -94,28 +95,8 @@
 	font-size: 2rem;
 }
 
-.icon-wodexiaoxi{
-	color: rgb(50, 185, 170);
-}
-
-.icon-rili{
-	color: rgb(136, 90, 56);
-}
-
-.icon-iconfontdianpu{
+.iconfont{
 	color: #f68531;
-}
-
-.icon-wodekehu{
-	color: rgb(255, 202, 87);
-}
-
-.icon-wode{
-	color: rgb(221, 85, 58);
-}
-
-.icon-huiyuan1{
-	color: rgb(187, 166, 109);
 }
 
 .mui-grid-view.mui-grid-9 .mui-table-view-cell.mui-active{

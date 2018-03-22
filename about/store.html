@@ -8,45 +8,17 @@
 		<link rel="stylesheet" href="../css/mui.min.css" />
 		<link rel="stylesheet" href="../css/iconfont.min.css" />
 		<link rel="stylesheet" href="../css/about/store.css" />
+		<script type="text/javascript" src="../js/angular/angular.min.js"></script>
 	</head>
 
-	<body>
+	<body ng-app="scene" ng-controller="store">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">我的小店</h1>
 		</header>
 		<div class="mui-content">
 			<ul class="mui-table-view" id="info">
-				<li class="mui-table-view-cell" id="1">
-					<div class="mui-slider-right mui-disabled">
-						<a class="mui-btn mui-btn-red">下架</a>
-					</div>
-					<div class="mui-slider-handle mui-table ">
-						<img class="mui-pull-left" src="../img/cover.jpg">
-						<div class="describes">
-							<span class="title">高端新年通用祝福模板</span>
-							<span class="mui-pull-right times">2018-01-08</span>
-							<span class="line"></span>
-							<span class="iconfont icon-jifen"> 9</span>
-							<span class="iconfont icon-gouxuan"> 15</span>
-						</div>
-					</div>
-				</li>
-				<li class="mui-table-view-cell" id="2">
-					<div class="mui-slider-right mui-disabled">
-						<a class="mui-btn mui-btn-red">下架</a>
-					</div>
-					<div class="mui-slider-handle mui-table ">
-						<img class="mui-pull-left" src="../img/cover.jpg">
-						<div class="describes">
-							<span class="title">高端新年通用祝福模板</span>
-							<span class="mui-pull-right times">2018-01-08</span>
-							<span class="line"></span>
-							<span class="iconfont icon-jifen"> 3</span>
-							<span class="iconfont icon-gouxuan"> 200</span>
-						</div>
-					</div>
-				</li>
+				
 			</ul>
 			<div class="notice dispress" id="notice">
 				<span><i class="iconfont icon-iconfontdianpu"></i></span>

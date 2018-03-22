@@ -23,12 +23,14 @@
 				<div class="swiper-container">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide" ng-repeat="pages in scene track by $index" id="page{{$index}}">
-							<i class="mui-icon mui-icon-closeempty" ng-click="delPage()"></i>
-							<div class="page">
-								<div class="bg" style="background-image: url('{{pages.bgUrl}}');background-color: {{pages.color}};">
+							<div class="page" id="bg{{$index}}">
+								<div class="bg" style="background-image: url({{pages.bgUrl}});background-color: {{pages.color}};">
+									<i class="mui-icon mui-icon-closeempty" ng-click="delPage()"></i>
 									<ul class="edit-area" id="{{pages.areaId}}">
-										<li ng-repeat="list in pages track by $index" id="inside{{pages.areaId}}{{$index}}" class="{{list.className}}" style="{{list.liCss}}" ng-click="check(pages.areaId,$index)">
-											<span compile="list.content" style="{{list.divCss}}"></span>
+										<li ng-repeat="list in pages track by $index" id="inside{{pages.areaId}}{{$index}}" class="{{list.className}}" style="{{list.liCss}}" 
+											swiper-animate-effect="{{list.effect}}" swiper-animate-duration="{{list.duration}}" swiper-animate-delay="{{list.delay}}"
+											ng-click="check(pages.areaId,$index)">
+											<span ng-bind-html="list.content|to_draw" style="{{list.divCss}}"></span>
 											<div class="bar bar-top"></div>
 											<div class="bar bar-bottom"></div>
 											<div class="bar bar-left"></div>
@@ -46,7 +48,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="swiper-slide">
+						<div class="swiper-slide" id="refer">
 							<div class="add" ng-click="addPage()">
 								<span class="iconfont icon-tianjiatupian"></span>
 								<span class="toast">添加页面</span>
@@ -99,11 +101,11 @@
 		</div>
 		<div class="mui-popup-backdrop mui-active" style="display: none;" id="shade"></div>
 		<script type="text/javascript" src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/html2canvas.min.js"></script>
 		<script type="text/javascript" src="js/swiper-4.1.0.min.js"></script>
 		<script type="text/javascript" src="js/swiper.animate.min.js"></script>
 		<script type="text/javascript" src="js/hammer.min.js"></script>
 		<script type="text/javascript" src="js/scene/zoom.min.js"></script>
-		<script type="text/javascript" src="js/html2canvas.min.js"></script>
 		<script type="text/javascript" src="js/scene/issue.js"></script>
 	</body>
 

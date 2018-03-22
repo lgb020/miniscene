@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="scene" ng-controller="view">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>{{title}}</title>
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/swiper-4.1.0.min.css" />
+		<link rel="stylesheet" href="css/animate.min.css" />
+		<link rel="stylesheet" href="css/scene/view.css" />
+		<script type="text/javascript" src="js/angular/angular.min.js"></script>
+		<script type="text/javascript" src="http://pv.sohu.com/cityjson?ie=utf-8"></script> 
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">{{title}}</h1>
+		</header>
+		<div class="mui-content">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide" ng-repeat="pages in info track by $index">
+						<div class="page">
+							<div class="bg" style="background-image: url({{pages.bgUrl}});background-color: {{pages.color}};">
+								<ul class="view">
+									<li ng-repeat="list in pages track by $index" class="ani" style="{{list.liCss}}" 
+										swiper-animate-effect="{{list.effect}}" swiper-animate-duration="{{list.duration}}" swiper-animate-delay="{{list.delay}}">
+										<span ng-bind-html="list.content|to_draw" style="{{list.divCss}}"></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+			<div class="bgm-btn rotate">
+				<audio src="{{music}}" autoplay loop id="music"></audio>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="report">举报<i class="mui-icon mui-icon-arrowup"></i></div>
+			<div class="charge">{{charge}}</div>
+		</footer>
+		<div class="mui-popup mui-popup-in" style="display: none;" id="item">
+			<div class="mui-popup-inner">
+				<div class="mui-popup-text">
+					<input type="text" placeholder="请输入举报原因" id="reason" />
+				</div>
+			</div>
+			<div class="mui-popup-buttons">
+				<span class="mui-popup-button" ng-click="cancel()">取消</span>
+				<span class="mui-popup-button mui-popup-button-bold" ng-click="submit()">确认</span>
+			</div>
+		</div>
+		<div class="mui-popup-backdrop mui-active" style="display: none;" id="shade"></div>
+		<script type="text/javascript" src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/swiper-4.1.0.min.js"></script>
+		<script type="text/javascript" src="js/swiper.animate.min.js"></script>
+		<script type="text/javascript" src="js/scene/view.js"></script>
+	</body>
+
+</html>

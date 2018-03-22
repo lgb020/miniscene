@@ -152,13 +152,8 @@ input[type=text]{
 /*滑块*/
 .rang{
 	margin-top: 15px;
-	display: none;
 }
 
 .mui-input-row label{
 	padding: 11px 10px;
-}
-
-.mui-input-range .mui-tooltip{
-	display: none;
 }

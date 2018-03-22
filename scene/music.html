@@ -8,9 +8,10 @@
 		<link rel="stylesheet" href="../css/mui.min.css" />
 		<link rel="stylesheet" href="../css/iconfont.min.css" />
 		<link rel="stylesheet" href="../css/scene/music.css" />
+		<script type="text/javascript" src="../js/angular/angular.min.js"></script>
 	</head>
 
-	<body>
+	<body ng-app="scene" ng-controller="music">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">音乐库</h1>
@@ -30,6 +31,7 @@
 
 				</ul>
 			</div>
+			<input type="hidden" value="{{sceneId}}" id="sceneId"/>
 		</div>
 		<footer>
 			<audio id="music" src="http://pic.ibaotu.com/00/45/87/232888piCVbK.mp3" controls preload="none"></audio>

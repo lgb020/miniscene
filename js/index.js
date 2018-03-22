@@ -1,6 +1,6 @@
 mui.init({
 	preloadPages: [{
-		id: "bMusic",
+		id: "music",
 		url: "./music/back-music.html"
 	}],
 	preloadLimit: 5
@@ -13,7 +13,6 @@ mui.plusReady(function() {
 			id: "recommend",
 			url: "./template/recommend.html",
 			extras: {},
-
 		}, {
 			id: "hot",
 			url: "./template/hot.html",
@@ -41,21 +40,41 @@ mui.plusReady(function() {
 	});
 });
 
-//个人中心
-document.getElementById("about").addEventListener("tap", function() {
-	mui.openWindow({
-		id: "aboutUs",
-		url: "./about-us.html",
-		show: {
-			aniShow: "pop-in"
-		}
+var music = angular.module("scene", []);
+music.controller("init", function($scope, $http) {
+	var root = "http://www.hsfeng.cn/scene/";
+	document.getElementById("about").addEventListener("tap", function() {
+		$http({
+			method: "GET",
+			url: root + "user/auth.html",
+			params: {v: "1.0"}
+		}).then(function successCallback(response) {
+			//用户处于登录状态,跳转到个人中心,用户未登录，跳到登录页面
+			if(response.data == 1) {
+				mui.openWindow({
+					id: "aboutUs",
+					url: "./about-us.html",
+					show: {
+						aniShow: "pop-in"
+					}
+				});
+			} else {
+				mui.openWindow({
+					id: "login",
+					url: "./login.html",
+					show: {
+						aniShow: "pop-in"
+					}
+				});
+			}
+		});
 	});
 });
 
 //乐库
 document.getElementById("music").addEventListener("tap", function() {
 	mui.openWindow({
-		id: "bMusic",
+		id: "music",
 		show: {
 			aniShow: "pop-in"
 		}

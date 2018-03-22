@@ -11,16 +11,15 @@ var animate = new Swiper(".animate .swiper-container", {
 
 var text = angular.module("edit", []);
 text.controller("editImg", function($scope) {
-	$scope.animateArray = new Array("无动画", "弹入", "左弹入", "右弹入", "上弹入", "下弹入", "淡入", "上淡入", "下淡入", "左淡入", "右淡入", "淡出", "翻转", "水平翻", "垂直翻", "旋转", "左旋入", "右旋入", "下滑入", "上滑入", "左滑入", "右滑入", "放大");
-	$scope.aniValue = new Array("none", "bounceIn", "bounceInLeft", "bounceInRight", "bounceInDown", "bounceInUp", "fadeIn", "fadeInDown", "fadeInUp", "fadeInLeft", "fadeInRight", "fadeOut", "flip", "flipInX", "flipInY", "rotateIn", "rotateInDownLeft", "rotateInDownRight", "slideInUp", "slideInDown", "slideInLeft", "slideInRight", "zoomIn");
-	$scope.aEffect = "none animated"; //动画效果
-	$scope.aDuration = 1; //动画持续时间
+	$scope.animateArray = new Array("无动画","淡入", "弹入", "左弹入", "右弹入", "上弹入", "下弹入", "上淡入", "下淡入", "左淡入", "右淡入", "淡出", "翻转", "水平翻", "垂直翻", "旋转", "左旋入", "右旋入", "下滑入", "上滑入", "左滑入", "右滑入", "放大");
+	$scope.aniValue = new Array("none","fadeIn", "bounceIn", "bounceInLeft", "bounceInRight", "bounceInDown", "bounceInUp", "fadeInDown", "fadeInUp", "fadeInLeft", "fadeInRight", "fadeOut", "flip", "flipInX", "flipInY", "rotateIn", "rotateInDownLeft", "rotateInDownRight", "slideInUp", "slideInDown", "slideInLeft", "slideInRight", "zoomIn");
+	$scope.aEffect = "fadeIn"; //动画效果
+	$scope.aDuration = 0.5; //动画持续时间
 	$scope.aDelay = 0.5; //动画延迟时间
 	$scope.opacity = 0.8; //透明度
 	//设置图片动画
 	$scope.setAnimate = function(index) {
-		var value = $scope.aniValue[index] + " animated";
-		$scope.aEffect = value;
+		$scope.aEffect = $scope.aniValue[index];
 		var aOption = document.body.querySelectorAll(".animate .swiper-slide");
 		for(var i = 0; i < aOption.length; i++) {
 			if(aOption[i].classList.contains("check")) {
@@ -87,7 +86,6 @@ text.controller("editImg", function($scope) {
 	
 	//确定后返回编辑页面
 	mui("body").on("tap", ".ensure", function() {
-		console.log($scope.content+" "+$scope.opacity+" "+$scope.aEffect+" "+$scope.aDelay+" "+$scope.aDuration);
 		var view = plus.webview.getWebviewById("issue");
 		mui.fire(view, "editImg", {
 			pageIndex: $scope.pageIndex,

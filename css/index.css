@@ -41,13 +41,8 @@
 	
 }
 
-.mui-badge{
-	margin-left: -5px;
-	padding: 3px 3px;
-	background: red;
-}
-
 .mui-input-clear::-webkit-input-placeholder {
 	font-size: 0.9rem;
 	color: #b3b4b4;
 }
+

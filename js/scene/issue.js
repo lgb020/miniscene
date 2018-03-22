@@ -6,23 +6,14 @@ mui.init({
 		id: "addText",
 		url: "/scene/text.html"
 	}, {
-		id: "addImg",
-		url: "/scene/img.html"
-	}, {
-		id: "addBg",
-		url: "/scene/backg.html"
-	}, {
-		id: "addMusic",
-		url: "/scene/music.html"
-	}, {
 		id: "editImg",
 		url: "/scene/edit-img.html"
 	}],
-	preloadLimit: 10
+	preloadLimit: 5
 });
 
 var menu = new Swiper(".footer .swiper-container", {
-	slidesPerView: 5,
+	slidesPerView: 4,
 	watchOverflow: true
 });
 
@@ -42,12 +33,14 @@ var swiper = new Swiper(".panel .swiper-container", {
 
 var app = angular.module("scene", []);
 var status = "false"; //编辑状态默认为false
-app.controller("issue", function($scope) {
+app.controller("issue", function($scope, $http) {
 	/**
 	 * 构建页面对象数组
 	 * 一个页面为一个数组，存放当前页素材对象
 	 */
 	$scope.scene = new Array(); //场景
+	$scope.fromScene = 0; //父场景id
+	$scope.sceneId = 0; //场景id
 	var page; //单个页面,存放素材对象
 	var text; //文本素材对象
 
@@ -63,6 +56,7 @@ app.controller("issue", function($scope) {
 
 	//删除当前页
 	$scope.delPage = function() {
+		console.log("1");
 		var index = swiper.activeIndex; //当前页面
 		$scope.scene.splice(index, 1); //删除
 	}
@@ -99,10 +93,17 @@ app.controller("issue", function($scope) {
 			});
 		}
 	});
+	//操作区域宽度
+	var referWidth = document.getElementById("refer").offsetWidth;
+	var referHeight = document.getElementById("refer").offsetHeight;
 	window.addEventListener("getText", function(event) {
 		var pageIndex = event.detail.pageIndex;
 		var sIndex = event.detail.sIndex;
 		var value = event.detail.value;
+		var width = percent(parseInt(event.detail.width),referWidth);
+		var height = percent(parseInt(event.detail.height),referHeight);
+		var left = percent(parseInt(event.detail.left),referWidth);
+		var top = percent(parseInt(event.detail.top),referHeight);
 		var fontSize = event.detail.fontSize;
 		var color = event.detail.color;
 		var align = event.detail.align;
@@ -114,9 +115,12 @@ app.controller("issue", function($scope) {
 			var index = swiper.activeIndex;
 			if(index < $scope.scene.length) {
 				text.content = "<div class='text'>" + value + "</div>";
-				text.className = "swiper-no-swiping scene-text animated " + ani_name;
+				text.className = "swiper-no-swiping scene-text ani";
 				text.divCss = "font-size:" + fontSize + ";color:" + color + ";text-align:" + align + ";";
-				text.liCss = "animation-delay:" + ani_delay + ";animation-duration:" + ani_duration + ";";
+				text.liCss = "width:" + width + ";height:" + height + ";top:" + top + ";left:" + left + ";";
+				text.effect = ani_name;
+				text.duration = ani_duration;
+				text.delay = ani_delay;
 				if(pageIndex == -1 && sIndex == -1) {
 					$scope.scene[index].push(text);
 				} else {
@@ -134,6 +138,7 @@ app.controller("issue", function($scope) {
 		if(index < $scope.scene.length) {
 			mui.openWindow({
 				id: "addImg",
+				url: "/scene/img.html",
 				show: {
 					aniShow: "pop-in"
 				}
@@ -160,19 +165,22 @@ app.controller("issue", function($scope) {
 		var pageIndex = event.detail.pageIndex;
 		var sIndex = event.detail.sIndex;
 		var mImg = event.detail.content;
-		var width = event.detail.width;
-		var height = event.detail.height;
-		var top = event.detail.top;
-		var left = event.detail.left;
+		var width = percent(parseInt(event.detail.width),referWidth);
+		var height = percent(parseInt(event.detail.height),referHeight);
+		var left = percent(parseInt(event.detail.left),referWidth);
+		var top = percent(parseInt(event.detail.top),referHeight);
 		var opacity = parseFloat(event.detail.opacity);
 		var ani_name = event.detail.ani_name;
 		var ani_delay = event.detail.ani_delay;
 		var ani_duration = event.detail.ani_duration;
 		text = {};
 		text.content = "<img src='" + mImg + "' class='img' style='opacity:" + opacity + "'/>";
-		text.className = "swiper-no-swiping scene-img animated " + ani_name;
+		text.className = "swiper-no-swiping scene-img ani";
 		text.divCss = "";
-		text.liCss = "width:" + width + ";height:" + height + ";top:" + top + ";left:" + left + ";animation-delay:" + ani_delay + ";animation-duration:" + ani_duration + ";";
+		text.liCss = "width:" + width + ";height:" + height + ";top:" + top + ";left:" + left + ";";
+		text.effect = ani_name;
+		text.duration = ani_duration;
+		text.delay = ani_delay;
 		$scope.scene[pageIndex][sIndex] = text;
 		$scope.$apply(); //手动刷新
 		status = "true"; //编辑状态改为true
@@ -184,6 +192,7 @@ app.controller("issue", function($scope) {
 		if(index < $scope.scene.length) {
 			mui.openWindow({
 				id: "addBg",
+				url: "/scene/backg.html",
 				show: {
 					aniShow: "pop-in"
 				}
@@ -216,19 +225,6 @@ app.controller("issue", function($scope) {
 		}
 	});
 
-	//添加音乐
-	mui("body").on("tap", ".addMusic", function() {
-		var index = swiper.activeIndex;
-		if(index < $scope.scene.length) {
-			mui.openWindow({
-				id: "addMusic",
-				show: {
-					aniShow: "pop-in"
-				}
-			});
-		}
-	});
-
 	//修改素材传递参数
 	$scope.edit = function(pageId, index) {
 		var preantId = "inside" + pageId + index;
@@ -238,17 +234,25 @@ app.controller("issue", function($scope) {
 		if(result) {
 			var elem = preantElem.getElementsByTagName("div")[0];
 			var value = elem.innerText;
+			var width = getCss(preantElem, "width");
+			var height = getCss(preantElem, "height");
+			var top = getCss(preantElem, "top");
+			var left = getCss(preantElem, "left");
 			var fontSize = getCss(elem, "font-size");
 			var color = getCss(elem, "color");
 			var align = getCss(elem, "text-align");
-			var ani_delay = getCss(preantElem, "animation-delay");
-			var ani_duration = getCss(preantElem, "animation-duration");
-			var ani_name = getCss(preantElem, "animation-name");
+			var ani_delay = preantElem.getAttribute("swiper-animate-delay");
+			var ani_duration = preantElem.getAttribute("swiper-animate-duration");
+			var ani_name = preantElem.getAttribute("swiper-animate-effect");
 			var view = plus.webview.getWebviewById("addText");
 			mui.fire(view, "initText", {
 				pageIndex: pageIndex,
 				index: index,
 				value: value,
+				width: width,
+				height: height,
+				top: top,
+				left: left,
 				fontSize: fontSize,
 				color: color,
 				align: align,
@@ -265,9 +269,9 @@ app.controller("issue", function($scope) {
 			var top = getCss(preantElem, "top");
 			var left = getCss(preantElem, "left");
 			var opacity = getCss(elem, "opacity");
-			var ani_delay = getCss(preantElem, "animation-delay");
-			var ani_duration = getCss(preantElem, "animation-duration");
-			var ani_name = getCss(preantElem, "animation-name");
+			var ani_delay = preantElem.getAttribute("swiper-animate-delay");
+			var ani_duration = preantElem.getAttribute("swiper-animate-duration");
+			var ani_name = preantElem.getAttribute("swiper-animate-effect");
 			var view = plus.webview.getWebviewById("editImg");
 			mui.fire(view, "initImg", {
 				pageIndex: pageIndex,
@@ -302,7 +306,7 @@ app.controller("issue", function($scope) {
 
 		var elem = document.getElementById(id);
 		drop(elem, pageId, index); //移动
-		zoom(pageId, id, elem, rId, wId); //缩放
+		zoom(pageId, id, rId, wId); //缩放
 	}
 
 	//拖动
@@ -322,64 +326,73 @@ app.controller("issue", function($scope) {
 		});
 		hammer.on("panend", function(event) {
 			//拖动结束后获取基础样式，重构css
-			var width = getCss(element, "width");
-			var height = getCss(element, "height");
-			var left = getCss(element, "left");
-			var top = getCss(element, "top");
+			var width = percent(parseInt(getCss(element, "width")),referWidth);
+			var height = percent(parseInt(getCss(element, "height")),referHeight);
+			var left = percent(parseInt(getCss(element, "left")),referWidth);
+			var top = percent(parseInt(getCss(element, "top")),referHeight);
 			var pageIndex = pageId.substring("4");
-
 			var elemCss = "width:" + width + ";height:" + height + ";left:" + left + ";top:" + top + ";";
-			$scope.scene[pageIndex][index].css = elemCss;
+			$scope.scene[pageIndex][index].liCss = elemCss;
 		});
 	}
 
 	//缩放，类名含有scene-img则为图片，按比例缩放，显示右下角操作点
 	//没有则为文字，不按比例缩放，显示右下角，右上角，左下角操作点
-	var zoom = function(index, id, elem, rId, wId) {
-		if(elem.classList.contains("scene-img")) {
-			var scale = new Resize(id, {
-				Max: true,
-				mxContainer: index,
-				Scale: true
-			});
-			scale.Set(rId, "right-down");
-			scale.Set(wId, "right-up");
-		} else {
-			var scale = new Resize(id, {
-				Max: true,
-				mxContainer: index
-			});
-			scale.Set(rId, "right-down");
-			scale.Set(wId, "right-up");
-		}
+	var zoom = function(index, id, rId, wId) {
+		var scale = new Resize(id, {
+			Max: true,
+			mxContainer: index
+		});
+		scale.Set(rId, "right-down");
+		scale.Set(wId, "right-up");
 	}
 
 	//删除素材
 	$scope.del = function(pageId, index) {
+		console.log(pageId+" "+index);
 		var pageIndex = pageId.substring(4);
 		$scope.scene[pageIndex].splice(index, 1);
 	}
 
 	//完成
+	var root = "http://www.hsfeng.cn/scene/";
 	document.getElementById("finish").addEventListener("tap", function() {
-		cover();
-		save();
+		plus.nativeUI.showWaiting();
+		if($scope.sceneId == 0) {
+			$http({
+				method: "GET",
+				url: root + "s/issue/info.html",
+				params: {
+					v: "1.0",
+					fromScene: $scope.fromScene
+				}
+			}).then(function successCallback(response) {
+				$scope.sceneId = response.data;
+				cover($scope.sceneId); //封面图
+				plus.nativeUI.closeWaiting();
+				mui.openWindow({
+					id: "setTempl",
+					url: "./about/set-templ.html",
+					extras: {
+						sceneId: $scope.sceneId
+					}
+				});
+			});
+		} else {
+			cover($scope.sceneId); //封面图
+			plus.nativeUI.closeWaiting();
+			mui.openWindow({
+				id: "setTempl",
+				url: "./about/set-templ.html",
+				extras: {
+					sceneId: $scope.sceneId
+				}
+			});
+		}
 	});
 
-	//保存数据
-	var save = function() {
-		var index = swiper.activeIndex;
-		for(var i=0;i<$scope.scene.length;i++){
-			var info={};
-			info.color = $scope.scene[i].color;
-			info.bgUrl = $scope.scene[i].bgUrl;
-			info.content = JSON.stringify($scope.scene[i]);
-			console.log(JSON.stringify(info));
-		}
-	}
-
 	//截取封面图
-	var cover = function() {
+	var cover = function(id) {
 		var page = document.getElementById("page0");
 		var width = page.offsetWidth;
 		var height = page.offsetHeight;
@@ -395,34 +408,82 @@ app.controller("issue", function($scope) {
 			height: height
 		};
 		html2canvas(page, opts).then(function(canvas) {
-			var img = canvas.toDataURL("image/png");
-			console.log(img);
+			var cover = canvas.toDataURL("image/png");
+			cover = cover.substr(cover.indexOf(",") + 1);
+			console.log(cover);
+			$http({
+				method: "post",
+				url: root + "s/cover.html",
+				data: {
+					v: "1.0",
+					cover: cover,
+					id: id
+				},
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded"
+				},
+				transformRequest: function(obj) {
+					var str = [];
+					for(var p in obj) {
+						str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+					}
+					return str.join("&");
+				}
+			}).then(function successCallback(response) {
+				if(response.data == 1) {
+					save($scope.sceneId); //单页保存数据
+				}
+			});
 		})
 	}
+
+	//保存数据
+	var save = function(id) {
+		for(var i = 0; i < $scope.scene.length; i++) {
+			$http({
+				method: "post",
+				url: root + "s/issue.html",
+				data: {
+					v: "1.0",
+					sceneId: id,
+					currentPage: i,
+					bgColor: $scope.scene[i].color,
+					background: $scope.scene[i].bgUrl,
+					content: JSON.stringify($scope.scene[i])
+				},
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded"
+				},
+				transformRequest: function(obj) {
+					var str = [];
+					for(var p in obj) {
+						str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+					}
+					return str.join("&");
+				}
+			}).then(function successCallback(response) {
+			});
+		}
+	}
+
 });
+
+app.filter("to_draw", ["$sce", function($sce) {
+	return function(text) {
+		return $sce.trustAsHtml(text);
+	}
+}]);
 
 //获取相关CSS属性
 var getCss = function(elem, key) {
 	return window.getComputedStyle(elem)[key];
 };
 
-/*
- * 调用$compile服务
- * 手动编译动态生成html代码中的指令
- */
-app.directive("compile", function($compile) {
-	return function(scope, element, attrs) {
-		scope.$watch(
-			function(scope) {
-				return scope.$eval(attrs.compile);
-			},
-			function(value) {
-				element.html(value);
-				$compile(element.contents())(scope);
-			}
-		);
-	};
-});
+//宽度像素比
+function percent(number1, number2) {
+	var num = parseInt(number1);
+    return (Math.round(num / number2 * 10000) / 100.00 + "%");
+}
 
 //返回
 mui.back = function() {

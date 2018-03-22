@@ -8,21 +8,24 @@
 		<link rel="stylesheet" href="../css/mui.min.css" />
 		<link rel="stylesheet" href="../css/iconfont.min.css" />
 		<link rel="stylesheet" href="../css/search.css" />
+		<script type="text/javascript" src="../js/angular/angular.min.js"></script>
 	</head>
 
-	<body>
+	<body ng-app="scene" ng-controller="search">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<span class="mui-title"><input type="search" class="mui-input-clear" placeholder="输入搜索关键字" /></span>
-			<a class="mui-pull-right">搜索</a>
+			<span class="mui-title"><input type="search" class="mui-input-clear" placeholder="输入搜索内容" id="content"/></span>
+			<a class="mui-pull-right" id="search">搜索</a>
 		</header>
 		<div class="mui-content">
-
+			<div class="info"></div>
+			<div class="notice" id="notice">
+				<span><i class="iconfont icon-wujilu"></i></span>
+				<span class="title">- 换个词试试 -</span>
+			</div>
 		</div>
 		<script type="text/javascript" src="../js/mui.min.js"></script>
-		<script>
-			mui.init();
-		</script>
+		<script type="text/javascript" src="../js/scene/search.js"></script>
 	</body>
 
 </html>
