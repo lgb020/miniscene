@@ -1,8 +1,8 @@
 # MINISCENE
 WebApp - H5场景制作平台<br/>
-开发工具：HBuilder<br />
-开发环境：HTML5+CSS3+MUI+AngularJS 开发r/>
-参考文档：<br />
+开发工具：HBuilder<br/>
+开发环境：HTML5+CSS3+MUI+AngularJS<br/>
+参考文档：<br/>
 - MUI组件：<a href="http://dev.dcloud.net.cn/mui/ui/">http://dev.dcloud.net.cn/mui/ui/</a>
 - HTML5+：<a href="http://www.html5plus.org/doc/h5p.html">http://www.html5plus.org/doc/h5p.html</a>
 - AngularJS：<a href="http://www.runoob.com/angularjs/angularjs-tutorial.html">http://www.runoob.com/angularjs/angularjs-tutorial.html</a>
