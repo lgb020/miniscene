@@ -4,7 +4,7 @@
 - H5场景的制作：包括添加文字、上传图片、添加背景、添加音乐、文字和图片可以随意移动和修改大小；
 - 积分机制：包括积分兑换场景、用户DIY场景上传平台赚取积分
 - 会员机制：会员每月限定次数兑换积分模板；
-- 素材丰富：平台通过爬虫技术抓取丰富的音乐素材；
+- 素材丰富：平台通过爬虫技术抓取丰富的音乐素材；<br/>
  **参考文档：** <br/>
 - UI组件MUI：<a href="http://dev.dcloud.net.cn/mui/ui/">http://dev.dcloud.net.cn/mui/ui/</a>
 - HTML5+：<a href="http://www.html5plus.org/doc/h5p.html">http://www.html5plus.org/doc/h5p.html</a>
