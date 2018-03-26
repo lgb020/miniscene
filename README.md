@@ -1,7 +1,7 @@
 <p><strong>项目说明</strong></p>
 <ul>
     <li>项目采用Html5、CSS3、MUI、AngularJS以及HTML5+规范开发的一款H5场景制作平台；</li>
-    <li>平台力求简单，可一键生成H5场景，实现H5场景的编辑，同时实现场景分享。</li>
+    <li>平台力求简单，提供丰富的素材，可一键生成H5场景，实现场景编辑，实现场景分享。</li>
 </ul>
 <p><strong>项目特点</strong></p>
 <ul>
