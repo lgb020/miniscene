@@ -21,5 +21,5 @@
 </ul>
 <p><strong>后端代码</strong></p>
 <ul>
-    <li>Scene：<a href="https://gitee.com/hongsf/scene">https://gitee.com/hongsf/scene</a></li>
+    <li>SCENE：<a href="https://gitee.com/hongsf/scene">https://gitee.com/hongsf/scene</a></li>
 </ul>
