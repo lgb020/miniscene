@@ -19,7 +19,7 @@
     <li>屏幕截屏插件html2canvas：<a href="http://html2canvas.hertzen.com/">http://html2canvas.hertzen.com</li>
     <li>阿里巴巴图标库iconfont：<a herf="http://www.iconfont.cn/">http://www.iconfont.cn/</li>
 </ul>
-<p><strong>后端接口</strong></p>
+<p><strong>后端代码</strong></p>
 <ul>
     <li>Scene：<a href="https://gitee.com/hongsf/scene">https://gitee.com/hongsf/scene</a></li>
 </ul>
