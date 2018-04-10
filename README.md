@@ -20,8 +20,8 @@
     <li>阿里巴巴图标库iconfont：<a herf="http://www.iconfont.cn/">http://www.iconfont.cn/</li>
 </ul>
 <p><strong>运行效果（部分）：</strong></p>
-<img src="https://gitee.com/uploads/images/2018/0410/210323_f71fa5bc_1196576.png"/>
-<img src="https://gitee.com/uploads/images/2018/0410/210410_86a3eddc_1196576.png"/>
+<img src="https://gitee.com/uploads/images/2018/0410/210323_f71fa5bc_1196576.png" style="width:25%"/>
+<img src="https://gitee.com/uploads/images/2018/0410/210410_86a3eddc_1196576.png" style="width:25%"/>
 <p><strong>后端代码</strong></p>
 <ul>
     <li>SCENE：<a href="https://gitee.com/hongsf/scene">https://gitee.com/hongsf/scene</a></li>
