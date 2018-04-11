@@ -18,7 +18,7 @@
     <li>滑动组件swiper：<a href="http://www.swiper.com.cn/">http://www.swiper.com.cn/</a></li>   
     <li>屏幕截屏插件html2canvas：<a href="http://html2canvas.hertzen.com/">http://html2canvas.hertzen.com</a></li>
     <li>图片裁剪插件cropper：<a href="https://github.com/fengyuanchen/cropper">https://github.com/fengyuanchen/cropper</a></li>
-    <li>阿里巴巴图标库iconfont：<a herf="http://www.iconfont.cn/">http://www.iconfont.cn/</a></li>
+    <li>阿里巴巴图标库iconfont：<a href="http://www.iconfont.cn/">http://www.iconfont.cn/</a></li>
 </ul>
 <p><strong>运行效果（部分）：</strong></p>
 <img width="23%" src="https://gitee.com/uploads/images/2018/0410/210323_f71fa5bc_1196576.png"/>
