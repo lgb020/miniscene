@@ -14,9 +14,10 @@
 <ul>
     <li>UI组件MUI：<a href="http://dev.dcloud.net.cn/mui/ui/">http://dev.dcloud.net.cn/mui/ui/</a></li>
     <li>HTML5+：<a href="http://www.html5plus.org/doc/h5p.html">http://www.html5plus.org/doc/h5p.html</a></li>
-    <li>AngularJS：<a href="http://www.runoob.com/angularjs/angularjs-tutorial.html">http://www.runoob.com/angularjs/angularjs-tutorial.html</li>
-    <li>滑动组件swiper：<a href="http://www.swiper.com.cn/">http://www.swiper.com.cn/</li>   
-    <li>屏幕截屏插件html2canvas：<a href="http://html2canvas.hertzen.com/">http://html2canvas.hertzen.com</li>
+    <li>AngularJS：<a href="http://www.runoob.com/angularjs/angularjs-tutorial.html">http://www.runoob.com/angularjs/angularjs-tutorial.html</a></li>
+    <li>滑动组件swiper：<a href="http://www.swiper.com.cn/">http://www.swiper.com.cn/</a></li>   
+    <li>屏幕截屏插件html2canvas：<a href="http://html2canvas.hertzen.com/">http://html2canvas.hertzen.com</a></li>
+    <li>图片裁剪插件cropper：<a href="https://github.com/fengyuanchen/cropper">https://github.com/fengyuanchen/cropper</a></li>
     <li>阿里巴巴图标库iconfont：<a herf="http://www.iconfont.cn/">http://www.iconfont.cn/</li>
 </ul>
 <p><strong>运行效果（部分）：</strong></p>
