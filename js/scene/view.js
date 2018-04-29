@@ -1,7 +1,7 @@
 var scene = angular.module("scene", []);
 scene.controller("view", function($scope, $http) {
 	mui.init();
-	var root = "http://www.hsfeng.cn/scene/";
+	var root = "http://www.hsfeng.cn/";
 	mui.plusReady(function() {
 		//获取传递过来模板的id
 		var self = plus.webview.currentWebview();
@@ -25,9 +25,9 @@ scene.controller("view", function($scope, $http) {
 			$scope.title = response.data.title;
 			$scope.music = response.data.music;
 			$scope.cover = response.data.cover;
-			if(response.data.jifen>0){
-				$scope.charge = response.data.jifen+"积分兑换";
-			}else{
+			if(response.data.jifen > 0) {
+				$scope.charge = response.data.jifen + "积分兑换";
+			} else {
 				$scope.charge = "免费兑换";
 			}
 		});
@@ -69,7 +69,7 @@ scene.controller("view", function($scope, $http) {
 			this.classList.add("rotate");
 		}
 	});
-	
+
 	//点击举报
 	mui(".footer").on("tap", ".report", function() {
 		$http({
@@ -81,22 +81,21 @@ scene.controller("view", function($scope, $http) {
 				ip: returnCitySN.cip
 			}
 		}).then(function successCallback(response) {
-			console.log(response.data);
-			if(response.data=="true"){
+			if(response.data == "true") {
 				document.getElementById("item").style.display = "block";
 				document.getElementById("shade").style.display = "block";
-			}else{
+			} else {
 				mui.toast("该场景已举报，管理员正在处理！");
 			}
 		});
 	});
-	
+
 	//取消
 	$scope.cancel = function() {
 		document.getElementById("item").style.display = "none";
 		document.getElementById("shade").style.display = "none";
 	}
-	
+
 	//举报
 	$scope.submit = function() {
 		var reason = document.getElementById("reason").value; //举报原因
@@ -107,10 +106,10 @@ scene.controller("view", function($scope, $http) {
 				v: "1.0",
 				sceneId: $scope.sceneId,
 				ip: returnCitySN.cip,
-				content : reason
+				content: reason
 			}
 		}).then(function successCallback(response) {
-			if(response.data>0){
+			if(response.data > 0) {
 				mui.toast("举报成功，管理员会马上处理！");
 			}
 			document.getElementById("item").style.display = "none";
@@ -144,6 +143,6 @@ var swiper = new Swiper(".swiper-container", {
 	}
 });
 
-setTimeout(function(){
-　　swiperAnimate(swiper);
-},1000);
+setTimeout(function() {　　
+	swiperAnimate(swiper);
+}, 1000);

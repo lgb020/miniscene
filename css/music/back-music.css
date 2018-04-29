@@ -31,15 +31,6 @@
 	color: #8F8F94;
 }
 
-.mui-table-view {
-	font-size: 1rem;
-	background-color: #f7f7f7;
-}
-
-.mui-table-view-cell {
-	padding: 13px 15px;
-}
-
 
 /*下拉刷新*/
 .mui-pull-bottom-pocket {
@@ -51,7 +42,13 @@
 }
 
 /*音乐列表*/
-.mui-table-view-cell{
+.mui-table-view {
+	font-size: 1rem;
+	background-color: #f7f7f7;
+}
+
+.mui-table-view-cell {
+	padding: 13px 15px;
 	font-size: 0.9rem;
 }
 

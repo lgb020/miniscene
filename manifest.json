@@ -81,9 +81,7 @@
 		"NativeObj": {
 			"description": "原生对象"
 		},
-		"Share":{
-			"description": "社交分享"
-		}
+		"Share":{}
 	},
 	"plus": {
 		"splashscreen": {
@@ -94,7 +92,7 @@
 		"popGesture": "close",/*设置应用默认侧滑返回关闭Webview窗口，"none"为无侧滑返回功能，"hide"为侧滑隐藏Webview窗口。参考http://ask.dcloud.net.cn/article/102*/
 		"runmode": "normal",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
 		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
-		"distribute": {
+		"distribute": {"google":{"permissions":["<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>"]},
 			"plugins": {
 				"share":{
 					"weixin":{
@@ -489,7 +487,8 @@
 				],
 				"refer": [
 					"store/store_all.html",
-					"issue.html"
+					"issue.html",
+					"login.html"
 				],
 				"priority": 4
 			},
@@ -511,7 +510,8 @@
 					"template/photo.html",
 					"template/hot.html",
 					"music/back-music.html",
-					"scene/search.html"
+					"scene/search.html",
+					"login.html"
 				],
 				"priority": 0
 			},
@@ -533,7 +533,6 @@
 		"idle": {
 			"resources": [
 				"js/angular/angular-route.min.js",
-				"login.html",
 				"img/background.jpg",
 				"js/mui.view.js"
 			]

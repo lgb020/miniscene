@@ -1,7 +1,7 @@
 var scene = angular.module("scene", []);
 scene.controller("member", function($scope, $http) {
 	mui.init();
-	var root = "http://www.hsfeng.cn/scene/";
+	var root = "http://www.hsfeng.cn/";
 	//用户信息
 	$http({
 		method: "GET",
@@ -21,7 +21,7 @@ scene.controller("member", function($scope, $http) {
 		if(response.data.isMember == 1) {
 			info = info + "<span class='times'>次数：" + response.data.alNumbers + "/" + response.data.numbers + "</span></p>";
 		}
-		//info = info + "</div><button type='button' class='mui-btn mui-btn-primary recharge' id='recharge'>充值</button>";
+		info = info + "</div><button type='button' class='mui-btn mui-btn-primary recharge' id='recharge'>申请会员</button>";
 
 		document.getElementById("info").innerHTML = info;
 	});
@@ -45,26 +45,5 @@ scene.controller("member", function($scope, $http) {
 			info = info + "<p class='time'>无记录</p></aside></section>";
 		}
 		document.getElementById("exchange").innerHTML = info;
-	});
-
-	//充值记录
-	$http({
-		method: "GET",
-		url: root + "about/member.html",
-		params: {
-			v: "1.0",
-			type: 1
-		}
-	}).then(function successCallback(response) {
-		var info = "";
-		if(response.data.length > 0) {
-			for(var i = 0; i < response.data.length; i++) {
-				info = info + "<section><span class='point-time point-yellow'></span><aside>" +
-					"<p class='time'>" + response.data[i].sTimes + "</p><p class='brief'>" + response.data[i].descirbe + "</p></aside></section>";
-			}
-		} else {
-			info = info + "<p class='time'>无记录</p></aside></section>";
-		}
-		document.getElementById("charge").innerHTML = info;
 	});
 });

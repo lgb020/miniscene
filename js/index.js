@@ -13,15 +13,7 @@ mui.plusReady(function() {
 			id: "recommend",
 			url: "./template/recommend.html",
 			extras: {},
-		}, {
-			id: "hot",
-			url: "./template/hot.html",
-			extras: {}
-		}, {
-			id: "company",
-			url: "./template/company.html",
-			extras: {}
-		}, {
+		},{
 			id: "photo",
 			url: "./template/photo.html",
 			extras: {}
@@ -42,7 +34,7 @@ mui.plusReady(function() {
 
 var music = angular.module("scene", []);
 music.controller("init", function($scope, $http) {
-	var root = "http://www.hsfeng.cn/scene/";
+	var root = "http://www.hsfeng.cn/";
 	document.getElementById("about").addEventListener("tap", function() {
 		$http({
 			method: "GET",

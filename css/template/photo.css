@@ -3,20 +3,17 @@
 	font-size: 1.8rem;
 }
 
-.icon-wannianli-06{
+.icon-generalize,
+.icon-shengri,
+.icon-hunlixianchang,
+.icon-qita{
 	color: rgb(244, 160, 130);
 }
 
-.icon-shengri{
-	color: rgb(247, 132, 184);
-}
-
-.icon-hunlixianchang{
-	color: rgb(223, 81, 80);
-}
-
-.icon-qita{
-	color: rgb(126, 128, 190);
+.mui-content .adv,
+.mui-content .adv img{
+	width: 100%;
+	height: auto;
 }
 
 .mui-content>.mui-table-view:first-child{

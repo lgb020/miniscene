@@ -27,10 +27,12 @@
 /*菜单选项*/
 .mui-segmented-control {
 	font-size: 0.9rem;
+	margin: 0a auto;
 }
 
 .mui-segmented-control.mui-scroll-wrapper .mui-control-item {
 	padding: 0px 20px;
+	margin: 0 auto;
 }
 
 .iconfont{

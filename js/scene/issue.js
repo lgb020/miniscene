@@ -1,7 +1,7 @@
 mui.init({
 	preloadPages: [{
-		id: "addPage",
-		url: "/scene/page.html"
+		id: "addBg",
+		url: "/scene/backg.html",
 	}, {
 		id: "addText",
 		url: "/scene/text.html"
@@ -13,7 +13,7 @@ mui.init({
 });
 
 var menu = new Swiper(".footer .swiper-container", {
-	slidesPerView: 4,
+	slidesPerView: 3,
 	watchOverflow: true
 });
 
@@ -61,18 +61,6 @@ app.controller("issue", function($scope, $http) {
 		$scope.scene.splice(index, 1); //删除
 	}
 
-	//添加模板
-	mui("body").on("tap", ".addPage", function() {
-		var index = swiper.activeIndex;
-		if(index < $scope.scene.length) {
-			mui.openWindow({
-				id: "addPage",
-				show: {
-					aniShow: "pop-in"
-				}
-			});
-		}
-	});
 	window.addEventListener("getPage", function(event) {
 		var pageId = event.detail.id;
 		if(pageId > 0) {
@@ -192,7 +180,6 @@ app.controller("issue", function($scope, $http) {
 		if(index < $scope.scene.length) {
 			mui.openWindow({
 				id: "addBg",
-				url: "/scene/backg.html",
 				show: {
 					aniShow: "pop-in"
 				}
@@ -355,7 +342,7 @@ app.controller("issue", function($scope, $http) {
 	}
 
 	//完成
-	var root = "http://www.hsfeng.cn/scene/";
+	var root = "http://www.hsfeng.cn/";
 	document.getElementById("finish").addEventListener("tap", function() {
 		plus.nativeUI.showWaiting();
 		if($scope.sceneId == 0) {

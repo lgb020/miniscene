@@ -1,7 +1,6 @@
 mui.init();
 
 var menu = new Swiper(".swiper-container", {
-	effect: "fade",
 	observer: true,
 	observeParents: true,
 	autoplay: true,
@@ -12,7 +11,7 @@ var menu = new Swiper(".swiper-container", {
 
 var scene = angular.module("scene", []);
 scene.controller("recommend", function($scope, $http) {
-	var root = "http://www.hsfeng.cn/scene/";
+	var root = "http://www.hsfeng.cn/";
 	//轮播图
 	$http({
 		method: "GET",
@@ -117,14 +116,6 @@ scene.controller("recommend", function($scope, $http) {
 			extras: {
 				sceneId: sceneId
 			}
-		});
-	});
-
-	/*设计小店*/
-	document.getElementById("store").addEventListener("tap", function() {
-		mui.openWindow({
-			id: "storeAll",
-			url: "../store/store_all.html"
 		});
 	});
 

@@ -1,7 +1,7 @@
 var scene = angular.module("scene", []);
 scene.controller("setting", function($scope, $http) {
 	mui.init();
-	var root = "http://www.hsfeng.cn/scene/";
+	var root = "http://www.hsfeng.cn/";
 	mui.plusReady(function() {
 		//获取传递过来模板的id
 		var self = plus.webview.currentWebview();

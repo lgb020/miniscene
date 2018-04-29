@@ -48,7 +48,7 @@
 }
 
 .info .center {
-	margin-left: 4%;
+	margin-left: 5%;
 }
 
 .info .right {
@@ -79,19 +79,6 @@
 
 .info .cover .integral i {
 	font-size: 0.9rem;
-}
-
-/*设计小店*/
-.store {
-	margin-top: 10px;
-	margin-bottom: 5px;
-	width: 100%;
-	height: 35px;
-	line-height: 35px;
-	text-align: center;
-	font-size: 0.9rem;
-	color: #f68531;
-	border-top: 1px solid #c8c7cc;
 }
 
 /*发布按钮*/

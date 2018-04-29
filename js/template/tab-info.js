@@ -2,35 +2,23 @@ mui.init();
 var music = angular.module("scene", []);
 music.controller("label", function($scope, $http) {
 	var id = 0;
-	var root = "http://www.hsfeng.cn/scene/";
+	var root = "http://www.hsfeng.cn/";
 	mui.plusReady(function() {
 		var self = plus.webview.currentWebview();
 		/*获取传递过来的参数*/
 		var title = "";
 		switch(self.name) {
-			case "3":
-				title = "公司简介";
-				break;
-			case "4":
-				title = "企业文化";
-				break;
-			case "5":
-				title = "产品品牌";
-				break;
-			case "6":
-				title = "企业宣传";
-				break;
-			case "7":
+			case "1":
 				title = "婚礼";
 				break;
-			case "8":
-				title = "生日祝福";
+			case "2":
+				title = "宴席";
 				break;
-			case "9":
-				title = "纪念";
+			case "3":
+				title = "会议";
 				break;
-			case "10":
-				title = "个人相册";
+			case "4":
+				title = "活动场景";
 				break;
 			default:
 				break;
@@ -75,6 +63,7 @@ music.controller("label", function($scope, $http) {
 							"<span class='describes'>" + response.data[i].title + "</span>" +
 							"<span class='integral'><i class='iconfont icon-jifen'></i> " + response.data[i].jifen + "</span>";
 					}
+					div.id = response.data[i].id;
 					info.appendChild(div);
 				}
 				document.getElementById("notice").style.display = "none";
@@ -83,6 +72,18 @@ music.controller("label", function($scope, $http) {
 			}
 		});
 	}
+	
+	//查看详情
+	mui(".info").on("tap", ".cover", function() {
+		var sceneId = this.id;
+		mui.openWindow({
+			id: "view",
+			url: "../view.html",
+			extras: {
+				sceneId: sceneId
+			}
+		});
+	});
 
 	/*点击免费按钮*/
 	var isCharge = document.getElementById("charge");

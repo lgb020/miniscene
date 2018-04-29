@@ -1,7 +1,7 @@
 var scene = angular.module("scene", []);
 scene.controller("search", function($scope, $http) {
 	mui.init();
-	var root = "http://www.hsfeng.cn/scene/";
+	var root = "http://www.hsfeng.cn/";
 	document.getElementById("search").addEventListener("tap", function() {
 		console.log("1");
 		var content = document.getElementById("content").value;

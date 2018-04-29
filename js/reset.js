@@ -1,7 +1,7 @@
 var music = angular.module("scene", []);
 music.controller("back", function($scope, $http) {
 	mui.init();
-	var root = "http://www.hsfeng.cn/scene/";
+	var root = "http://www.hsfeng.cn/";
 	var count = 60; //计数器
 	var curCount; //当前剩余秒数
 	var InterValObj; //控制时间

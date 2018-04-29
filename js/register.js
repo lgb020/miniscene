@@ -1,7 +1,7 @@
 var music = angular.module("scene", []);
 music.controller("register", function($scope, $http) {
 	mui.init();
-	var root = "http://www.hsfeng.cn/scene/";
+	var root = "http://www.hsfeng.cn/";
 	var check = function(account, pass, rpass) {
 		if(account != "" && pass != "" && rpass != "") {
 			if(isEmail(account)) {

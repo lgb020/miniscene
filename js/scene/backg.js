@@ -23,7 +23,7 @@ scene.controller("background", function($scope, $http) {
 	});
 	$scope.originColor = new Array("#FFFFFF", "#9fb2c0", "#d3c3c4", "#a09aa6", "#8CC7B5", "#D1BA74", "#ECAD9E", "#F4606C", "#716f7d", "#314d58", "#000000");
 
-	var root = "http://www.hsfeng.cn/scene/";
+	var root = "http://www.hsfeng.cn/";
 	var page = 1; //当前页
 	var count = 1; //总页数
 	var init_info = function(page) {

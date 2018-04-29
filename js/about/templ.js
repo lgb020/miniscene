@@ -1,7 +1,7 @@
 var scene = angular.module("scene", []);
 scene.controller("templ", function($scope, $http, $compile) {
 	mui.init();
-	var root = "http://www.hsfeng.cn/scene/";
+	var root = "http://www.hsfeng.cn/";
 	//制作的模板
 	$http({
 		method: "GET",

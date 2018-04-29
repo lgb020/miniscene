@@ -5,13 +5,14 @@ music.controller("photo", function($scope, $http) {
 			container: "#hotInfo",
 			up: {
 				height: 50,
+				auto: true,
 				contentrefresh: "正在加载...",
 				contentnomore: "没有更多数据了",
 				callback: moreInfo
 			}
 		}
 	});
-	var root = "http://www.hsfeng.cn/scene/";
+	var root = "http://www.hsfeng.cn/";
 	var page = 1; //当前页
 	var count = 1; //总页数
 	//查询总页数
@@ -55,13 +56,14 @@ music.controller("photo", function($scope, $http) {
 						"<span class='describes'>" + response.data[i].title + "</span>" +
 						"<span class='integral'><i class='iconfont icon-jifen'></i> " + response.data[i].jifen + "</span>";
 				}
+				div.id = response.data[i].id;
 				info.appendChild(div);
 			}
 		});
 	}
 	//数据初始化
 	init_info(1);
-
+	
 	function moreInfo() {
 		if(count == 1) {
 			mui("#hotInfo").pullRefresh().endPullup(true);
@@ -73,6 +75,18 @@ music.controller("photo", function($scope, $http) {
 			}, 2000);
 		}
 	}
+	
+	//查看详情
+	mui(".info").on("tap", ".cover", function() {
+		var sceneId = this.id;
+		mui.openWindow({
+			id: "view",
+			url: "../view.html",
+			extras: {
+				sceneId: sceneId
+			}
+		});
+	});
 });
 
 /*点击婚礼*/
@@ -81,29 +95,29 @@ document.getElementById("marry").addEventListener("tap", function() {
 		id: "tabInfo",
 		url: "./tab-info.html",
 		extras: {
-			name: "7"
+			name: "1"
 		}
 	});
 });
 
-/*点击生日祝福*/
+/*点击宴席*/
 document.getElementById("birthday").addEventListener("tap", function() {
 	mui.openWindow({
 		id: "tabInfo",
 		url: "./tab-info.html",
 		extras: {
-			name: "8"
+			name: "2"
 		}
 	});
 });
 
-/*点击纪念*/
+/*点击会议*/
 document.getElementById("record").addEventListener("tap", function() {
 	mui.openWindow({
 		id: "tabInfo",
 		url: "./tab-info.html",
 		extras: {
-			name: "9"
+			name: "3"
 		}
 	});
 });
@@ -114,7 +128,7 @@ document.getElementById("other").addEventListener("tap", function() {
 		id: "tabInfo",
 		url: "./tab-info.html",
 		extras: {
-			name: "10"
+			name: "4"
 		}
 	});
 });

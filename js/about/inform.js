@@ -1,7 +1,7 @@
 var scene = angular.module("scene", []);
 scene.controller("inform", function($scope, $http) {
 	mui.init();
-	var root = "http://www.hsfeng.cn/scene/";
+	var root = "http://www.hsfeng.cn/";
 	$http({
 		method: "GET",
 		url: root + "about/message.html",

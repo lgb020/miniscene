@@ -50,7 +50,6 @@ body {
 /*滑块*/
 .rang{
 	margin-top: 15px;
-	display: none;
 }
 
 .orang{
@@ -59,10 +58,6 @@ body {
 
 .mui-input-row label{
 	padding: 11px 10px;
-}
-
-.mui-input-range .mui-tooltip{
-	display: none;
 }
 
 /*样例*/

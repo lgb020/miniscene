@@ -6,6 +6,7 @@ music.controller("info", function($scope, $http) {
 			container: "#online",
 			up: {
 				height: 50,
+				auto: true,
 				contentrefresh: "正在加载...",
 				contentnomore: "没有更多数据了",
 				callback: moreInfo
@@ -13,7 +14,7 @@ music.controller("info", function($scope, $http) {
 		}
 	});
 	
-	var root = "http://www.hsfeng.cn/scene/";
+	var root = "http://www.hsfeng.cn/";
 	var page = 1; //当前页
 	var count = 1; //总页数
 
