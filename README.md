@@ -22,7 +22,7 @@
 </ul>
 <p><strong>后台代码</strong></p>
 <ul>
-    <li>miniAdmin：<a href="https://github.com/kd-hsfeng/miniAdmin">https://github.com/kd-hsfeng/miniAdmin</a></li>
+    <li>miniAdmin：<a href="https://github.com/kdMelody/miniAdmin">https://github.com/kdMelody/miniAdmin</a></li>
 </ul>
 <p><strong>运行效果（部分）：</strong></p>
 <img width="23%" src="https://gitee.com/uploads/images/2018/0410/210323_f71fa5bc_1196576.png"/>
